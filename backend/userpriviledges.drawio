@@ -1,0 +1,67 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.4 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="26.0.4">
+  <diagram name="Page-1" id="XcGd4eBQYNo4Qva8Zp4T">
+    <mxGraphModel dx="1434" dy="863" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="0.9" pageWidth="530" pageHeight="400" background="#999999" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="TLgnXw41GExj6nQDH0Xq-6" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=none;strokeColor=#CC00CC;strokeWidth=4;fontColor=#CC00CC;" parent="1" vertex="1">
+          <mxGeometry x="41" y="260" width="210" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="TLgnXw41GExj6nQDH0Xq-10" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=none;strokeColor=#FF0000;strokeWidth=4;fontColor=#FF0000;" parent="1" vertex="1">
+          <mxGeometry x="41" y="300" width="419" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="TLgnXw41GExj6nQDH0Xq-4" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=none;strokeColor=#0000FF;strokeWidth=4;" parent="1" vertex="1">
+          <mxGeometry x="41" y="40" width="210" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="TLgnXw41GExj6nQDH0Xq-1" value="see/filter animal" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="86" y="90" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TLgnXw41GExj6nQDH0Xq-2" value="create account" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="86" y="150" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TLgnXw41GExj6nQDH0Xq-3" value="login" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="86" y="210" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TLgnXw41GExj6nQDH0Xq-5" value="Anyone" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;fontColor=#0000FF;" parent="1" vertex="1">
+          <mxGeometry x="56" y="40" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TLgnXw41GExj6nQDH0Xq-7" value="book an appointment for yourself" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="86" y="320" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TLgnXw41GExj6nQDH0Xq-8" value="see your own appointment" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="86" y="390" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TLgnXw41GExj6nQDH0Xq-9" value="Logged in users" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;fontColor=#CC00CC;" parent="1" vertex="1">
+          <mxGeometry x="46" y="260" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TLgnXw41GExj6nQDH0Xq-11" value="Admin" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;fontColor=#FF0000;" parent="1" vertex="1">
+          <mxGeometry x="336" y="300" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TLgnXw41GExj6nQDH0Xq-12" value="book an appointment for anyone" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="286" y="340" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TLgnXw41GExj6nQDH0Xq-13" value="see all appointments" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="286" y="390" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TLgnXw41GExj6nQDH0Xq-14" value="register animal" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="86" y="500" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TLgnXw41GExj6nQDH0Xq-15" value="delete animal" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="86" y="550" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TLgnXw41GExj6nQDH0Xq-17" value="comment on animal, users, booking and adoption" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="66" y="610" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TLgnXw41GExj6nQDH0Xq-18" value="approve /deny users for adoption" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="286" y="440" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TLgnXw41GExj6nQDH0Xq-19" value="register adoption" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="286" y="490" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TLgnXw41GExj6nQDH0Xq-20" value="delete adoption" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="286" y="540" width="120" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,46 @@
+meta {
+  name: Create brutus
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:8080/api/animals
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoMCIsInN1YiI6IjczYTcwYmMwLWY4ZDUtNGJlZC1iZTAzLWIyNjJjYjg1ZjdjZiJ9.awUW3pDT7a7ousqnfqKEkxIuJQpz0gKf1fbzAYH9sAg
+}
+
+body:json {
+  {
+    "animalName": "Brutus",
+    "assumedDateOfBirth": "1914-12-24",
+    "dateRegistered": "2011-09-11",
+    "animalSpecies": "dog",
+    "adopted": false,
+    "adopter": null,
+  "foundByUser": {
+    "userId": "6416c73b-bb83-4444-9afa-f0d6746fa967",
+    "username": "rastaman",
+    "firstName": "Robert",
+    "lastName": "Marley",
+    "dateOfBirth": "1945-02-06",
+    "address": {
+      "street": "56 Hope Road",
+      "city": "Kingston",
+      "state": "St. Andrew",
+      "zipCode": "00000"
+    },
+    "email": "jamaicarecord@jamaica.com",
+    "phoneNumber": "+46705886699",
+    "ownedAnimals": [],
+    "canAdopt": true,
+    "comments": [],
+    "role": "user"
+  },
+    "comments": null
+  }
+}

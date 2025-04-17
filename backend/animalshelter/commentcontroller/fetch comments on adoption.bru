@@ -1,0 +1,19 @@
+meta {
+  name: fetch comments on adoption
+  type: http
+  seq: 15
+}
+
+get {
+  url: http://localhost:8080/comment/adoption?adoptionID=ee32dd58-0064-4994-b579-e8ab7bae65b0
+  body: none
+  auth: bearer
+}
+
+params:query {
+  adoptionID: ee32dd58-0064-4994-b579-e8ab7bae65b0
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoMCIsInN1YiI6IjczYTcwYmMwLWY4ZDUtNGJlZC1iZTAzLWIyNjJjYjg1ZjdjZiJ9.awUW3pDT7a7ousqnfqKEkxIuJQpz0gKf1fbzAYH9sAg
+}

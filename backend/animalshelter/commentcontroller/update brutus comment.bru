@@ -1,0 +1,23 @@
+meta {
+  name: update brutus comment
+  type: http
+  seq: 14
+}
+
+put {
+  url: http://localhost:8080/comment?commentID=1221a489-7d56-448b-9824-224948000ee9
+  body: text
+  auth: bearer
+}
+
+params:query {
+  commentID: 1221a489-7d56-448b-9824-224948000ee9
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoMCIsInN1YiI6IjczYTcwYmMwLWY4ZDUtNGJlZC1iZTAzLWIyNjJjYjg1ZjdjZiJ9.awUW3pDT7a7ousqnfqKEkxIuJQpz0gKf1fbzAYH9sAg
+}
+
+body:text {
+  Brutus is weird around other dogs named Julius
+}

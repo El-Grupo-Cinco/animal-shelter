@@ -1,0 +1,19 @@
+meta {
+  name: commenting dog
+  type: http
+  seq: 9
+}
+
+post {
+  url: http://localhost:8080/comment/animal?animalID=6f1f63b0-7bae-43a3-94d4-3f50ca89bcd1
+  body: text
+  auth: none
+}
+
+params:query {
+  animalID: 6f1f63b0-7bae-43a3-94d4-3f50ca89bcd1
+}
+
+body:text {
+  Brutus stabbed his father in the back.
+}

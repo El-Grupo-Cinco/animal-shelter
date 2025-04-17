@@ -1,0 +1,19 @@
+meta {
+  name: update Booking comment
+  type: http
+  seq: 10
+}
+
+put {
+  url: http://localhost:8080/comment?commentID=66400e08-d665-4c20-8329-dcbfa6b7c4b6
+  body: text
+  auth: none
+}
+
+params:query {
+  commentID: 66400e08-d665-4c20-8329-dcbfa6b7c4b6
+}
+
+body:text {
+  Brutus shall not be in the vicinity of daggers.
+}

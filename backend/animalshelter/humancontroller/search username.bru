@@ -1,0 +1,19 @@
+meta {
+  name: search username
+  type: http
+  seq: 5
+}
+
+get {
+  url: http://localhost:8080/api/humans/search?query=rasta
+  body: none
+  auth: bearer
+}
+
+params:query {
+  query: rasta
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoMCIsInN1YiI6IjczYTcwYmMwLWY4ZDUtNGJlZC1iZTAzLWIyNjJjYjg1ZjdjZiJ9.awUW3pDT7a7ousqnfqKEkxIuJQpz0gKf1fbzAYH9sAg
+}

@@ -1,0 +1,32 @@
+meta {
+  name: Homer Simpson
+  type: http
+  seq: 9
+}
+
+post {
+  url: http://localhost:8080/api/humans/create
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "username": "beer",
+    "firstName": "Homer",
+    "lastName": "Simpspon",
+    "dateOfBirth": "1985-01-01",
+    "address": {
+      "street": "1111 Springfield st",
+      "city": "Springfield",
+      "state": "FOX TV",
+      "zipCode": "123245"
+    },
+    "email": "homer.simpson@burns-industry.com",
+    "phoneNumber": "+1987654321",
+    "ownedAnimals": [],
+    "comments": [],
+    "canAdopt": true,
+    "password": "margerockshard123"
+  }
+}

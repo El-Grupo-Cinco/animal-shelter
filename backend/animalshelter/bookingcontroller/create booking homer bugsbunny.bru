@@ -1,0 +1,23 @@
+meta {
+  name: create booking homer bugsbunny
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:8080/api/bookings
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoMCIsInN1YiI6IjQxZDJiMGI1LTdiZDctNGU0Ni1hNGJkLWRlODQ4YzFlNzZmMyJ9.d-DKN0EVJaqEhBQSrVCdI5nlRTYy2Rqzr8b3kH-TMzw
+}
+
+body:json {
+  {
+    "userId": "41d2b0b5-7bd7-4e46-a4bd-de848c1e76f3",
+    "animalId": "c72059f9-fc65-4eca-abc0-a047c4599c25",
+    "appointmentTime": "2025-02-15T09:30:00"
+  }
+}

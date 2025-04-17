@@ -1,0 +1,23 @@
+meta {
+  name: commenting brutus
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8080/comment/animal?animalID=b2ac7465-6076-4daf-a5b5-54368b8d4e12
+  body: text
+  auth: bearer
+}
+
+params:query {
+  animalID: b2ac7465-6076-4daf-a5b5-54368b8d4e12
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoMCIsInN1YiI6IjczYTcwYmMwLWY4ZDUtNGJlZC1iZTAzLWIyNjJjYjg1ZjdjZiJ9.awUW3pDT7a7ousqnfqKEkxIuJQpz0gKf1fbzAYH9sAg
+}
+
+body:text {
+  likes daggers in the back of father figures.
+}

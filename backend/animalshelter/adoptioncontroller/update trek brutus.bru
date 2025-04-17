@@ -1,0 +1,69 @@
+meta {
+  name: update trek brutus
+  type: http
+  seq: 7
+}
+
+put {
+  url: http://localhost:8080/adoption/update
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoMCIsInN1YiI6IjczYTcwYmMwLWY4ZDUtNGJlZC1iZTAzLWIyNjJjYjg1ZjdjZiJ9.awUW3pDT7a7ousqnfqKEkxIuJQpz0gKf1fbzAYH9sAg
+}
+
+body:json {
+  {
+      "adoptionID": "ee32dd58-0064-4994-b579-e8ab7bae65b0",
+      "adoptionDate": "2025-02-14",
+      "animalDTO": {
+        "animalId": "b2ac7465-6076-4daf-a5b5-54368b8d4e12",
+        "animalName": "Brutus",
+        "animalSpecies": "dog",
+        "assumedDateOfBirth": "1914-12-24",
+        "adopted": true
+      },
+      "humanDTO": {
+        "userId": "975d0043-3bc5-432b-ac24-c4b1c8fdca24",
+        "username": "TrekSupreme",
+        "firstName": "William",
+        "lastName": "Shatner",
+        "dateOfBirth": "1935-08-18",
+        "address": {
+          "street": "105 Hollywood Blv",
+          "city": "Hollywood",
+          "state": "California",
+          "zipCode": "55687"
+        },
+        "email": "callmeKirk@entrepise.space",
+        "phoneNumber": "+112355545687",
+        "ownedAnimals": [
+          {
+            "animalId": "b2ac7465-6076-4daf-a5b5-54368b8d4e12",
+            "animalName": "Brutus",
+            "animalSpecies": "dog",
+            "assumedDateOfBirth": "1914-12-24",
+            "adopted": true
+          },
+          {
+            "animalId": "23cc90b8-8eb2-46cb-8102-ac27b69937aa",
+            "animalName": "Snoopy",
+            "animalSpecies": "dog",
+            "assumedDateOfBirth": "2015-12-01",
+            "adopted": true
+          }
+        ],
+        "canAdopt": true,
+        "comments": [],
+        "role": "user"
+      },
+      "commentDTOs": []
+    }
+}
+
+body:text {
+  "userId": "2beee2a0-f8c9-4629-85f4-1505ce800ebe",
+    "animalId": "5a7393c1-73b9-40f1-9dba-ea774ad2797a",
+}

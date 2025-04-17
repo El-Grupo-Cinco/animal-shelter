@@ -1,0 +1,23 @@
+meta {
+  name: update homer
+  type: http
+  seq: 6
+}
+
+put {
+  url: http://localhost:8080/comment?commentID=32e73a73-11ac-45a6-9e89-984d3448574d
+  body: text
+  auth: bearer
+}
+
+params:query {
+  commentID: 32e73a73-11ac-45a6-9e89-984d3448574d
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoMCIsInN1YiI6IjczYTcwYmMwLWY4ZDUtNGJlZC1iZTAzLWIyNjJjYjg1ZjdjZiJ9.awUW3pDT7a7ousqnfqKEkxIuJQpz0gKf1fbzAYH9sAg
+}
+
+body:text {
+  has a cartoonish feel about him.
+}

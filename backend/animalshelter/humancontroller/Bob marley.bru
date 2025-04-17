@@ -1,0 +1,32 @@
+meta {
+  name: Bob marley
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8080/api/humans/create
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "username": "rastaman",
+    "firstName": "Robert",
+    "lastName": "Marley",
+    "dateOfBirth": "1945-02-06",
+    "address": {
+      "street": "56 Hope Road",
+      "city": "Kingston",
+      "state": "St. Andrew",
+      "zipCode": "00000"
+    },
+    "email": "jamaicarecord@jamaica.com",
+    "phoneNumber": "+46705886699",
+    "ownedAnimals": [],
+    "comments": [],
+    "canAdopt": true,
+    "password": "Ilikerabbits45"
+  }
+}

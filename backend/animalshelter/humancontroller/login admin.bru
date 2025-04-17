@@ -1,0 +1,18 @@
+meta {
+  name: login admin
+  type: http
+  seq: 7
+}
+
+post {
+  url: http://localhost:8080/api/humans/login!
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "username": "DaGod",
+    "password": "BigJoke123"
+  }
+}

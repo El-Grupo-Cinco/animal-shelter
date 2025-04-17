@@ -1,0 +1,18 @@
+meta {
+  name: login homer
+  type: http
+  seq: 10
+}
+
+post {
+  url: http://localhost:8080/api/humans/login!
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "username": "beer",
+    "password": "margerockshard123"
+  }
+}

@@ -1,0 +1,18 @@
+meta {
+  name: login trekSupreme
+  type: http
+  seq: 8
+}
+
+post {
+  url: http://localhost:8080/api/humans/login!
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "username": "TrekSupreme",
+    "password": "IamCaptainKirk1965"
+  }
+}

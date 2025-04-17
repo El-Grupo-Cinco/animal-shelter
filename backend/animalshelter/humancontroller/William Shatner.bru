@@ -1,0 +1,32 @@
+meta {
+  name: William Shatner
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:8080/api/humans/create
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "username": "TrekSupreme",
+    "firstName": "William",
+    "lastName": "Shatner",
+    "dateOfBirth": "1935-08-18",
+    "address": {
+      "street": "105 Hollywood Blv",
+      "city": "Hollywood",
+      "state": "California",
+      "zipCode": "55687"
+    },
+    "email": "callmeKirk@entrepise.space",
+    "phoneNumber": "+112355545687",
+    "ownedAnimals": [],
+    "comments": [],
+    "canAdopt": true,
+    "password": "IamCaptainKirk1965"
+  }
+}

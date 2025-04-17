@@ -1,0 +1,19 @@
+meta {
+  name: filter animal1
+  type: http
+  seq: 5
+}
+
+get {
+  url: http://localhost:8080/api/animals/filter
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+  
+  
+    "includeAdopted": true
+  }
+}

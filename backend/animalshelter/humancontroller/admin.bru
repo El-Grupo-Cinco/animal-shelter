@@ -1,0 +1,32 @@
+meta {
+  name: admin
+  type: http
+  seq: 6
+}
+
+post {
+  url: http://localhost:8080/api/humans/admin/helloworld
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "username": "DaGod",
+    "firstName": "Bruce",
+    "lastName": "Allmighty",
+    "dateOfBirth": "1983-06-06",
+    "address": {
+      "street": "666 Heaven steet",
+      "city": "Sodom & Gomorra",
+      "state": "Heaven",
+      "zipCode": "00666"
+    },
+    "email": "god@customerservice.com",
+    "phoneNumber": "+666666",
+    "ownedAnimals": [],
+    "comments": [],
+    "canAdopt": true,
+    "password": "BigJoke123"
+  }
+}

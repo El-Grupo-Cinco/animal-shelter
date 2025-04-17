@@ -1,0 +1,23 @@
+meta {
+  name: commenting william shatner
+  type: http
+  seq: 12
+}
+
+post {
+  url: http://localhost:8080/comment/human?humanID=0ef6f124-faaa-408f-b35b-ca4e0f36be49
+  body: text
+  auth: bearer
+}
+
+params:query {
+  humanID: 0ef6f124-faaa-408f-b35b-ca4e0f36be49
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoMCIsInN1YiI6IjY5NTdkYmQ0LTc5ZTktNGYyZS05MDc0LTI1OGYzYjBkYzllMyJ9.ntbnwd7FRV2T3IggCq8D8_GOguPlGz1WfAcgJcFLSI8
+}
+
+body:text {
+  likes Shakespear
+}

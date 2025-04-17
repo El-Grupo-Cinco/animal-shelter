@@ -1,0 +1,19 @@
+meta {
+  name: fetch comments on Bob Marley
+  type: http
+  seq: 3
+}
+
+get {
+  url: http://localhost:8080/comment/human?humanID=6416c73b-bb83-4444-9afa-f0d6746fa967
+  body: none
+  auth: bearer
+}
+
+params:query {
+  humanID: 6416c73b-bb83-4444-9afa-f0d6746fa967
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoMCIsInN1YiI6IjczYTcwYmMwLWY4ZDUtNGJlZC1iZTAzLWIyNjJjYjg1ZjdjZiJ9.awUW3pDT7a7ousqnfqKEkxIuJQpz0gKf1fbzAYH9sAg
+}
