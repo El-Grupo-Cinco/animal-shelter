@@ -1,4 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Whisper&display=swap');
+
 .user-card {
+      color: #007F5F;
+      padding: 1rem;
       border: 1px solid #D4D700;
-      height: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+}
+
+.user-card h1 {
+        font-family: "Whisper";
+        font-size: 2.5rem;
+}
+
+.user-card > h2 {
+        align-self: center;
+}
+
+.username {
+        align-self: center;
+}
+
+.user-info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+}
+
+.user-info > div {
+        max-height: 3rem;
+        margin: 1px;
+        display: flex;
+        gap: 1rem;
+
+        h2 {
+                margin-top: auto;
+                margin-bottom: auto;
+        }
+
+        h3 {
+                margin-top: auto;
+                margin-bottom: auto;
+        }
+
+        h4 {
+                margin-top: auto;
+                margin-bottom: auto;
+        }
+
 }
