@@ -6,30 +6,27 @@
       border: 1px solid #D4D700;
       display: flex;
       flex-direction: column;
-      gap: 0;
-}
-
-.user-card h1 {
-        font-family: "Whisper";
-        font-size: 2.5rem;
-}
-
-.user-card > h2 {
-        align-self: center;
-}
-
-.username {
-        align-self: center;
+      gap: 1rem;
 }
 
 .user-info {
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 1rem;
 }
 
+#username {
+        font-family: "Whisper";
+        font-size: 2.5rem;
+        margin-top: auto;
+        margin-bottom: -2rem;
+        align-self: center;
+}
+
+
+
 .user-info > div {
-        max-height: 3rem;
+        
         margin: 1px;
         display: flex;
         gap: 1rem;
@@ -48,5 +45,14 @@
                 margin-top: auto;
                 margin-bottom: auto;
         }
+}
 
+.userIDClass {
+        margin-top: 0;
+        align-self: center;
+        margin: auto;
+}
+
+.animal-cards {
+        justify-self: center;
 }
