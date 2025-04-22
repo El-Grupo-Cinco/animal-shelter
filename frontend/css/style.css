@@ -4,7 +4,8 @@ button {
         background-color: #80B918;
         color: #007F5F;
         font-weight: bold;
-        border-radius: 0.25rem;
+        border-radius: 0.5rem;
         width: 6rem;
-        height: 3.5rem;
+        height: 2.75rem;
+        border: 2px solid #007F5F;
 }
