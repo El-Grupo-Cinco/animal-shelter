@@ -9,6 +9,12 @@
       gap: 1rem;
 }
 
+.user-card > h2 {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+}
+
 .user-info {
         display: flex;
         flex-direction: column;
@@ -26,7 +32,7 @@
 
 
 .user-info > div {
-        
+
         margin: 1px;
         display: flex;
         gap: 1rem;
@@ -53,6 +59,22 @@
         margin: auto;
 }
 
+.admin-section {
+        font-size: 1.5rem;
+        display: flex;
+        gap: 0.5rem;
+        align-self: center;
+        
+}
+
+.admin-section > div {
+        display: flex;
+        gap: 0.5rem;
+        margin-left: 3rem;
+}
+
+
+
 .animal-cards {
-        justify-self: center;
+        align-self: center;
 }
