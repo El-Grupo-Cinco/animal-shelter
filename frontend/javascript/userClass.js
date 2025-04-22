@@ -67,7 +67,7 @@ export class User {
                 searchInput.setAttribute("placeholder", "Enter search term here" );
 
                 //setting text content
-                searchLabel.textContent = "Search Query";
+                searchLabel.textContent = "Search Query:";
                 searchUserBtn.textContent = "Search User";
                 searchAnimalBtn.textContent = "Search Animal";
                 approveAdoptionBtn.textContent = "Approve Adoption";
@@ -76,10 +76,10 @@ export class User {
 
                 //setting style / class
                 adminSection.className = "admin-section";
+                deleteAdoptionBtn.className = "special-button";
 
                 //adding event-listener
-                searchInput.addEventListener('input', function() {searchQuery=searchInput.value; console.log(searchQuery);
-                })
+                searchInput.addEventListener('input', function() {searchQuery=searchInput.value});
                 searchUserBtn.addEventListener('click', function() {searchUser(searchQuery)});
                 searchAnimalBtn.addEventListener('click', function() {searchAnimal(searchQuery)});
                 approveAdoptionBtn.addEventListener('click', function() {goToApproveAdoption()});
