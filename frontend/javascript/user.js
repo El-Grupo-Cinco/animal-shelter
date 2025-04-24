@@ -1,6 +1,6 @@
 import {User} from "./userClass.js";
 
-getUser();
+
 
 /**
  * fetches the user and shows it on the page
@@ -12,3 +12,5 @@ let testUser = new User("1af40162-50ef-43e0-847f-ccf54700587a", "Testing", "Cesa
 testUser.showUser();
 
 }
+
+getUser();
