@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Animal Shelter - Animals</title>
+
+    <link rel="stylesheet" href="./css/animals.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./javascript/animal.js" type="module"></script>
+    <script src="./javascript/animalClass.js" type="module"></script>
+    <script src="./javascript/headerAndFooter.js" defer></script>
+
+    <style>
+    .card{
+      display: grid;
+      grid-template-columns: 1fr 2fr 3fr;
+    }
+    .card-picture{
+      aspect-ratio: 4/3;
+      height: 100%;
+      object-fit: cover;
+      grid-column: 1;
+      grid-row: 1/-1;
+    }
+    .card-info{
+      grid-column: 2;
+      grid-row: 2;
+    }
+    .card-name{
+      grid-column: 3;
+      grid-row: 1;
+    }
+    .card-description{
+      grid-column: 3;
+      grid-row: 2;
+    }
+    </style>
+  </head>
+
+  <body>
+    <ul class="animal-cards">
+      <div class="animal-info">
+
+      </div>
+    </ul>
+    <article>
+      
+    </article>
+  </body>
+</html>
