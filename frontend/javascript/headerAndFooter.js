@@ -1,7 +1,12 @@
 // Header
 const header = document.createElement("header");
-header.textContent = "Animal Shelter";
+const logoAndTitle = document.createElement("div");
+const logo = document.createElement("img");
+logoAndTitle.textContent = "Animal Shelter";
+logo.src = "./icons/animal-shelter-logo.png";
 document.body.prepend(header);
+header.append(logoAndTitle);
+logoAndTitle.prepend(logo);
 
 // Nav
 const nav = document.createElement("nav");
@@ -16,5 +21,9 @@ header.appendChild(nav);
 
 // Footer
 const footer = document.createElement("footer");
+const logo2 = document.createElement("img");
+logo2.src = "./icons/animal-shelter-logo.png";
+logo2.style.height = "2rem";
 footer.innerHTML = "&copy; 2025 Animal Shelter. All rights reserved.";
 document.body.appendChild(footer);
+footer.prepend(logo2)
