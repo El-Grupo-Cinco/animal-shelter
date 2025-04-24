@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Whisper&display=swap');
+
+body {
+  font-family: "Noticia Text", serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+
+.latest-news,
+.testimonials {
+  background-color: white;
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 800px;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+
+.latest-news h2,
+.testimonials h2 {
+  text-align: center;
+  color: #007F5F;
+  font-family: "Whisper", cursive;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+
+.latest-news ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.latest-news li {
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+
+.testimonial {
+  border-left: 4px solid #80B918;
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-style: italic;
+}
+
+.testimonial strong {
+  display: block;
+  margin-top: 0.5rem;
+  color: #007F5F;
+  font-style: normal;
+}
