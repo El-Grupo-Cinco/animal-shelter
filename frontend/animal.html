@@ -8,8 +8,8 @@
 
     <link rel="stylesheet" href="./css/animals.css" />
     <link rel="stylesheet" href="./css/style.css" />
-    <script src="./javascript/animal.js" type="module"></script>
-    <script src="./javascript/animalClass.js" type="module"></script>
+    <script src="./javascript/animal.js" type="module" defer></script>
+    <script src="./javascript/animalClass.js" type="module" defer></script>
     <script src="./javascript/headerAndFooter.js" defer></script>
 
     <style>
@@ -36,17 +36,24 @@
       grid-column: 3;
       grid-row: 2;
     }
+    .hidden{
+      display: none;
+    }
     </style>
   </head>
 
   <body>
     <ul class="animal-cards">
-      <div class="animal-info">
-
-      </div>
-    </ul>
-    <article>
       
-    </article>
+    
+    <li class="card hidden" id="card-template">
+      <img class="card-picture" alt="" src=""/>
+      <p class="card-info species-text">Species</p>
+      <p class="card-info date-of-birth-text">Date of Birth</p>
+      <p class="card-info registered-text">Registered</p>
+      <h3 class="card-name">Name</h3>
+      <p class="card-description">Description</p>
+    </li>
+  </ul>
   </body>
 </html>
