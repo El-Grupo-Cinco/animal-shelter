@@ -1,5 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Whisper&display=swap');
 
+header {
+        background-color: #007F5F;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+        font-size: 2rem;
+        font-family: "Whisper", cursive;
+      }
+      
+      nav.navbar {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        background-color: #D4D700;
+        padding: 0.5rem;
+      }
+      
+      nav.navbar a {
+        color: #333;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      
+      nav.navbar a:hover {
+        text-decoration: underline;
+      }
+
+      footer {
+        background-color: #D4D700;
+        color: #333;
+        text-align: center;
+        padding: 1rem;
+        margin-top: 3rem;
+      }
+
 button {
         background-color: #80B918;
         color: #007F5F;

@@ -6,32 +6,7 @@ body {
   background-color: #f5f5f5;
 }
 
-header {
-  background-color: #007F5F;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-  font-size: 2rem;
-  font-family: "Whisper", cursive;
-}
 
-nav.navbar {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  background-color: #D4D700;
-  padding: 0.5rem;
-}
-
-nav.navbar a {
-  color: #333;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav.navbar a:hover {
-  text-decoration: underline;
-}
 
 main {
   display: flex;
@@ -77,13 +52,7 @@ main {
   background-color: #005F45;
 }
 
-footer {
-  background-color: #D4D700;
-  color: #333;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 3rem;
-}
+
 
 .success {
   color: green;
