@@ -11,6 +11,7 @@ export class User {
                 this.phoneNumber = phoneNumber;
                 this.ownedAnimals = ownedAnimals;
                 this.canAdopt = canAdopt;
+                //TODO add animal owned list
                 this.role = role;
         }
 
