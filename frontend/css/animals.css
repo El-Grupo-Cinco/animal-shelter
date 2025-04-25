@@ -1,0 +1,37 @@
+.card {
+        display: grid;
+        grid-template-columns: 1fr 2fr 3fr;
+        grid-template-rows: 4fr;
+        text-align: center;
+      }
+      .card-picture {
+        aspect-ratio: 4/3;
+        height: 10rem;
+        object-fit: cover;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 5;
+      }
+      .card-info {
+        grid-column-start: 2;
+        grid-column-end: 5;
+        grid-row-start: 2;
+        grid-row-end: 5;
+      }
+      .card-name {
+        grid-column-start: 2;
+        grid-column-end: 7;
+        grid-row-start: 1;
+        grid-row-end: 5;
+        
+      }
+      .card-description {
+        grid-column-start: 5;
+        grid-column-end: 7;
+        grid-row-start: 2;
+        grid-row-end: 5;
+      }
+      .hidden {
+        display: none;
+      }
