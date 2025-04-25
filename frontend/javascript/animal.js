@@ -1,4 +1,4 @@
-import { Animal } from "./animalClass";
+import { Animal } from "./animalClass.js";
 
 const animals = [
     {

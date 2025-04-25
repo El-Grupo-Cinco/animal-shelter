@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link rel="icon" type="image/png" href="/icons/animal-shelter-logo.png" />
     <title>Animal Shelter - Animals</title>
 
     <link rel="stylesheet" href="./css/animals.css" />
@@ -13,47 +13,45 @@
     <script src="./javascript/headerAndFooter.js" defer></script>
 
     <style>
-    .card{
-      display: grid;
-      grid-template-columns: 1fr 2fr 3fr;
-    }
-    .card-picture{
-      aspect-ratio: 4/3;
-      height: 100%;
-      object-fit: cover;
-      grid-column: 1;
-      grid-row: 1/-1;
-    }
-    .card-info{
-      grid-column: 2;
-      grid-row: 2;
-    }
-    .card-name{
-      grid-column: 3;
-      grid-row: 1;
-    }
-    .card-description{
-      grid-column: 3;
-      grid-row: 2;
-    }
-    .hidden{
-      display: none;
-    }
+      .card {
+        display: grid;
+        grid-template-columns: 1fr 2fr 3fr;
+      }
+      .card-picture {
+        aspect-ratio: 4/3;
+        height: 100%;
+        object-fit: cover;
+        grid-column: 1;
+        grid-row: 1/-1;
+      }
+      .card-info {
+        grid-column: 2;
+        grid-row: 2;
+      }
+      .card-name {
+        grid-column: 3;
+        grid-row: 1;
+      }
+      .card-description {
+        grid-column: 3;
+        grid-row: 2;
+      }
+      .hidden {
+        display: none;
+      }
     </style>
   </head>
 
   <body>
     <ul class="animal-cards">
-      
-    
-    <li class="card hidden" id="card-template">
-      <img class="card-picture" alt="" src=""/>
-      <p class="card-info species-text">Species</p>
-      <p class="card-info date-of-birth-text">Date of Birth</p>
-      <p class="card-info registered-text">Registered</p>
-      <h3 class="card-name">Name</h3>
-      <p class="card-description">Description</p>
-    </li>
-  </ul>
+      <li class="card hidden" id="card-template">
+        <img class="card-picture" alt="" src="" />
+        <p class="card-info species-text">Species</p>
+        <p class="card-info date-of-birth-text">Date of Birth</p>
+        <p class="card-info registered-text">Registered</p>
+        <h3 class="card-name">Name</h3>
+        <p class="card-description">Description</p>
+      </li>
+    </ul>
   </body>
 </html>
