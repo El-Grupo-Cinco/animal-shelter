@@ -1,6 +1,7 @@
+import { Animal } from "./animalClass.js";
 export class User {
         constructor(userID, username, firstname, lastname, dateOfBirth, address, 
-                email, phoneNumber, ownedAnimals, canAdopt, role) {
+                email, phoneNumber, ownedAnimals, canAdopt, comments, role) {
                 this.userID = userID;
                 this.username = username;
                 this.firstname = firstname;
@@ -45,6 +46,12 @@ export class User {
                 if (this.role === "admin") {
                         this.showAdmin();
                 }
+                for (let i = 0; i < this.ownedAnimals.length; i++) {
+                        console.log("show animal " + this.ownedAnimals[i].name);
+                        
+                        this.ownedAnimals[i].showAnimal();
+                }
+                
         }
 
         showAdmin() {

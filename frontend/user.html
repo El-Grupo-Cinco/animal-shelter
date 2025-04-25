@@ -7,9 +7,12 @@
     <title>Animal Shelter - User</title>
     <link rel="stylesheet" href="./css/user.css" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/animals.css" />
     <script src="./javascript/user.js" type="module"></script>
     <script src="./javascript/userClass.js" type="module"></script>
     <script src="./javascript/headerAndFooter.js" defer></script>
+    <script type="module" src="./javascript/animalClass.js"></script>
+    <script type="module" src="./javascript/animal.js"></script>
   </head>
   <body>
     <section class="user-card">
@@ -47,7 +50,18 @@
       </div>
       <div class="user-comments"></div>
       <h2>Animals owned</h2>
-      <section class="animal-cards"></section>
+      <section class="animal-cards">
+        <ul class="animal-cards">
+          <li class="card hidden" id="card-template">
+            <img class="card-picture" alt="" src="" />
+            <p class="card-info species-text">Species</p>
+            <p class="card-info date-of-birth-text">Date of Birth</p>
+            <p class="card-info registered-text">Registered</p>
+            <h3 class="card-name">Name</h3>
+            <p class="card-description">Description</p>
+          </li>
+        </ul>
+      </section>
     </section>
   </body>
 </html>
