@@ -1,40 +1,82 @@
+/* animals.css */
+
+/* Grund för djurkorten */
+.animal-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 20px;
+  list-style: none;
+  margin: 0;
+}
+
+/* Varje kort */
 .card {
-        display: grid;
-        grid-template-columns: 1fr 2fr 3fr;
-        grid-template-rows: 4fr;
-        text-align: center;
-        margin: 1rem;
-        border: 1px solid #D4D700;
-        padding: 0.25rem;
-      }
-      .card-picture {
-        aspect-ratio: 4/3;
-        height: 10rem;
-        object-fit: cover;
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row-start: 1;
-        grid-row-end: 5;
-      }
-      .card-info {
-        grid-column-start: 2;
-        grid-column-end: 5;
-        grid-row-start: 2;
-        grid-row-end: 5;
-      }
-      .card-name {
-        grid-column-start: 2;
-        grid-column-end: 7;
-        grid-row-start: 1;
-        grid-row-end: 5;
-        
-      }
-      .card-description {
-        grid-column-start: 5;
-        grid-column-end: 7;
-        grid-row-start: 2;
-        grid-row-end: 5;
-      }
-      .hidden {
-        display: none;
-      }
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover-effekt */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Bilddelen av kortet */
+.card-picture {
+  flex-shrink: 0;
+}
+
+.card-picture img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px 0 0 10px;
+}
+
+/* Textdelen av kortet */
+.card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Individuella texter */
+.species-text {
+  font-weight: bold;
+  font-size: 16px;
+  color: #444;
+}
+
+.date-of-birth-text,
+.registered-text {
+  font-size: 14px;
+  color: #777;
+}
+
+.card-name {
+  font-size: 24px;
+  color: #008000;
+  margin: 10px 0 0 0;
+}
+
+.card-description {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Döljer mallkortet */
+.hidden {
+  display: none;
+}
