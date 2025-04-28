@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/icons/animal-shelter-logo.png" />
     <title>Animal Shelter - Animals</title>
 
-    <link rel="stylesheet" href="./css/animals.css" />
     <link rel="stylesheet" href="./css/style.css" />
-    <script src="./javascript/animal.js" type="module" defer></script>
-    <script src="./javascript/animalClass.js" type="module" defer></script>
-    <script src="./javascript/headerAndFooter.js" defer></script>
-    <title>Animal Shelter - Animals</title>
-  </head>
+    <link rel="stylesheet" href="./css/animals.css" />
 
-  <body>
-    <ul class="animal-cards">
-      <li class="card hidden" id="card-template">
-        <img class="card-picture" alt="" src="" />
-        <p class="card-info species-text">Species</p>
-        <p class="card-info date-of-birth-text">Date of Birth</p>
-        <p class="card-info registered-text">Registered</p>
-        <h3 class="card-name">Name</h3>
-        <p class="card-description">Description</p>
-      </li>
-    </ul>
-  </body>
+    <script src="./javascript/headerAndFooter.js" defer></script>
+    <script src="./javascript/animalClass.js" type="module" defer></script>
+    <script src="./javascript/animal.js" type="module" defer></script>
+</head>
+
+<body>
+    <header></header>
+
+    <main>
+      <ul class="animal-cards">
+        <li class="card hidden" id="card-template">
+          <div class="card-picture">
+            <img alt="" src="" />
+          </div>
+          <div class="card-content">
+            <p class="species-text">Species</p>
+            <p class="date-of-birth-text">Date of Birth</p>
+            <p class="registered-text">Registered</p>
+            <h3 class="card-name">Name</h3>
+            <p class="card-description">Description</p>
+          </div>
+        </li>
+      </ul>
+    </main>
+
+    <footer></footer>
+</body>
 </html>
