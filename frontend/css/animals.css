@@ -80,3 +80,22 @@
 .hidden {
   display: none;
 }
+
+/* Responsiv design för mobil */
+@media (max-width: 600px) {
+  .card {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .card-picture img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px 10px 0 0; /* Rundning bara upptill */
+  }
+
+  .card-content {
+      padding: 15px;
+  }
+}
