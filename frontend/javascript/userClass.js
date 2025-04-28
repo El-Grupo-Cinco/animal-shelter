@@ -1,4 +1,5 @@
 import { Animal } from "./animalClass.js";
+
 export class User {
         constructor(userID, username, firstname, lastname, dateOfBirth, address, 
                 email, phoneNumber, ownedAnimals, canAdopt, comments, role) {
@@ -12,7 +13,6 @@ export class User {
                 this.phoneNumber = phoneNumber;
                 this.ownedAnimals = ownedAnimals;
                 this.canAdopt = canAdopt;
-                //TODO add animal owned list
                 this.role = role;
         }
 
@@ -29,6 +29,7 @@ export class User {
                 const phoneNumberH3 = document.getElementById("phoneNumber");
                 const emailH3 = document.getElementById("email");
                 const canAdoptH4 = document.getElementById("canAdopt");
+                const animalCards = document.getElementById("animals")
 
                 usernameH1.textContent = this.username;
                 userIDP.textContent = this.userID;
@@ -46,11 +47,15 @@ export class User {
                 if (this.role === "admin") {
                         this.showAdmin();
                 }
-                for (let i = 0; i < this.ownedAnimals.length; i++) {
-                        console.log("show animal " + this.ownedAnimals[i].name);
-                        
-                        this.ownedAnimals[i].showAnimal();
-                }
+
+                const cardList = document.querySelector(".animal-cards");
+                let animalClasses = [];
+                this.ownedAnimals.forEach(animal => {
+                    const animalClass = new Animal(animal.animalID, animal.name, animal.pictureURL, animal.species, animal.dateOfBirth, animal.registrationDate, animal.description);
+                    animalClasses.push(animalClass); // Store the created Animal instance in the array
+                    const card = animalClass.showAnimal();
+                    cardList.appendChild(card); // Append the card to the DOM
+                });
                 
         }
 

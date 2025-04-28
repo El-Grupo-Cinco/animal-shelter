@@ -30,12 +30,10 @@ const animals = [
     }
 ]
 
-const cardList = document.querySelector(".animal-cards");
-let animalClasses = [];
+
 animals.forEach(animal => {
     const animalClass = new Animal(animal.animalID, animal.name, animal.pictureURL, animal.species, animal.dateOfBirth, animal.registrationDate, animal.description);
     animalClasses.push(animalClass); // Store the created Animal instance in the array
-    const card = animalClass.showAnimal();
     cardList.appendChild(card); // Append the card to the DOM
 });
 console.log(animalClasses[0]) // Think Demon core. Don't remove

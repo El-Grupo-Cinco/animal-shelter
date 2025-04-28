@@ -50,15 +50,22 @@
       </div>
       <div class="user-comments"></div>
       <h2>Animals owned</h2>
-      <section class="animal-cards">
+      <section id="animals">
         <ul class="animal-cards">
           <li class="card hidden" id="card-template">
-            <img class="card-picture" alt="" src="" />
-            <p class="card-info species-text">Species</p>
-            <p class="card-info date-of-birth-text">Date of Birth</p>
-            <p class="card-info registered-text">Registered</p>
             <h3 class="card-name">Name</h3>
-            <p class="card-description">Description</p>
+            <!-- Namn ovanför allt -->
+            <div class="card-content">
+              <div class="card-picture">
+                <img src="" alt="" />
+              </div>
+              <div class="card-middle">
+                <p class="species-text">Species:</p>
+                <p class="date-of-birth-text">Date of Birth:</p>
+                <p class="registered-text">Registered:</p>
+              </div>
+              <div class="card-description">Description</div>
+            </div>
           </li>
         </ul>
       </section>
