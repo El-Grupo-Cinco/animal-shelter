@@ -14,16 +14,16 @@ export class Animal {
         const newCard = cardTemplate.cloneNode(true);
         newCard.classList.remove("hidden");
 
-        // Här fixar vi rätt!
+        newCard.querySelector(".card-name").textContent = this.name.toUpperCase();
+
         const imgElement = newCard.querySelector(".card-picture img");
         imgElement.src = this.pictureURL;
         imgElement.alt = this.name;
 
-        newCard.querySelector(".species-text").textContent = this.species;
+        newCard.querySelector(".species-text").textContent = `Species: ${this.species}`;
         newCard.querySelector(".date-of-birth-text").textContent = `Date of Birth: ${this.dateOfBirth}`;
         newCard.querySelector(".registered-text").textContent = `Registered: ${this.registrationDate}`;
-        newCard.querySelector(".card-name").textContent = this.name.toUpperCase();
-        newCard.querySelector(".card-description").textContent = this.description;
+        newCard.querySelector(".card-description").textContent = `Description: ${this.description}`;
 
         newCard.removeAttribute("id");
 

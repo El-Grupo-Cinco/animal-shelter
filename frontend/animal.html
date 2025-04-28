@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/animals.css" />
-
+    
     <script src="./javascript/headerAndFooter.js" defer></script>
     <script src="./javascript/animalClass.js" type="module" defer></script>
     <script src="./javascript/animal.js" type="module" defer></script>
@@ -20,15 +20,19 @@
     <main>
       <ul class="animal-cards">
         <li class="card hidden" id="card-template">
-          <div class="card-picture">
-            <img alt="" src="" />
-          </div>
+          <h3 class="card-name">Name</h3> <!-- Namn ovanför allt -->
           <div class="card-content">
-            <p class="species-text">Species</p>
-            <p class="date-of-birth-text">Date of Birth</p>
-            <p class="registered-text">Registered</p>
-            <h3 class="card-name">Name</h3>
-            <p class="card-description">Description</p>
+            <div class="card-picture">
+              <img src="" alt="">
+            </div>
+            <div class="card-middle">
+              <p class="species-text">Species: </p>
+              <p class="date-of-birth-text">Date of Birth: </p>
+              <p class="registered-text">Registered: </p>
+            </div>
+            <div class="card-description">
+              Description
+            </div>
           </div>
         </li>
       </ul>
