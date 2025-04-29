@@ -30,8 +30,6 @@ export class Booking {
 
                 card.className = "booking-card";
 
-                
-
                 dateDiv.textContent = this.appointmentTime;
 
                 userName.textContent = this.humanName;
