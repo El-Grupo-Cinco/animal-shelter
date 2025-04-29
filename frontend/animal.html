@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/icons/animal-shelter-logo.png" />
@@ -8,42 +8,40 @@
 
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/animals.css" />
-    
+
     <script src="./javascript/headerAndFooter.js" defer></script>
     <script src="./javascript/animalClass.js" type="module" defer></script>
     <script src="./javascript/animal.js" type="module" defer></script>
-</head>
+  </head>
 
-<body>
-    <header> </header>
+  <body>
+    <header></header>
 
     <div class="search-container">
       <button id="search-button">Search</button>
       <input type="text" id="search-input" placeholder="Search animals..." />
     </div>
-    
-    <main>
 
+    <main>
       <ul class="animal-cards">
         <li class="card hidden" id="card-template">
-          <h3 class="card-name">Name</h3> <!-- Namn ovanför allt -->
+          <h3 class="card-name">Name</h3>
+          <!-- Namn ovanför allt -->
           <div class="card-content">
             <div class="card-picture">
-              <img src="" alt="">
+              <img src="" alt="" />
             </div>
             <div class="card-middle">
-              <p class="species-text">Species: </p>
-              <p class="date-of-birth-text">Date of Birth: </p>
-              <p class="registered-text">Registered: </p>
+              <p class="species-text">Species:</p>
+              <p class="date-of-birth-text">Date of Birth:</p>
+              <p class="registered-text">Registered:</p>
             </div>
-            <div class="card-description">
-              Description
-            </div>
+            <div class="card-description">Description</div>
           </div>
         </li>
       </ul>
     </main>
 
     <footer></footer>
-</body>
+  </body>
 </html>
