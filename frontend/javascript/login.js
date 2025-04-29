@@ -8,15 +8,8 @@ const registerMessage = document.getElementById('registerMessage');
 
 // Toggle between login and register forms
 toggleLink.addEventListener('click', function() {
-    if (registerForm.style.display === "none") {
-        registerForm.style.display = "block";
-        loginForm.style.display = "none";
-        toggleLink.textContent = "Already have an account? Login here";
-    } else {
-        registerForm.style.display = "none";
-        loginForm.style.display = "block";
-        toggleLink.textContent = "Don't have an account? Register here";
-    }
+    loginForm.classList.toggle("hidden");
+    registerForm.classList.toggle("hidden");
 });
 
 // Login Form Submission
