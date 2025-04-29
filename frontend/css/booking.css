@@ -13,7 +13,6 @@
         flex-direction: row;
         justify-content: space-between;
         align-items:center; 
-        gap: 20px;
         font-size: 1.1rem;
 }
 
@@ -29,7 +28,6 @@
         flex-direction: row;
         justify-content: space-between;
         align-items:center; 
-        gap: 20px;
         font-size: 1.25rem;
 
 }
@@ -44,14 +42,12 @@
 
 .booking-card > ul {
         font-weight: bold;
-        text-decoration: underline;
         width: 35%;
         min-width: auto;
         text-align: start;
-}
-
-.booking-card li {
-        font-size: 1.2rem;
-        font-weight: 400;
-        margin-left: 2rem;
+        li {
+                font-size: 1.2rem;
+                font-weight: 400;
+                margin-left: 2rem;
+        }
 }
