@@ -17,62 +17,64 @@
     <script type="module" src="./javascript/bookingClass.js"></script>
   </head>
   <body>
-    <section class="user-card">
-      <div class="user-info">
-        <h1 id="username">placeholder</h1>
-        <div class="userIDClass">
-          <p style="text-decoration: underline">User ID:</p>
-          <p id="userID">placeholder</p>
-        </div>
-        <div>
-          <h2 style="text-decoration: underline">First Name:</h2>
-          <h2 id="firstname">placeholder</h2>
-        </div>
-        <div>
-          <h2 style="text-decoration: underline">Last Name:</h2>
-          <h2 id="lastname">placeholder</h2>
-        </div>
+    <main>
+      <section class="user-card">
+        <div class="user-info">
+          <h1 id="username">placeholder</h1>
+          <div class="userIDClass">
+            <p style="text-decoration: underline">User ID:</p>
+            <p id="userID">placeholder</p>
+          </div>
+          <div>
+            <h2 style="text-decoration: underline">First Name:</h2>
+            <h2 id="firstname">placeholder</h2>
+          </div>
+          <div>
+            <h2 style="text-decoration: underline">Last Name:</h2>
+            <h2 id="lastname">placeholder</h2>
+          </div>
 
-        <div>
-          <h3 style="text-decoration: underline">Address:</h3>
-          <h3 id="address">placeholder</h3>
+          <div>
+            <h3 style="text-decoration: underline">Address:</h3>
+            <h3 id="address">placeholder</h3>
+          </div>
+          <div>
+            <h3 style="text-decoration: underline">Phone:</h3>
+            <h3 id="phoneNumber">placeholder</h3>
+          </div>
+          <div>
+            <h3 style="text-decoration: underline">Email:</h3>
+            <h3 id="email">placeholder</h3>
+          </div>
+          <div>
+            <h4 style="text-decoration: underline">Approved for adoption:</h4>
+            <h4 id="canAdopt">placeholder</h4>
+          </div>
         </div>
-        <div>
-          <h3 style="text-decoration: underline">Phone:</h3>
-          <h3 id="phoneNumber">placeholder</h3>
-        </div>
-        <div>
-          <h3 style="text-decoration: underline">Email:</h3>
-          <h3 id="email">placeholder</h3>
-        </div>
-        <div>
-          <h4 style="text-decoration: underline">Approved for adoption:</h4>
-          <h4 id="canAdopt">placeholder</h4>
-        </div>
-      </div>
-      <div class="user-comments"></div>
-      <h2>Animals owned</h2>
-      <section id="animals">
-        <ul class="animal-cards">
-          <li class="card hidden" id="card-template">
-            <h3 class="card-name">Name</h3>
-            <!-- Namn ovanför allt -->
-            <div class="card-content">
-              <div class="card-picture">
-                <img src="" alt="" />
+        <div class="user-comments"></div>
+        <h2>Animals owned</h2>
+        <section id="animals">
+          <ul class="animal-cards">
+            <li class="card hidden" id="card-template">
+              <h3 class="card-name">Name</h3>
+              <!-- Namn ovanför allt -->
+              <div class="card-content">
+                <div class="card-picture">
+                  <img src="" alt="" />
+                </div>
+                <div class="card-middle">
+                  <p class="species-text">Species:</p>
+                  <p class="date-of-birth-text">Date of Birth:</p>
+                  <p class="registered-text">Registered:</p>
+                </div>
+                <div class="card-description">Description</div>
               </div>
-              <div class="card-middle">
-                <p class="species-text">Species:</p>
-                <p class="date-of-birth-text">Date of Birth:</p>
-                <p class="registered-text">Registered:</p>
-              </div>
-              <div class="card-description">Description</div>
-            </div>
-          </li>
-        </ul>
+            </li>
+          </ul>
+        </section>
+        <h2>Bookings made</h2>
+        <section id="booking-cards"></section>
       </section>
-      <h2>Bookings made</h2>
-      <section id="booking-cards"></section>
-    </section>
+    </main>
   </body>
 </html>

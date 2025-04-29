@@ -1,4 +1,4 @@
-// login.js
+import { User } from "./userClass.js";
 
 const loginForm = document.getElementById('loginForm');
 const registerForm = document.getElementById('registerForm');
