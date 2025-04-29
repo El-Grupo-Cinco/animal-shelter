@@ -1,9 +1,10 @@
 // Header
 const header = document.createElement("header");
-const logoAndTitle = document.createElement("div");
+const logoAndTitle = document.createElement("a");
 const logo = document.createElement("img");
 logoAndTitle.textContent = "Animal Shelter";
 logo.src = "./icons/animal-shelter-logo.png";
+logoAndTitle.href = "index.html";
 document.body.prepend(header);
 header.append(logoAndTitle);
 logoAndTitle.prepend(logo);
@@ -12,12 +13,20 @@ logoAndTitle.prepend(logo);
 const nav = document.createElement("nav");
 nav.className = "navbar";
 nav.innerHTML = `
-  <a href="index.html">Home</a>
+  <a href="animal.html">Animals</a>
   <a href="user.html">Profile</a>
   <a href="contact.html">Contact</a>
   <a href="about.html">About</a>
 `;
 header.appendChild(nav);
+
+//login button
+const loginBtn =document.createElement("button");
+loginBtn.textContent = "Login";
+loginBtn.addEventListener('click', () => {
+  window.location.href = "login.html";
+});
+header.appendChild(loginBtn);
 
 // Footer
 const footer = document.createElement("footer");

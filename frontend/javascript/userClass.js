@@ -1,4 +1,5 @@
 import { Animal } from "./animalClass.js";
+import { Booking } from "./bookingClass.js";
 
 export class User {
         constructor(userID, username, firstname, lastname, dateOfBirth, address, 
@@ -56,6 +57,16 @@ export class User {
                     const card = animalClass.showAnimal();
                     cardList.appendChild(card); // Append the card to the DOM
                 });
+
+                //will fetch bookings efter userID
+                const bookings = [new Booking("Testing", "R2D2", "2025-05-08T08:00UTC", ["Doesn't really want a droid but needs a new vaccum cleaner"]),
+                        new Booking("Testing", "Lilla Gubben", "2025-05-08T08:00UTC", ["Will try to teach horse to sit", "brings a huge leash"])];
+                //then
+                const bookingCards = document.getElementById("booking-cards");
+                for (const booking of bookings) {
+                        bookingCards.append(booking.publish());
+                }
+                
                 
         }
 
@@ -132,5 +143,5 @@ function goToDeleteAdoption() {
 }
 
 function goToBooking() {
-        console.log("handle booking Adoption button");
+        window.location.href = "booking.html";
 }
