@@ -13,6 +13,7 @@ const nav = document.createElement("nav");
 nav.className = "navbar";
 nav.innerHTML = `
   <a href="index.html">Home</a>
+  <a href="animal.html">Animals</a>
   <a href="user.html">Profile</a>
   <a href="contact.html">Contact</a>
   <a href="about.html">About</a>
