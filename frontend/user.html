@@ -3,12 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/icons/animal-shelter-logo.png" />
     <title>Animal Shelter - User</title>
     <link rel="stylesheet" href="./css/user.css" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/animals.css" />
     <script src="./javascript/user.js" type="module"></script>
     <script src="./javascript/userClass.js" type="module"></script>
     <script src="./javascript/headerAndFooter.js" defer></script>
+    <script type="module" src="./javascript/animalClass.js"></script>
+    <script type="module" src="./javascript/animal.js"></script>
   </head>
   <body>
     <section class="user-card">
@@ -46,7 +50,25 @@
       </div>
       <div class="user-comments"></div>
       <h2>Animals owned</h2>
-      <section class="animal-cards"></section>
+      <section id="animals">
+        <ul class="animal-cards">
+          <li class="card hidden" id="card-template">
+            <h3 class="card-name">Name</h3>
+            <!-- Namn ovanför allt -->
+            <div class="card-content">
+              <div class="card-picture">
+                <img src="" alt="" />
+              </div>
+              <div class="card-middle">
+                <p class="species-text">Species:</p>
+                <p class="date-of-birth-text">Date of Birth:</p>
+                <p class="registered-text">Registered:</p>
+              </div>
+              <div class="card-description">Description</div>
+            </div>
+          </li>
+        </ul>
+      </section>
     </section>
   </body>
 </html>

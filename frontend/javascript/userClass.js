@@ -1,6 +1,8 @@
+import { Animal } from "./animalClass.js";
+
 export class User {
         constructor(userID, username, firstname, lastname, dateOfBirth, address, 
-                email, phoneNumber, ownedAnimals, canAdopt, role) {
+                email, phoneNumber, ownedAnimals, canAdopt, comments, role) {
                 this.userID = userID;
                 this.username = username;
                 this.firstname = firstname;
@@ -27,6 +29,7 @@ export class User {
                 const phoneNumberH3 = document.getElementById("phoneNumber");
                 const emailH3 = document.getElementById("email");
                 const canAdoptH4 = document.getElementById("canAdopt");
+                const animalCards = document.getElementById("animals")
 
                 usernameH1.textContent = this.username;
                 userIDP.textContent = this.userID;
@@ -44,6 +47,16 @@ export class User {
                 if (this.role === "admin") {
                         this.showAdmin();
                 }
+
+                const cardList = document.querySelector(".animal-cards");
+                let animalClasses = [];
+                this.ownedAnimals.forEach(animal => {
+                    const animalClass = new Animal(animal.animalID, animal.name, animal.pictureURL, animal.species, animal.dateOfBirth, animal.registrationDate, animal.description);
+                    animalClasses.push(animalClass); // Store the created Animal instance in the array
+                    const card = animalClass.showAnimal();
+                    cardList.appendChild(card); // Append the card to the DOM
+                });
+                
         }
 
         showAdmin() {
@@ -57,6 +70,7 @@ export class User {
                 const buttons = document.createElement("div");
                 const searchUserBtn = document.createElement("button");
                 const searchAnimalBtn = document.createElement("button");
+                const registerAnimalBtn = document.createElement("button");
                 const approveAdoptionBtn = document.createElement("button");
                 const deleteAdoptionBtn = document.createElement("button");
                 const bookingsBtn = document.createElement("button");
@@ -70,6 +84,7 @@ export class User {
                 searchLabel.textContent = "Search Query:";
                 searchUserBtn.textContent = "Search User";
                 searchAnimalBtn.textContent = "Search Animal";
+                registerAnimalBtn.textContent = "Register Animal"
                 approveAdoptionBtn.textContent = "Approve Adoption";
                 deleteAdoptionBtn.textContent = "Delete Adoption";
                 bookingsBtn.textContent = "Handle Bookings";
@@ -82,21 +97,16 @@ export class User {
                 searchInput.addEventListener('input', function() {searchQuery=searchInput.value});
                 searchUserBtn.addEventListener('click', function() {searchUser(searchQuery)});
                 searchAnimalBtn.addEventListener('click', function() {searchAnimal(searchQuery)});
-                approveAdoptionBtn.addEventListener('click', function() {goToApproveAdoption()});
-                deleteAdoptionBtn.addEventListener('click',function() {goToDeleteAdoption()});
-                bookingsBtn.addEventListener('click', function() {goToBooking()});
+                registerAnimalBtn.addEventListener('click', registerAnimal);
+                approveAdoptionBtn.addEventListener('click', goToApproveAdoption);
+                deleteAdoptionBtn.addEventListener('click',goToDeleteAdoption);
+                bookingsBtn.addEventListener('click', goToBooking);
 
                 //appending to document
                 userInfoSection[0].append(adminSection);
-                adminSection.appendChild(searchLabel);
-                adminSection.appendChild(searchInput);
+                adminSection.append(searchLabel, searchInput);
                 adminSection.appendChild(buttons);
-                buttons.appendChild(searchUserBtn);
-                buttons.appendChild(searchAnimalBtn);
-                buttons.appendChild(approveAdoptionBtn);
-                buttons.appendChild(deleteAdoptionBtn);
-                buttons.appendChild(bookingsBtn);
-                
+                buttons.append(searchUserBtn, searchAnimalBtn, registerAnimalBtn, approveAdoptionBtn, deleteAdoptionBtn, bookingsBtn);
         }
 }
 
@@ -106,6 +116,11 @@ function searchUser(searchQuery) {
 
 function searchAnimal(searchQuery) {
         console.log(searchQuery);
+}
+
+function registerAnimal() {
+        console.log("registerAnimal button");
+        
 }
 
 function goToApproveAdoption() {

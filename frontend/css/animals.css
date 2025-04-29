@@ -1,0 +1,129 @@
+.search-container {
+  display: flex;
+  justify-content: flex-end; /* Högerställd */
+  gap: 5px;
+  border-radius: 5px;
+  padding: 10px 40px;
+}
+
+#search-button {
+  padding: 8px 12px;
+  font-size: 14px;
+  background-color: #3aa655; /* Grön färg */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 36px;
+}
+
+#search-button:hover {
+  background-color: #2e8b47; /* Mörkare grön vid hover */
+}
+
+#search-input {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f0f0f0; /* Ljusgrå bakgrund på input */
+  width: 250px;
+  height: 20px;
+}
+
+
+.animal-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 5px 20px;
+  list-style: none;
+  margin: 0;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 1000px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.card-name {
+  font-size: 24px;
+  color: #008000;
+  margin: 0;
+  text-align: center;
+}
+
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  gap: 20px;
+}
+
+/* Bild */
+.card-picture img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Mitten */
+.card-middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  gap: 8px;
+}
+
+.species-text {
+  font-weight: bold;
+  font-size: 16px;
+  color: #444;
+}
+
+.date-of-birth-text,
+.registered-text {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Beskrivning */
+.card-description {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #555;
+}
+
+/* Template hidden */
+.hidden {
+  display: none;
+}
+
+/* RESPONSIV */
+@media (max-width: 600px) {
+  .card-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .card-picture img {
+      width: 100%;
+      height: auto;
+  }
+}
