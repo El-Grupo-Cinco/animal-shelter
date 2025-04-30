@@ -120,6 +120,7 @@ main {
 .success {
   color: green;
   text-align: center;
+  background-color: rgba(51, 51, 51, 0.55);
 }
 
 .error {

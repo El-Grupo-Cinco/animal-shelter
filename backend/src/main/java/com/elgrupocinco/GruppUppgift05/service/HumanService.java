@@ -41,9 +41,9 @@ public class HumanService {
             throw new IllegalArgumentException("Email format is not valid.");
         }
 
-        if (!isValidPhoneNumber(humanDTO.getPhoneNumber())) {
-            throw new IllegalArgumentException("Phone number format is not valid.");
-        }
+//        if (!isValidPhoneNumber(humanDTO.getPhoneNumber())) {
+//            throw new IllegalArgumentException("Phone number format is not valid.");
+//        } commented out to get going
 
         Human human = new Human(
                 UUID.randomUUID(),
@@ -57,8 +57,6 @@ public class HumanService {
                 humanDTO.getCity(),
                 humanDTO.getState(),
                 humanDTO.getZipCode(),
-                humanDTO.isCanAdopt(),
-                humanDTO.getComments(),
                 "user"
         );
         human.setPassword(passwordConfig.passwordEncoder().encode(humanDTO.getPassword())); // Assuming the Human class has a setPassword method
@@ -83,9 +81,7 @@ public class HumanService {
                 humanDTO.getCity(),
                 humanDTO.getState(),
                 humanDTO.getZipCode(),
-                humanDTO.isCanAdopt(),
-                humanDTO.getComments(),
-                "admin"
+                "user"
         );
         human.setPassword(passwordConfig.passwordEncoder().encode(humanDTO.getPassword())); // Assuming the Human class has a setPassword method
         humanRepository.save(human);

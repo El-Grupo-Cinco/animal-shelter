@@ -45,11 +45,11 @@ public class Human implements UserDetails {
     @Column
     private String zipCode;
     @OneToMany(mappedBy = "adopter", fetch = FetchType.EAGER)
-    private List<Animal> ownedAnimals;
+    private List<Animal> ownedAnimals = new ArrayList<>();
     @Column
     private boolean canAdopt;
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
-    private List<Comment> comments;
+    private List<Comment> comments = new ArrayList<>();
     @Column
     private String role;
     @Column
@@ -74,6 +74,22 @@ public class Human implements UserDetails {
         this.ownedAnimals = ownedAnimals;
         this.canAdopt = canAdopt;
         this.comments = comments;
+        this.role = role;
+    }
+
+    public Human(UUID userId, String username, String firstName, String lastName, LocalDate dateOfBirth, String email,
+                 String phoneNumber, String street, String city, String state, String zipCode, String role) {
+        this.userId = userId;
+        this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dateOfBirth = dateOfBirth;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.street = street;
+        this.city = city;
+        this.state = state;
+        this.zipCode = zipCode;
         this.role = role;
     }
 
