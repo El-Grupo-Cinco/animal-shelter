@@ -18,8 +18,8 @@ public class Animal {
     private UUID animalId;
     @Column
     private String animalName;
-    @Column
-    private String pictureURL;
+//    @Column
+//    private String pictureURL;
     @Column
     private LocalDate assumedDateOfBirth;
     @Column

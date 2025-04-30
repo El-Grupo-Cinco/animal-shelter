@@ -1,30 +1,35 @@
 package com.elgrupocinco.GruppUppgift05.controller;
 
+
 import com.elgrupocinco.GruppUppgift05.dto.HumanDTO;
 import com.elgrupocinco.GruppUppgift05.dto.HumanDTOLogin;
 import com.elgrupocinco.GruppUppgift05.dto.HumanDTOWithPassword;
 import com.elgrupocinco.GruppUppgift05.service.HumanService;
-import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.UUID;
 
+
 @RestController
 @RequestMapping("/api/humans")
 public class HumanController {
     private final HumanService humanService;
-
     public HumanController(HumanService humanService) {
         this.humanService = humanService;
     }
-
+    private static final Logger logger = LoggerFactory.getLogger(HumanController.class);
     @PostMapping("/create")
     public ResponseEntity<?> createUser(@RequestBody HumanDTOWithPassword humanDTO) {
+        logger.info("Received request to create user: {}", humanDTO.getUsername());
         try {
+            logger.info("Received request to create user: {}", humanDTO.getUsername());
             return ResponseEntity.ok(humanService.createUser(humanDTO));
         } catch (Exception e) {
+            logger.error("Error creating user: {}", e.getMessage(), e);
             return ResponseEntity.badRequest().body("Error creating user: " + e.getMessage());
         }
     }

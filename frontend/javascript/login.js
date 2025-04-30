@@ -75,7 +75,7 @@ registerForm.addEventListener('submit', function(e) {
         headers: {
             'Content-type': 'application/json'
         },
-        body: {
+        body: JSON.stringify({
             "username": registerDTO.username,
             "firstName": registerDTO.firstName,
             "lastName": registerDTO.lastName,
@@ -92,7 +92,7 @@ registerForm.addEventListener('submit', function(e) {
             "comments": [],
             "canAdopt": false,
             "password": registerDTO.password,
-          }
+          })
     })
     .then(async response => {
         if (await (!response.ok)) {
@@ -101,7 +101,7 @@ registerForm.addEventListener('submit', function(e) {
             throw new Error(message);
         }
 
-        return response.json;
+        return response.json();
     })
     .catch(error => {
         alert(error.message);
