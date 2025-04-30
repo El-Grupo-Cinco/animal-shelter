@@ -13,54 +13,66 @@ import java.util.UUID;
 @NoArgsConstructor
 public class Animal {
 
-    // Attributes
     @Id
     private UUID animalId;
+
     @Column
     private String animalName;
+
     @Column
-    private String pictureURL;
+    private String pictureURL; // New field for picture URL
+
     @Column
     private LocalDate assumedDateOfBirth;
+
     @Column
     private LocalDate dateRegistered;
+
     @Column
     private String animalSpecies;
+
     @Column
     private boolean adopted;
+
     @ManyToOne
     private Human adopter;
+
     @ManyToOne
     @JoinColumn(name = "found_by_user_id")
     private Human foundByUser;
+
     @OneToMany(mappedBy = "animal")
     private List<Comment> comments;
 
-
-    // Constructor
-    public Animal(UUID animalId, String animalName, LocalDate assumedDateOfBirth, LocalDate dateRegistered, String animalSpecies,
-                  boolean adopted, Human adopter, Human foundByUser, List<Comment> comments) {
+    // Updated constructor including pictureURL
+    public Animal(UUID animalId, String animalName, LocalDate assumedDateOfBirth, LocalDate dateRegistered,
+                  String animalSpecies, boolean adopted, Human adopter, Human foundByUser,
+                  List<Comment> comments, String pictureURL) {
         this.animalId = animalId;
         this.animalName = animalName;
+        this.assumedDateOfBirth = assumedDateOfBirth;
+        this.dateRegistered = dateRegistered;
         this.animalSpecies = animalSpecies;
         this.adopted = adopted;
         this.adopter = adopter;
         this.foundByUser = foundByUser;
-        this.assumedDateOfBirth = assumedDateOfBirth;
-        this.dateRegistered = dateRegistered;
         this.comments = comments;
+        this.pictureURL = pictureURL;
     }
 
-    public Animal(String animalName, LocalDate assumedDateOfBirth, LocalDate dateRegistered, String animalSpecies,
-                  boolean adopted, Human adopter, Human foundByUser, List<Comment> comments) {
+    
+    public Animal(String animalName, LocalDate assumedDateOfBirth, LocalDate dateRegistered,
+                  String animalSpecies, boolean adopted, Human adopter, Human foundByUser,
+                  List<Comment> comments, String pictureURL) {
         this.animalId = UUID.randomUUID();
         this.animalName = animalName;
+        this.assumedDateOfBirth = assumedDateOfBirth;
+        this.dateRegistered = dateRegistered;
         this.animalSpecies = animalSpecies;
         this.adopted = adopted;
         this.adopter = adopter;
         this.foundByUser = foundByUser;
-        this.assumedDateOfBirth = assumedDateOfBirth;
-        this.dateRegistered = dateRegistered;
         this.comments = comments;
+        this.pictureURL = pictureURL;
     }
 }
