@@ -18,7 +18,7 @@
     <main>
 
         <!-- Register Form -->
-        <form id="registerForm" class="register-form">
+        <form id="registerForm" class="register-form" autocomplete="on">
             <h2>Register new animal</h2>
             <div>
                 <h4>Animals Name:</h4>
@@ -31,19 +31,29 @@
 
             <div>
                 <h4>Assumed Date of Birth:</h4>
-                <input type="date" id="assumedDateOfBirth" placeholder="Assumed Date of Birth" required />
-            </div>
-            
-            <div>
-                <h4>Date of Registration:</h4>
-                <input type="date" id="dateRegistered" placeholder="Date of Registration" required />
+                <input type="date" id="assumedDateOfBirth" required />
             </div>
 
-<!-- 
-    "adopted": false,
-"adopter": null,
-"foundByUser": {
-        -->
+            <div>
+                <h4>Date of Registration:</h4>
+                <input type="date" id="dateRegistered" required />
+            </div>
+
+            <div>
+                <label for="adopted">Adopted</label><br>
+                <input type="checkbox" id="adopted" name="adopted" value="adopted">
+            </div>
+
+            <div>
+                <h4>Adopter:</h4>
+                <input type="text" id="adopter" placeholder="Adopter"/>
+            </div>
+
+            <div>
+                <h4>Found by user:</h4>
+                <input type="text" id="foundByUser" placeholder="Found by user (username)"/>
+            </div>
+
 
 
 
@@ -51,7 +61,7 @@
             <div>
                 <input type="text" id="username" placeholder="Username" required />
                 <input type="text" id="userId" placeholder="User ID" required />
-                <input type="date" id="dateOfBirth" placeholder="Date of Birth" required />
+                <input type="date" id="dateOfBirth" required />
                 <input type="text" id="firstName" placeholder="First Name" required />
                 <input type="text" id="lastName" placeholder="Last Name" required />
                 <input type="text" id="address" placeholder="Address" required />
@@ -63,7 +73,7 @@
                 <input type="email" id="registerEmail" placeholder="Email" required />
                 <input type="text" id="phone" placeholder="Phone Number" required />
             </div>
-            <button type="submit">Register</button>
+            <button type="submit" value="submit">Register</button>
             <p id="registerMessage" class="success"></p>
         </form>
 
