@@ -2,7 +2,6 @@ package com. elgrupocinco. GruppUppgift05.service;
 import com.elgrupocinco.GruppUppgift05.dto.HumanDTO;
 import com.elgrupocinco.GruppUppgift05.dto.HumanDTOWithPassword;
 import com.elgrupocinco.GruppUppgift05.models.*;
-import com.elgrupocinco.GruppUppgift05.repository.AddressRepository;
 import com.elgrupocinco.GruppUppgift05.repository.BookingRepository;
 import com.elgrupocinco.GruppUppgift05.repository.CommentRepository;
 import com.elgrupocinco.GruppUppgift05.repository.HumanRepository;
@@ -30,7 +29,6 @@ import org.springframework.stereotype.Service;
 public class HumanService {
 
     private final HumanRepository humanRepository;
-    private final AddressRepository addressRepository;
     private final PasswordConfig passwordConfig;
     private final JWTService jwtService;
 
@@ -47,22 +45,18 @@ public class HumanService {
             throw new IllegalArgumentException("Phone number format is not valid.");
         }
 
-        Address address = new Address(
-                humanDTO.getAddress().getStreet(),
-                humanDTO.getAddress().getCity(),
-                humanDTO.getAddress().getState(),
-                humanDTO.getAddress().getZipCode()
-        );
-        addressRepository.save(address);
         Human human = new Human(
                 UUID.randomUUID(),
                 humanDTO.getUsername(),
                 humanDTO.getFirstName(),
                 humanDTO.getLastName(),
                 humanDTO.getDateOfBirth(),
-                address,
                 humanDTO.getEmail(),
                 humanDTO.getPhoneNumber(),
+                humanDTO.getStreet(),
+                humanDTO.getCity(),
+                humanDTO.getState(),
+                humanDTO.getZipCode(),
                 humanDTO.isCanAdopt(),
                 humanDTO.getComments(),
                 "user"
@@ -77,22 +71,18 @@ public class HumanService {
             throw new IllegalAccessException ("You are not allowed to register an admin account.");
         }
 
-        Address address = new Address(
-                humanDTO.getAddress().getStreet(),
-                humanDTO.getAddress().getCity(),
-                humanDTO.getAddress().getState(),
-                humanDTO.getAddress().getZipCode()
-        );
-        addressRepository.save(address);
         Human human = new Human(
                 UUID.randomUUID(),
                 humanDTO.getUsername(),
                 humanDTO.getFirstName(),
                 humanDTO.getLastName(),
                 humanDTO.getDateOfBirth(),
-                address,
                 humanDTO.getEmail(),
                 humanDTO.getPhoneNumber(),
+                humanDTO.getStreet(),
+                humanDTO.getCity(),
+                humanDTO.getState(),
+                humanDTO.getZipCode(),
                 humanDTO.isCanAdopt(),
                 humanDTO.getComments(),
                 "admin"
