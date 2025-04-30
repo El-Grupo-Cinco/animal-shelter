@@ -30,13 +30,22 @@ main {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1rem;
-  justify-content: center;
   width: 100%;
 }
 
 .register-form h2 {
   text-align: center;
   color: #007F5F;
+}
+
+.register-form h4 {
+    text-align:left
+    color: #007F5F;
+}
+
+.field {
+    text-align: left;
+    
 }
 
 .register-form input {
