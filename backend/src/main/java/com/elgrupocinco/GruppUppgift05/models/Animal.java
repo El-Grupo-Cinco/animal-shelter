@@ -19,6 +19,8 @@ public class Animal {
     @Column
     private String animalName;
     @Column
+    private String pictureURL;
+    @Column
     private LocalDate assumedDateOfBirth;
     @Column
     private LocalDate dateRegistered;

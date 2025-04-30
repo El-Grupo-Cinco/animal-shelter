@@ -121,6 +121,28 @@ export class User {
         }
 }
 
+export class HumanDTOWithPassword {
+        constructor (username, firstName, lastName, dob, addressDTO, email, phone, password) {
+                this.username = username;
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.dob = dob;
+                this.addressDTO = addressDTO;
+                this.email = email;
+                this.phone = phone;
+                this.password = password
+        }
+}
+
+export class AddressDTO {
+        constructor (address, city, postalCode, state) {
+        this.address = address;
+        this.city = city;
+        this.postalCode = postalCode;
+        this.state = state;
+        }
+}
+
 function searchUser(searchQuery) {
         console.log(searchQuery);
 }
