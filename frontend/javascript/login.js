@@ -72,9 +72,7 @@ registerForm.addEventListener('submit', function(e) {
 
     fetch("http://localhost:8080/api/humans/create", {
         method: "POST",
-        headers: {
-            'Content-type': 'application/json'
-        },
+        headers: { "Content-type": "application/json" },
         body: JSON.stringify({
             "username": registerDTO.username,
             "firstName": registerDTO.firstName,
@@ -94,14 +92,17 @@ registerForm.addEventListener('submit', function(e) {
             "password": registerDTO.password,
           })
     })
-    .then(async response => {
-        if (await (!response.ok)) {
+    .then(response => {
+        if (!response.ok) {
             let message = "Error:" +  response.status + " - " + response.text;
             
             throw new Error(message);
         }
 
         return response.json();
+
+    }).then(response => {
+        alert("User: " + response.username + " created")
     })
     .catch(error => {
         alert(error.message);

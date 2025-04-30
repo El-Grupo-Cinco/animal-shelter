@@ -2,6 +2,7 @@ package com.elgrupocinco.GruppUppgift05.dto;
 
 import com.elgrupocinco.GruppUppgift05.models.Comment;
 import com.elgrupocinco.GruppUppgift05.models.Human;
+import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,9 +21,12 @@ public class HumanDTO {
     private String firstName;
     private String lastName;
     private LocalDate dateOfBirth;
-    private AddressDTO address;
     private String email;
     private String phoneNumber;
+    private String street;
+    private String city;
+    private String state;
+    private String zipCode;
     private List<AnimalResponseDTO> ownedAnimals;
     private boolean canAdopt;
     private List<String> comments;
@@ -35,9 +39,12 @@ public class HumanDTO {
                 human.getFirstName(),
                 human.getLastName(),
                 human.getDateOfBirth(),
-                AddressDTO.fromAddress(human.getAddress()),
                 human.getEmail(),
                 human.getPhoneNumber(),
+                human.getStreet(),
+                human.getCity(),
+                human.getState(),
+                human.getZipCode(),
                 human.getOwnedAnimals().stream()
                         .map(AnimalResponseDTO::fromEntity)
                         .toList(),
