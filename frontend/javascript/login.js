@@ -16,20 +16,35 @@ toggleLink.addEventListener('click', function() {
 loginForm.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const email = document.getElementById('loginEmail').value;
+    const username = document.getElementById('loginUsername').value;
     const password = document.getElementById('loginPassword').value;
 
     // Create DTO for login
-    const loginDTO = new LoginDTO(email, password);
+    const loginDTO = new LoginDTO(username, password);
 
-    // Validate email and password
-    if (!loginDTO.validateEmail()) {
-        loginMessage.textContent = "Please enter a valid email.";
-        return;
-    }
+    
 
     // Simulate login (you can add actual login logic here)
-    loginMessage.textContent = "Login successful!";
+    fetch("http://localhost:8080/api/humans/login!", {
+        method : "POST",
+        headers : { "Content-type" : "application/json" },
+        body : JSON.stringify(loginDTO)
+    })
+    .then(response => {
+        if (!response.ok) {
+            let message = "Login Error: " + response.status + " - " + response.text;
+            loginMessage.textContent = message;
+            throw new Error(message);
+        }
+        return response.json.text;
+    })
+    .then(token => {
+        loginMessage.textContent = "Login successful!";
+        localStorage.setItem("token", token);
+        window.location.href = "/user.html";
+    })
+    .catch(error => loginMessage.textContent = error.message);
+    
 });
 
 // Register Form Submission
@@ -78,17 +93,12 @@ registerForm.addEventListener('submit', function(e) {
             "firstName": registerDTO.firstName,
             "lastName": registerDTO.lastName,
             "dateOfBirth": registerDTO.dob,
-            "address": {
-              "street": addressDTO.street,
-              "city": addressDTO.city,
-              "state": addressDTO.state,
-              "zipCode": addressDTO.zipCode
-            },
             "email": registerDTO.email,
             "phoneNumber": registerDTO.phone,
-            "ownedAnimals": [],
-            "comments": [],
-            "canAdopt": false,
+            "street": addressDTO.street,
+            "city": addressDTO.city,
+            "state": addressDTO.state,
+            "zipCode": addressDTO.zipCode,
             "password": registerDTO.password,
           })
     })
@@ -102,7 +112,9 @@ registerForm.addEventListener('submit', function(e) {
         return response.json();
 
     }).then(response => {
-        alert("User: " + response.username + " created")
+        alert("User: " + response.username + " created, you can now login!");
+        window.location.href = "/login.html";
+
     })
     .catch(error => {
         alert(error.message);
@@ -121,15 +133,11 @@ registerForm.addEventListener('submit', function(e) {
 // DTO for Login
 
 class LoginDTO {
-    constructor(email, password) {
-        this.email = email;
+    constructor(username, password) {
+        this.username = username;
         this.password = password;
     }
 
-    validateEmail() {
-        const emailRegex = /^[\w!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-        return emailRegex.test(this.email);
-    }
 }
 
 function validateEmail(email) {

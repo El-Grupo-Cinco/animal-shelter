@@ -23,13 +23,11 @@ public class HumanDTOWithPassword {
     private String city;
     private String state;
     private String zipCode;
-    private List<String> ownedAnimals;
     private boolean canAdopt;
-    private List<Comment> comments;
     private String password;
 
     public HumanDTOWithPassword(String username, String firstName, String lastName, LocalDate dateOfBirth, String email, String phoneNumber,
-                                String street, String city, String state, boolean canAdopt, List<Comment> comments, String password) {
+                                String street, String city, String state, String zipCode, boolean canAdopt, String password) {
         this.userId = null;
         this.username = username;
         this.firstName = firstName;
@@ -42,7 +40,6 @@ public class HumanDTOWithPassword {
         this.state = state;
         this.zipCode = zipCode;
         this.canAdopt = canAdopt;
-        this.comments = comments;
         this.password = password;
     }
 
