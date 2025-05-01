@@ -93,7 +93,7 @@ export class User {
 
                 //setting text content
                 searchLabel.textContent = "Search Query:";
-                searchUserBtn.textContent = "Search User";
+                searchUserBtn.textContent = "Search Username";
                 searchAnimalBtn.textContent = "Search Animal";
                 registerAnimalBtn.textContent = "Register Animal"
                 approveAdoptionBtn.textContent = "Approve Adoption";
