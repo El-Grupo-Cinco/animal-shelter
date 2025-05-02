@@ -10,7 +10,7 @@ main {
   height: 100%;
 }
 
-.login-form {
+.register-form {
   background: url('/images/index1_b&w.jpg') no-repeat center center;
   background-size: 100%;
   padding: 2rem;
@@ -25,21 +25,30 @@ main {
 
 }
 
-.login-form div {
+.register-form div {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1rem;
-  justify-content: center;
   width: 100%;
 }
 
-.login-form h2 {
+.register-form h2 {
   text-align: center;
   color: #007F5F;
 }
 
-.login-form input {
+.register-form h4 {
+    text-align:left
+    color: #007F5F;
+}
+
+.field {
+    text-align: left;
+    
+}
+
+.register-form input {
   padding: 0.5rem;
   border-radius: 0.5rem;
   width: 300px;
@@ -48,7 +57,11 @@ main {
   align-self: center;
 }
 
-.login-form button {
+#data-of-adopter {
+    
+}
+
+.register-form button {
   background-color: #007F5F;
   color: white;
   border: none;
@@ -60,7 +73,7 @@ main {
   margin-left: auto;
 }
 
-.login-form button:hover {
+.register-form button:hover {
   background-color: #005F45;
 }
 
@@ -120,7 +133,6 @@ main {
 .success {
   color: green;
   text-align: center;
-  background-color: rgba(51, 51, 51, 0.55);
 }
 
 .error {

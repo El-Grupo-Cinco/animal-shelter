@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/icons/animal-shelter-logo.png" />
+    <title>Register Animal - Animal Shelter</title>
+    <link rel="stylesheet" href="./css/newAnimal.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="module" src="./javascript/login.js"></script>
+    <script type="module" src="./javascript/userClass.js"></script>
+    <script type="module" src="./javascript/headerAndFooter.js" defer></script>
+</head>
+
+<body>
+    <main>
+
+        <!-- Register Form -->
+        <form id="registerForm" class="register-form" autocomplete="on">
+            <h2>Register new animal</h2>
+            <div>
+                <h4>Animals Name:</h4>
+                <input type="text" id="animalName" class="field" placeholder="Animals Name" required />
+            </div>
+            <div>
+                <h4>Species:</h4>
+                <input type="text" id="animalSpecies" placeholder="Enter Species" required />
+            </div>
+
+            <div>
+                <h4>Assumed Date of Birth:</h4>
+                <input type="date" id="assumedDateOfBirth" required />
+            </div>
+
+            <div>
+                <h4>Date of Registration:</h4>
+                <input type="date" id="dateRegistered" required />
+            </div>
+
+            <div>
+                <h4>Found by user:</h4>
+                <input type="text" id="foundByUser" placeholder="Found by user (username)" />
+            </div>
+
+            <div>
+                <label for="adopted">Adopted</label><br>
+                <input type="checkbox" id="adopted" name="adopted" value="adopted">
+            </div>
+
+            <div>
+                <h4>Adopter:</h4>
+                <input type="text" id="adopter" placeholder="Adopter" />
+            </div>
+
+
+
+
+
+
+            <h2>Data of adopter</h2>
+            <div id="data-of-adopter">
+                <input type="text" id="username" placeholder="Username" required />
+                <input type="text" id="userId" placeholder="User ID" required />
+                <input type="date" id="dateOfBirth" required />
+                <input type="text" id="firstName" placeholder="First Name" required />
+                <input type="text" id="lastName" placeholder="Last Name" required />
+                <input type="text" id="address" placeholder="Address" required />
+                <input type="text" id="street" placeholder="Street" required />
+                <input type="text" id="city" placeholder="City" required />
+                <input type="text" id="state" placeholder="State" required />
+                <input type="text" id="zipCode" placeholder="Zip Code" required />
+                <input type="text" id="country" placeholder="Country" required />
+                <input type="email" id="registerEmail" placeholder="Email" required />
+                <input type="text" id="phone" placeholder="Phone Number" required />
+            </div>
+            <button type="submit" value="submit">Register</button>
+            <p id="registerMessage" class="success"></p>
+        </form>
+
+        <a id="toggleLink" href="#">Don't have an account? Register here</a>
+    </main>
+
+    <script src="userDTO.js"></script>
+    <script src="login.js"></script>
+</body>
+
+<!-- 
+
+"ownedAnimals": [],
+"canAdopt": true,
+"comments": [],
+"role": "user"
+},
+"comments": []
+}
+
+    -->
+
+</html>
+
+</html>

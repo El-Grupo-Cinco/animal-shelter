@@ -3,7 +3,6 @@ package com.elgrupocinco.GruppUppgift05.controller;
 import com.elgrupocinco.GruppUppgift05.dto.AdoptionDTO;
 import com.elgrupocinco.GruppUppgift05.service.AdoptionService;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -66,7 +65,7 @@ public class AdoptionController {
     }
     //update
     @PutMapping("/update")
-    public ResponseEntity<?> updateAdotpion(@RequestParam AdoptionDTO adoptionDTO) {
+    public ResponseEntity<?> updateAdoption(@RequestParam AdoptionDTO adoptionDTO) {
         try {
             return ResponseEntity.ok(adoptionService.updateAdoption(adoptionDTO));
         } catch (Exception e) {

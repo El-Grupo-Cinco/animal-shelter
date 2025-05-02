@@ -32,19 +32,24 @@ public class Human implements UserDetails {
     private String lastName;
     @Column
     private LocalDate dateOfBirth;
-    @OneToOne
-    @JoinColumn(name = "address_id")
-    private Address address;
     @Column
     private String email;
     @Column
     private String phoneNumber;
+    @Column
+    private String street;
+    @Column
+    private String city;
+    @Column
+    private String state;
+    @Column
+    private String zipCode;
     @OneToMany(mappedBy = "adopter", fetch = FetchType.EAGER)
-    private List<Animal> ownedAnimals;
+    private List<Animal> ownedAnimals = new ArrayList<>();
     @Column
     private boolean canAdopt;
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
-    private List<Comment> comments;
+    private List<Comment> comments = new ArrayList<>();
     @Column
     private String role;
     @Column
@@ -52,7 +57,7 @@ public class Human implements UserDetails {
 
     // Constructor
     public Human(UUID userId, String username, String firstName, String lastName, LocalDate dateOfBirth,
-                 Address address, String email, String phoneNumber, List<Animal> ownedAnimals,
+                 String email, String phoneNumber, String street, String city, String state, String zipCode, List<Animal> ownedAnimals,
                  boolean canAdopt, List<Comment> comments, String role) {
 
         this.userId = userId;
@@ -60,26 +65,48 @@ public class Human implements UserDetails {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
-        this.address = address;
         this.email = email;
         this.phoneNumber = phoneNumber;
+        this.street = street;
+        this.city = city;
+        this.state = state;
+        this.zipCode = zipCode;
         this.ownedAnimals = ownedAnimals;
         this.canAdopt = canAdopt;
         this.comments = comments;
         this.role = role;
     }
 
+    public Human(UUID userId, String username, String firstName, String lastName, LocalDate dateOfBirth, String email,
+                 String phoneNumber, String street, String city, String state, String zipCode, String role) {
+        this.userId = userId;
+        this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dateOfBirth = dateOfBirth;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.street = street;
+        this.city = city;
+        this.state = state;
+        this.zipCode = zipCode;
+        this.role = role;
+    }
+
     public Human(UUID userId, String username, String firstName, String lastName, LocalDate dateOfBirth,
-                 Address address, String email, String phoneNumber, boolean canAdopt, List<Comment> comments,
+                 String email, String phoneNumber, String street, String city, String state, String zipCode, boolean canAdopt, List<Comment> comments,
                  String role) {
         this.userId = userId;
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
-        this.address = address;
         this.email = email;
         this.phoneNumber = phoneNumber;
+        this.street = street;
+        this.city = city;
+        this.state = state;
+        this.zipCode = zipCode;
         this.ownedAnimals = new ArrayList<>();
         this.canAdopt = canAdopt;
         this.comments = comments;

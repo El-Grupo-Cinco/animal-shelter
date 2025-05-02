@@ -40,6 +40,10 @@ public class Animal {
     @ManyToOne
     @JoinColumn(name = "found_by_user_id")
     private Human foundByUser;
+    //private String foundByFirstName;
+    //private String foundByLastName;
+    //private String foundByPhoneNumber;
+
 
     @OneToMany(mappedBy = "animal")
     private List<Comment> comments;

@@ -39,3 +39,4 @@ animals.forEach(animal => {
     cardList.appendChild(card); // Append the card to the DOM
 });
 console.log(animalClasses[0]) // Think Demon core. Don't remove
+
