@@ -30,28 +30,17 @@
         align-self: center;
 }
 
-
-
 .user-info > div {
-
         margin: 1px;
         display: flex;
         gap: 1rem;
+}
 
-        h2 {
-                margin-top: auto;
-                margin-bottom: auto;
-        }
-
-        h3 {
-                margin-top: auto;
-                margin-bottom: auto;
-        }
-
-        h4 {
-                margin-top: auto;
-                margin-bottom: auto;
-        }
+.user-info > div h2,
+.user-info > div h3,
+.user-info > div h4 {
+        margin-top: auto;
+        margin-bottom: auto;
 }
 
 .userIDClass {
@@ -66,7 +55,6 @@
         align-items: center;
         gap: 0.5rem;
         align-self: center;
-        
 }
 
 .admin-section > div {
@@ -81,8 +69,43 @@
         height: 1.5rem;
 }
 
-
-
 .animal-cards {
         align-self: center;
+}
+
+/* === Search User Sektionen === */
+.search-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem auto;
+  padding: 1rem;
+  border: 1px solid #D4D700;
+  border-radius: 0.5rem;
+  width: fit-content;
+  color: #007F5F;
+}
+
+.search-user input {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #007F5F;
+  border-radius: 0.5rem;
+  width: 300px;
+}
+
+.search-user button {
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  background-color: #D4D700;
+  color: #007F5F;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search-user button:hover {
+  background-color: #c1c100;
 }
