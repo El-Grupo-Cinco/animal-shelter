@@ -2,168 +2,161 @@ import { Animal } from "./animalClass.js";
 import { Booking } from "./bookingClass.js";
 
 export class User {
-        constructor(userID, username, firstname, lastname, dateOfBirth, address, 
+    constructor(userID, username, firstname, lastname, dateOfBirth, address, 
                 email, phoneNumber, ownedAnimals, canAdopt, comments, role) {
-                this.userID = userID;
-                this.username = username;
-                this.firstname = firstname;
-                this.lastname = lastname;
-                this.dateOfBirth = dateOfBirth;
-                this.address = address;
-                this.email = email;
-                this.phoneNumber = phoneNumber;
-                this.ownedAnimals = ownedAnimals;
-                this.canAdopt = canAdopt;
-                this.role = role;
+        this.userID = userID;
+        this.username = username;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.dateOfBirth = dateOfBirth;
+        this.address = address;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.ownedAnimals = ownedAnimals;
+        this.canAdopt = canAdopt;
+        this.role = role;
+    }
+
+    showUser() {
+        const usernameH1 = document.getElementById("username");
+        const userIDP = document.getElementById("userID");
+        const firstnameH2 = document.getElementById("firstname");
+        const lastnameH2 = document.getElementById("lastname");
+        const addressH3 = document.getElementById("address");
+        const phoneNumberH3 = document.getElementById("phoneNumber");
+        const emailH3 = document.getElementById("email");
+        const canAdoptH4 = document.getElementById("canAdopt");
+        const animalCards = document.getElementById("animals");
+
+        usernameH1.textContent = this.username;
+        userIDP.textContent = this.userID;
+        firstnameH2.textContent = this.firstname;
+        lastnameH2.textContent = this.lastname;
+        addressH3.textContent = this.address;
+        phoneNumberH3.textContent = this.phoneNumber;
+        emailH3.textContent = this.email;
+        canAdoptH4.textContent = this.canAdopt ? "Yes" : "No";
+
+        if (this.role === "admin") {
+            this.showAdmin();
         }
 
-        /**
-         * shows the user in the user.html, role is hidden as it is only used to recognized admins
-         * TODO add owned animals
-         */
-        showUser() {
-                const usernameH1 = document.getElementById("username");
-                const userIDP = document.getElementById("userID");
-                const firstnameH2 = document.getElementById("firstname");
-                const lastnameH2 = document.getElementById("lastname");
-                const addressH3 = document.getElementById("address");
-                const phoneNumberH3 = document.getElementById("phoneNumber");
-                const emailH3 = document.getElementById("email");
-                const canAdoptH4 = document.getElementById("canAdopt");
-                const animalCards = document.getElementById("animals")
+        const cardList = document.querySelector(".animal-cards");
+        this.ownedAnimals.forEach(animal => {
+            const animalClass = new Animal(animal.animalID, animal.name, animal.pictureURL, animal.species, animal.dateOfBirth, animal.registrationDate, animal.description);
+            const card = animalClass.showAnimal();
+            cardList.appendChild(card);
+        });
 
-                usernameH1.textContent = this.username;
-                userIDP.textContent = this.userID;
-                firstnameH2.textContent = this.firstname;
-                lastnameH2.textContent = this.lastname;
-                addressH3.textContent = this.address;
-                phoneNumberH3.textContent = this.phoneNumber;
-                emailH3.textContent = this.email;
-                if (canAdopt) {
-                        canAdoptH4.textContent = "Yes";
-                } else {
-                        canAdoptH4.textContent = "No";
-                }
+        // Simulating bookings
+        const bookings = [new Booking("Testing", "R2D2", "2025-05-08T08:00UTC", ["Doesn't really want a droid but needs a new vacuum cleaner"])];
+        const bookingCards = document.getElementById("booking-cards");
+        bookings.forEach(booking => {
+            bookingCards.append(booking.publish());
+        });
+    }
 
-                if (this.role === "admin") {
-                        this.showAdmin();
-                }
+    showAdmin() {
+        let searchQuery;
+        const userInfoSection = document.getElementsByClassName("user-info");
+        const adminSection = document.createElement("section");
+        const searchLabel = document.createElement("label");
+        const searchInput = document.createElement("input");
+        const buttons = document.createElement("div");
+        const searchUserBtn = document.createElement("button");
+        const searchAnimalBtn = document.createElement("button");
+        const registerAnimalBtn = document.createElement("button");
+        const approveAdoptionBtn = document.createElement("button");
+        const deleteAdoptionBtn = document.createElement("button");
+        const bookingsBtn = document.createElement("button");
 
-                const cardList = document.querySelector(".animal-cards");
-                let animalClasses = [];
-                this.ownedAnimals.forEach(animal => {
-                    const animalClass = new Animal(animal.animalID, animal.name, animal.pictureURL, animal.species, animal.dateOfBirth, animal.registrationDate, animal.description);
-                    animalClasses.push(animalClass); // Store the created Animal instance in the array
-                    const card = animalClass.showAnimal();
-                    cardList.appendChild(card); // Append the card to the DOM
-                });
+        searchLabel.setAttribute("for", "searchQuery");
+        searchInput.setAttribute("id", "searchQuery");
+        searchInput.setAttribute("placeholder", "Enter search term here");
 
-                //will fetch bookings efter userID
-                const bookings = [new Booking("Testing", "R2D2", "2025-05-08T08:00UTC", ["Doesn't really want a droid but needs a new vaccum cleaner"]),
-                        new Booking("Testing", "Lilla Gubben", "2025-05-08T08:00UTC", ["Will try to teach horse to sit", "brings a huge leash"])];
-                //then
-                const bookingCards = document.getElementById("booking-cards");
-                for (const booking of bookings) {
-                        bookingCards.append(booking.publish());
-                }
-                
-                
-        }
+        searchLabel.textContent = "Search Query:";
+        searchUserBtn.textContent = "Search Username";
+        searchAnimalBtn.textContent = "Search Animal";
+        registerAnimalBtn.textContent = "Register Animal";
+        approveAdoptionBtn.textContent = "Approve Adoption";
+        deleteAdoptionBtn.textContent = "Delete Adoption";
+        bookingsBtn.textContent = "Handle Bookings";
 
-        showAdmin() {
-                //preparing for searchQuery
-                let searchQuery;
-                //Making element
-                const userInfoSection = document.getElementsByClassName("user-info");
-                const adminSection = document.createElement("section");
-                const searchLabel = document.createElement("label");
-                const searchInput = document.createElement("input");
-                const buttons = document.createElement("div");
-                const searchUserBtn = document.createElement("button");
-                const searchAnimalBtn = document.createElement("button");
-                const registerAnimalBtn = document.createElement("button");
-                const approveAdoptionBtn = document.createElement("button");
-                const deleteAdoptionBtn = document.createElement("button");
-                const bookingsBtn = document.createElement("button");
+        adminSection.className = "admin-section";
+        deleteAdoptionBtn.className = "special-button";
 
-                //setting atributes
-                searchLabel.setAttribute("for", "searchQuery");
-                searchInput.setAttribute("id", "searchQuery");
-                searchInput.setAttribute("placeholder", "Enter search term here" );
+        searchInput.addEventListener('input', function() { searchQuery = searchInput.value; });
+        searchUserBtn.addEventListener('click', function() { searchUser(searchQuery); });
+        searchAnimalBtn.addEventListener('click', function() { searchAnimal(searchQuery); });
+        registerAnimalBtn.addEventListener('click', registerAnimal);
+        approveAdoptionBtn.addEventListener('click', goToApproveAdoption);
+        deleteAdoptionBtn.addEventListener('click', goToDeleteAdoption);
+        bookingsBtn.addEventListener('click', goToBooking);
 
-                //setting text content
-                searchLabel.textContent = "Search Query:";
-                searchUserBtn.textContent = "Search Username";
-                searchAnimalBtn.textContent = "Search Animal";
-                registerAnimalBtn.textContent = "Register Animal"
-                approveAdoptionBtn.textContent = "Approve Adoption";
-                deleteAdoptionBtn.textContent = "Delete Adoption";
-                bookingsBtn.textContent = "Handle Bookings";
-
-                //setting style / class
-                adminSection.className = "admin-section";
-                deleteAdoptionBtn.className = "special-button";
-
-                //adding event-listener
-                searchInput.addEventListener('input', function() {searchQuery=searchInput.value});
-                searchUserBtn.addEventListener('click', function() {searchUser(searchQuery)});
-                searchAnimalBtn.addEventListener('click', function() {searchAnimal(searchQuery)});
-                registerAnimalBtn.addEventListener('click', registerAnimal);
-                approveAdoptionBtn.addEventListener('click', goToApproveAdoption);
-                deleteAdoptionBtn.addEventListener('click',goToDeleteAdoption);
-                bookingsBtn.addEventListener('click', goToBooking);
-
-                //appending to document
-                userInfoSection[0].append(adminSection);
-                adminSection.append(searchLabel, searchInput);
-                adminSection.appendChild(buttons);
-                buttons.append(searchUserBtn, searchAnimalBtn, registerAnimalBtn, approveAdoptionBtn, deleteAdoptionBtn, bookingsBtn);
-        }
+        userInfoSection[0].append(adminSection);
+        adminSection.append(searchLabel, searchInput);
+        adminSection.appendChild(buttons);
+        buttons.append(searchUserBtn, searchAnimalBtn, registerAnimalBtn, approveAdoptionBtn, deleteAdoptionBtn, bookingsBtn);
+    }
 }
 
 export class HumanDTOWithPassword {
-        constructor (username, firstName, lastName, dob, addressDTO, email, phone, password) {
-                this.username = username;
-                this.firstName = firstName;
-                this.lastName = lastName;
-                this.dob = dob;
-                this.addressDTO = addressDTO;
-                this.email = email;
-                this.phone = phone;
-                this.password = password
-        }
+    constructor(username, firstName, lastName, dob, addressDTO, email, phone, password) {
+        this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dob = dob;
+        this.addressDTO = addressDTO;
+        this.email = email;
+        this.phone = phone;
+        this.password = password;
+    }
 }
 
 export class AddressDTO {
-        constructor (address, city, postalCode, state) {
+    constructor(address, city, postalCode, state) {
         this.address = address;
         this.city = city;
         this.postalCode = postalCode;
         this.state = state;
-        }
+    }
 }
 
 function searchUser(searchQuery) {
-        console.log(searchQuery);
+    console.log("Searching for user with query:", searchQuery);
+    const users = [
+        new User("1af40162-50ef-43e0-847f-ccf54700587a", "Testing", "Cesar", "Milan", "2025-08-08", 
+            "1000 Hollywood Blvd, 90120 Beverly Hills", "dogwhisperer@discovery.com", 
+            "+1 62 65 19884 664", [new Animal("1af45162-50ef-43g0-847f-ccf54770587g", "Sponge Bob", "./images/400x300-dummy-greenThing.jpg", "Sponge", "01.01.2015", "08.08.2023", "Works at the Crusty Crab.")], 
+            true, [], "admin")
+    ];
+
+    const foundUser = users.find(user => user.username.toLowerCase().includes(searchQuery.toLowerCase()));
+
+    if (foundUser) {
+        foundUser.showUser();
+    } else {
+        alert("User not found.");
+    }
 }
 
 function searchAnimal(searchQuery) {
-        console.log(searchQuery);
+    console.log(searchQuery);
 }
 
 function registerAnimal() {
-        console.log("registerAnimal button");
-        
+    console.log("registerAnimal button");
 }
 
 function goToApproveAdoption() {
-        console.log("Approve Adoption button");
+    console.log("Approve Adoption button");
 }
 
 function goToDeleteAdoption() {
-        console.log("delete Adoption button");
+    console.log("Delete Adoption button");
 }
 
 function goToBooking() {
-        window.location.href = "booking.html";
+    window.location.href = "booking.html";
 }
+
