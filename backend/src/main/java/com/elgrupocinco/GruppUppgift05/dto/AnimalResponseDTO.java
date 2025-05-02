@@ -15,7 +15,7 @@ public class AnimalResponseDTO {
     private String animalSpecies;
     private LocalDate assumedDateOfBirth;
     private boolean adopted;
-    private String pictureURL; // URL field
+    private String pictureURL; // New field
 
     public static AnimalResponseDTO fromEntity(Animal animal) {
         return new AnimalResponseDTO(

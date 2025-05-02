@@ -44,7 +44,7 @@ public class Animal {
     @OneToMany(mappedBy = "animal")
     private List<Comment> comments;
 
-    // Updated constructor including pictureURL
+    // Full constructor including pictureURL
     public Animal(UUID animalId, String animalName, LocalDate assumedDateOfBirth, LocalDate dateRegistered,
                   String animalSpecies, boolean adopted, Human adopter, Human foundByUser,
                   List<Comment> comments, String pictureURL) {
@@ -60,7 +60,7 @@ public class Animal {
         this.pictureURL = pictureURL;
     }
 
-    
+    // Constructor with auto-generated ID
     public Animal(String animalName, LocalDate assumedDateOfBirth, LocalDate dateRegistered,
                   String animalSpecies, boolean adopted, Human adopter, Human foundByUser,
                   List<Comment> comments, String pictureURL) {
@@ -76,3 +76,4 @@ public class Animal {
         this.pictureURL = pictureURL;
     }
 }
+
