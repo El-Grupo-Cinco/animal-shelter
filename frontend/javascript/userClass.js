@@ -41,12 +41,18 @@ export class User {
             this.showAdmin();
         }
 
-        const cardList = document.querySelector(".animal-cards");
-        this.ownedAnimals.forEach(animal => {
-            const animalClass = new Animal(animal.animalID, animal.name, animal.pictureURL, animal.species, animal.dateOfBirth, animal.registrationDate, animal.description);
-            const card = animalClass.showAnimal();
-            cardList.appendChild(card);
-        });
+        console.log("DEBUG: " + this.ownedAnimals.length);
+        
+        if (this.ownedAnimals.length !== 0 || this.ownedAnimals === undefined){
+            const cardList = document.querySelector(".animal-cards");
+        
+            this.ownedAnimals.forEach(animal => {
+                const animalClass = new Animal(animal.animalID, animal.name, animal.pictureURL, animal.species, animal.dateOfBirth, animal.registrationDate, animal.description);
+                const card = animalClass.showAnimal();
+                cardList.appendChild(card);
+            });
+        }
+
 
         // Simulating bookings
         const bookings = [new Booking("Testing", "R2D2", "2025-05-08T08:00UTC", ["Doesn't really want a droid but needs a new vacuum cleaner"])];

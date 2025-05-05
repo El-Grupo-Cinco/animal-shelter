@@ -34,6 +34,7 @@ public class SecurityConfig {
                                 .requestMatchers(HttpMethod.POST, "/api/humans/login!").permitAll()
                                 .requestMatchers(HttpMethod.GET, "/api/animals/see-all").permitAll()
                                 .requestMatchers(HttpMethod.GET, "/api/animals/filter").permitAll()
+                                .requestMatchers(HttpMethod.POST, "/api/humans/show-loggedin").authenticated()
                                 .requestMatchers(HttpMethod.POST, "/api/bookings").authenticated()
                                 .requestMatchers(HttpMethod.GET, "/api/bookings").authenticated()
                                 .requestMatchers(HttpMethod.GET, "/api/bookings/**").authenticated()

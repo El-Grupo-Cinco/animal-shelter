@@ -36,9 +36,10 @@ loginForm.addEventListener('submit', function(e) {
             loginMessage.textContent = message;
             throw new Error(message);
         }
-        return response.json.text;
+        return response.text();
+        
     })
-    .then(token => {
+    .then(token => {       
         loginMessage.textContent = "Login successful!";
         localStorage.setItem("token", token);
         window.location.href = "/user.html";

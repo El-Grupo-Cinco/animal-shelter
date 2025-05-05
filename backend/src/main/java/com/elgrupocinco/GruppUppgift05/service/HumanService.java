@@ -96,6 +96,11 @@ public class HumanService {
         return jwtService.generateToken(human.getUserId());
     }
 
+    //shows the info of a user based on it's token (from controller)
+    public Human showInfo(Human human) {
+        return human;
+    }
+
     // Updated deleteUser method to delete bookings associated with the user
     public String deleteUser(UUID humanId) {
         Human human = humanRepository.findById(humanId)

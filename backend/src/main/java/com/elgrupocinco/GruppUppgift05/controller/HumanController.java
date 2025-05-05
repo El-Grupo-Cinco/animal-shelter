@@ -4,10 +4,12 @@ package com.elgrupocinco.GruppUppgift05.controller;
 import com.elgrupocinco.GruppUppgift05.dto.HumanDTO;
 import com.elgrupocinco.GruppUppgift05.dto.HumanDTOLogin;
 import com.elgrupocinco.GruppUppgift05.dto.HumanDTOWithPassword;
+import com.elgrupocinco.GruppUppgift05.models.Human;
 import com.elgrupocinco.GruppUppgift05.service.HumanService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -34,14 +36,22 @@ public class HumanController {
         }
     }
 
-
-
     @PostMapping("/login!")
     public ResponseEntity<String> login(@RequestBody HumanDTOLogin humanDTOLogin) {
         try {
             return ResponseEntity.ok(humanService.login(humanDTOLogin.getUsername(), humanDTOLogin.getPassword()));
         } catch (Exception e) {
             return ResponseEntity.status(401).body("Login failed: " + e.getMessage());
+        }
+    }
+
+    @GetMapping("/show-loggedin")
+    public ResponseEntity<?> showLoggedInUserInfo(@AuthenticationPrincipal Human human){
+        try {
+            HumanDTO humanDTO = HumanDTO.fromHuman(humanService.showInfo(human));
+            return ResponseEntity.ok(humanDTO);
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().body("Haven't written error handling for 'showLoggedInUserInfo', sorry");
         }
     }
 
