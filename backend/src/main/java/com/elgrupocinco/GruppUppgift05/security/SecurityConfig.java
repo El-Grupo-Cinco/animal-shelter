@@ -38,7 +38,7 @@ public class SecurityConfig {
                                 .requestMatchers(HttpMethod.POST, "/api/bookings").authenticated()
                                 .requestMatchers(HttpMethod.GET, "/api/bookings").authenticated()
                                 .requestMatchers(HttpMethod.GET, "/api/bookings/**").authenticated()
-                                .anyRequest().hasRole("ADMIN"))
+                                .anyRequest().permitAll())
                 .addFilterBefore(new JWTFilter(humanService), UsernamePasswordAuthenticationFilter.class)
                 .sessionManagement(session ->
                         session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));

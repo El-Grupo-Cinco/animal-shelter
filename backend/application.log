@@ -1,93 +1,227 @@
-2025-05-05T10:56:59.452+02:00  INFO 228618 --- [GruppUppgift05] [main] c.e.G.GruppUppgift05Application          : Starting GruppUppgift05Application using Java 23.0.2 with PID 228618 (/home/eckofox/Programming/EC-utbildning/08 JavaScript/elgrupocinco/animal-shelter/backend/build/classes/java/main started by eckofox in /home/eckofox/Programming/EC-utbildning/08 JavaScript/elgrupocinco/animal-shelter/backend)
-2025-05-05T10:56:59.479+02:00  INFO 228618 --- [GruppUppgift05] [main] c.e.G.GruppUppgift05Application          : No active profile set, falling back to 1 default profile: "default"
-2025-05-05T10:57:00.990+02:00  INFO 228618 --- [GruppUppgift05] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-05-05T10:57:01.183+02:00  INFO 228618 --- [GruppUppgift05] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 178 ms. Found 6 JPA repository interfaces.
-2025-05-05T10:57:02.332+02:00  INFO 228618 --- [GruppUppgift05] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-05-05T10:57:02.363+02:00  INFO 228618 --- [GruppUppgift05] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-05T10:57:02.364+02:00  INFO 228618 --- [GruppUppgift05] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
-2025-05-05T10:57:02.471+02:00  INFO 228618 --- [GruppUppgift05] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-05T10:57:02.472+02:00  INFO 228618 --- [GruppUppgift05] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2869 ms
-2025-05-05T10:57:03.571+02:00  INFO 228618 --- [GruppUppgift05] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-05-05T10:57:03.609+02:00  INFO 228618 --- [GruppUppgift05] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-05T10:57:03.930+02:00  INFO 228618 --- [GruppUppgift05] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6182ffef
-2025-05-05T10:57:03.933+02:00  INFO 228618 --- [GruppUppgift05] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-05T10:57:06.143+02:00  INFO 228618 --- [GruppUppgift05] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-05-05T10:57:06.641+02:00  INFO 228618 --- [GruppUppgift05] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-05-05T10:57:08.534+02:00  WARN 228618 --- [GruppUppgift05] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-05-05T10:57:08.564+02:00  WARN 228618 --- [GruppUppgift05] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+2025-05-06T09:05:50.093+02:00  INFO 401205 --- [GruppUppgift05] [main] c.e.G.GruppUppgift05Application          : Starting GruppUppgift05Application using Java 23.0.2 with PID 401205 (/home/eckofox/Programming/EC-utbildning/08 JavaScript/elgrupocinco/animal-shelter/backend/build/classes/java/main started by eckofox in /home/eckofox/Programming/EC-utbildning/08 JavaScript/elgrupocinco/animal-shelter/backend)
+2025-05-06T09:05:50.101+02:00  INFO 401205 --- [GruppUppgift05] [main] c.e.G.GruppUppgift05Application          : No active profile set, falling back to 1 default profile: "default"
+2025-05-06T09:05:50.578+02:00  INFO 401205 --- [GruppUppgift05] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-06T09:05:50.631+02:00  INFO 401205 --- [GruppUppgift05] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 6 JPA repository interfaces.
+2025-05-06T09:05:51.038+02:00  INFO 401205 --- [GruppUppgift05] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-06T09:05:51.051+02:00  INFO 401205 --- [GruppUppgift05] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-06T09:05:51.051+02:00  INFO 401205 --- [GruppUppgift05] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-05-06T09:05:51.089+02:00  INFO 401205 --- [GruppUppgift05] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-06T09:05:51.089+02:00  INFO 401205 --- [GruppUppgift05] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 950 ms
+2025-05-06T09:05:51.457+02:00  INFO 401205 --- [GruppUppgift05] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-06T09:05:51.476+02:00  INFO 401205 --- [GruppUppgift05] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-06T09:05:51.592+02:00  INFO 401205 --- [GruppUppgift05] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@27d73d22
+2025-05-06T09:05:51.593+02:00  INFO 401205 --- [GruppUppgift05] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-06T09:05:52.432+02:00  INFO 401205 --- [GruppUppgift05] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-06T09:05:52.643+02:00  INFO 401205 --- [GruppUppgift05] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-06T09:05:53.317+02:00  WARN 401205 --- [GruppUppgift05] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-06T09:05:53.330+02:00  WARN 401205 --- [GruppUppgift05] [main] .s.s.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: e6e0e6f7-859b-4578-8ebc-75e43dfba823
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-05-05T10:57:08.583+02:00  INFO 228618 --- [GruppUppgift05] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-2025-05-05T10:57:09.439+02:00  INFO 228618 --- [GruppUppgift05] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-05-05T10:57:09.466+02:00  INFO 228618 --- [GruppUppgift05] [main] c.e.G.GruppUppgift05Application          : Started GruppUppgift05Application in 11.086 seconds (process running for 12.141)
-2025-05-05T10:58:59.727+02:00  INFO 228618 --- [GruppUppgift05] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-05T10:58:59.727+02:00  INFO 228618 --- [GruppUppgift05] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-05-05T10:58:59.729+02:00  INFO 228618 --- [GruppUppgift05] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-05-05T10:58:59.799+02:00  INFO 228618 --- [GruppUppgift05] [http-nio-8080-exec-3] c.e.G.controller.HumanController         : Received request to create user: Franko
-2025-05-05T10:58:59.799+02:00  INFO 228618 --- [GruppUppgift05] [http-nio-8080-exec-3] c.e.G.controller.HumanController         : Received request to create user: Franko
-2025-05-05T11:40:59.497+02:00  INFO 228618 --- [GruppUppgift05] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-05-05T11:40:59.499+02:00  INFO 228618 --- [GruppUppgift05] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-05-05T11:40:59.502+02:00  INFO 228618 --- [GruppUppgift05] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-05-05T11:40:59.503+02:00  INFO 228618 --- [GruppUppgift05] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-05-05T11:40:59.506+02:00  INFO 228618 --- [GruppUppgift05] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-05-05T11:42:11.387+02:00  INFO 285591 --- [GruppUppgift05] [main] c.e.G.GruppUppgift05Application          : Starting GruppUppgift05Application using Java 23.0.2 with PID 285591 (/home/eckofox/Programming/EC-utbildning/08 JavaScript/elgrupocinco/animal-shelter/backend/build/classes/java/main started by eckofox in /home/eckofox/Programming/EC-utbildning/08 JavaScript/elgrupocinco/animal-shelter/backend)
-2025-05-05T11:42:11.389+02:00  INFO 285591 --- [GruppUppgift05] [main] c.e.G.GruppUppgift05Application          : No active profile set, falling back to 1 default profile: "default"
-2025-05-05T11:42:11.842+02:00  INFO 285591 --- [GruppUppgift05] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-05-05T11:42:11.894+02:00  INFO 285591 --- [GruppUppgift05] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 6 JPA repository interfaces.
-2025-05-05T11:42:12.245+02:00  INFO 285591 --- [GruppUppgift05] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-05-05T11:42:12.255+02:00  INFO 285591 --- [GruppUppgift05] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-05T11:42:12.255+02:00  INFO 285591 --- [GruppUppgift05] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
-2025-05-05T11:42:12.294+02:00  INFO 285591 --- [GruppUppgift05] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-05T11:42:12.294+02:00  INFO 285591 --- [GruppUppgift05] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 862 ms
-2025-05-05T11:42:12.626+02:00  INFO 285591 --- [GruppUppgift05] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-05-05T11:42:12.646+02:00  INFO 285591 --- [GruppUppgift05] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-05T11:42:12.769+02:00  INFO 285591 --- [GruppUppgift05] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2fc7fa6e
-2025-05-05T11:42:12.770+02:00  INFO 285591 --- [GruppUppgift05] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-05T11:42:13.548+02:00  INFO 285591 --- [GruppUppgift05] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-05-05T11:42:13.730+02:00  INFO 285591 --- [GruppUppgift05] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-05-05T11:42:14.393+02:00  WARN 285591 --- [GruppUppgift05] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-05-05T11:42:14.411+02:00  WARN 285591 --- [GruppUppgift05] [main] .s.s.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: 3ac81960-bfe4-4dd3-94c2-580b0e575299
+Using generated security password: da0dd25b-a689-4e43-afd1-f6f8710df281
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2025-05-05T11:42:14.422+02:00  INFO 285591 --- [GruppUppgift05] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-2025-05-05T11:42:14.823+02:00  INFO 285591 --- [GruppUppgift05] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-05-05T11:42:14.834+02:00  INFO 285591 --- [GruppUppgift05] [main] c.e.G.GruppUppgift05Application          : Started GruppUppgift05Application in 3.752 seconds (process running for 4.019)
-2025-05-05T11:44:36.966+02:00  INFO 285591 --- [GruppUppgift05] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-05-05T11:44:36.968+02:00  INFO 285591 --- [GruppUppgift05] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-05-05T11:44:36.973+02:00  INFO 285591 --- [GruppUppgift05] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-05-05T11:44:36.975+02:00  INFO 285591 --- [GruppUppgift05] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-05-05T11:44:36.977+02:00  INFO 285591 --- [GruppUppgift05] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-05-05T11:44:38.268+02:00  INFO 288854 --- [GruppUppgift05] [main] c.e.G.GruppUppgift05Application          : Starting GruppUppgift05Application using Java 23.0.2 with PID 288854 (/home/eckofox/Programming/EC-utbildning/08 JavaScript/elgrupocinco/animal-shelter/backend/build/classes/java/main started by eckofox in /home/eckofox/Programming/EC-utbildning/08 JavaScript/elgrupocinco/animal-shelter/backend)
-2025-05-05T11:44:38.269+02:00  INFO 288854 --- [GruppUppgift05] [main] c.e.G.GruppUppgift05Application          : No active profile set, falling back to 1 default profile: "default"
-2025-05-05T11:44:38.802+02:00  INFO 288854 --- [GruppUppgift05] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-05-05T11:44:38.869+02:00  INFO 288854 --- [GruppUppgift05] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 6 JPA repository interfaces.
-2025-05-05T11:44:39.246+02:00  INFO 288854 --- [GruppUppgift05] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-05-05T11:44:39.257+02:00  INFO 288854 --- [GruppUppgift05] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-05T11:44:39.257+02:00  INFO 288854 --- [GruppUppgift05] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
-2025-05-05T11:44:39.299+02:00  INFO 288854 --- [GruppUppgift05] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-05T11:44:39.299+02:00  INFO 288854 --- [GruppUppgift05] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 986 ms
-2025-05-05T11:44:39.662+02:00  INFO 288854 --- [GruppUppgift05] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-05-05T11:44:39.685+02:00  INFO 288854 --- [GruppUppgift05] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-05T11:44:39.791+02:00  INFO 288854 --- [GruppUppgift05] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3d1c52f5
-2025-05-05T11:44:39.792+02:00  INFO 288854 --- [GruppUppgift05] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-05T11:44:40.560+02:00  INFO 288854 --- [GruppUppgift05] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-05-05T11:44:40.754+02:00  INFO 288854 --- [GruppUppgift05] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-05-05T11:44:41.450+02:00  WARN 288854 --- [GruppUppgift05] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-05-05T11:44:41.463+02:00  WARN 288854 --- [GruppUppgift05] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+2025-05-06T09:05:53.338+02:00  INFO 401205 --- [GruppUppgift05] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-06T09:05:53.728+02:00  INFO 401205 --- [GruppUppgift05] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-06T09:05:53.738+02:00  INFO 401205 --- [GruppUppgift05] [main] c.e.G.GruppUppgift05Application          : Started GruppUppgift05Application in 3.992 seconds (process running for 4.219)
+2025-05-06T09:06:13.182+02:00  INFO 401205 --- [GruppUppgift05] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-06T09:06:13.182+02:00  INFO 401205 --- [GruppUppgift05] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-06T09:06:13.183+02:00  INFO 401205 --- [GruppUppgift05] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-06T09:08:07.869+02:00  INFO 401205 --- [GruppUppgift05] [http-nio-8080-exec-4] c.e.G.controller.HumanController         : Received request to create user: Bobang
+2025-05-06T09:08:07.869+02:00  INFO 401205 --- [GruppUppgift05] [http-nio-8080-exec-4] c.e.G.controller.HumanController         : Received request to create user: Bobang
+2025-05-06T09:18:24.495+02:00  INFO 401205 --- [GruppUppgift05] [http-nio-8080-exec-1] c.e.G.controller.HumanController         : Received request to create user: Zever
+2025-05-06T09:18:24.495+02:00  INFO 401205 --- [GruppUppgift05] [http-nio-8080-exec-1] c.e.G.controller.HumanController         : Received request to create user: Zever
+2025-05-06T09:33:33.076+02:00  INFO 401205 --- [GruppUppgift05] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-06T09:33:33.082+02:00  INFO 401205 --- [GruppUppgift05] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-06T09:33:33.090+02:00  INFO 401205 --- [GruppUppgift05] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-06T09:33:33.094+02:00  INFO 401205 --- [GruppUppgift05] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-06T09:33:33.098+02:00  INFO 401205 --- [GruppUppgift05] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-06T09:33:35.587+02:00  INFO 402005 --- [GruppUppgift05] [main] c.e.G.GruppUppgift05Application          : Starting GruppUppgift05Application using Java 23.0.2 with PID 402005 (/home/eckofox/Programming/EC-utbildning/08 JavaScript/elgrupocinco/animal-shelter/backend/build/classes/java/main started by eckofox in /home/eckofox/Programming/EC-utbildning/08 JavaScript/elgrupocinco/animal-shelter/backend)
+2025-05-06T09:33:35.589+02:00  INFO 402005 --- [GruppUppgift05] [main] c.e.G.GruppUppgift05Application          : No active profile set, falling back to 1 default profile: "default"
+2025-05-06T09:33:36.074+02:00  INFO 402005 --- [GruppUppgift05] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-06T09:33:36.127+02:00  INFO 402005 --- [GruppUppgift05] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 6 JPA repository interfaces.
+2025-05-06T09:33:36.484+02:00  INFO 402005 --- [GruppUppgift05] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-06T09:33:36.496+02:00  INFO 402005 --- [GruppUppgift05] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-06T09:33:36.496+02:00  INFO 402005 --- [GruppUppgift05] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-05-06T09:33:36.536+02:00  INFO 402005 --- [GruppUppgift05] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-06T09:33:36.537+02:00  INFO 402005 --- [GruppUppgift05] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 911 ms
+2025-05-06T09:33:36.901+02:00  INFO 402005 --- [GruppUppgift05] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-06T09:33:36.918+02:00  INFO 402005 --- [GruppUppgift05] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-06T09:33:37.035+02:00  INFO 402005 --- [GruppUppgift05] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@273dec10
+2025-05-06T09:33:37.036+02:00  INFO 402005 --- [GruppUppgift05] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-06T09:33:37.915+02:00  INFO 402005 --- [GruppUppgift05] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-06T09:33:38.114+02:00  INFO 402005 --- [GruppUppgift05] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-06T09:33:38.864+02:00  WARN 402005 --- [GruppUppgift05] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-06T09:33:38.877+02:00  WARN 402005 --- [GruppUppgift05] [main] .s.s.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: 6c050fe3-59af-436f-8551-421890fd68ad
+Using generated security password: 2e87bf7e-7392-4bfb-a5e6-764fc18e960b
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2025-05-05T11:44:41.471+02:00  INFO 288854 --- [GruppUppgift05] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-2025-05-05T11:44:41.824+02:00  INFO 288854 --- [GruppUppgift05] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-05-05T11:44:41.833+02:00  INFO 288854 --- [GruppUppgift05] [main] c.e.G.GruppUppgift05Application          : Started GruppUppgift05Application in 3.876 seconds (process running for 4.125)
-2025-05-05T12:04:38.387+02:00  INFO 288854 --- [GruppUppgift05] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-05T12:04:38.387+02:00  INFO 288854 --- [GruppUppgift05] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-05-05T12:04:38.388+02:00  INFO 288854 --- [GruppUppgift05] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-05-06T09:33:38.886+02:00  INFO 402005 --- [GruppUppgift05] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-06T09:33:39.230+02:00  INFO 402005 --- [GruppUppgift05] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-06T09:33:39.238+02:00  INFO 402005 --- [GruppUppgift05] [main] c.e.G.GruppUppgift05Application          : Started GruppUppgift05Application in 3.968 seconds (process running for 4.201)
+2025-05-06T09:34:01.563+02:00  INFO 402005 --- [GruppUppgift05] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-06T09:34:01.563+02:00  INFO 402005 --- [GruppUppgift05] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-06T09:34:01.564+02:00  INFO 402005 --- [GruppUppgift05] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-06T09:36:32.159+02:00  INFO 402005 --- [GruppUppgift05] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-06T09:36:32.161+02:00  INFO 402005 --- [GruppUppgift05] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-06T09:36:32.166+02:00  INFO 402005 --- [GruppUppgift05] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-06T09:36:32.169+02:00  INFO 402005 --- [GruppUppgift05] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-06T09:36:32.172+02:00  INFO 402005 --- [GruppUppgift05] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-06T09:36:33.776+02:00  INFO 402370 --- [GruppUppgift05] [main] c.e.G.GruppUppgift05Application          : Starting GruppUppgift05Application using Java 23.0.2 with PID 402370 (/home/eckofox/Programming/EC-utbildning/08 JavaScript/elgrupocinco/animal-shelter/backend/build/classes/java/main started by eckofox in /home/eckofox/Programming/EC-utbildning/08 JavaScript/elgrupocinco/animal-shelter/backend)
+2025-05-06T09:36:33.778+02:00  INFO 402370 --- [GruppUppgift05] [main] c.e.G.GruppUppgift05Application          : No active profile set, falling back to 1 default profile: "default"
+2025-05-06T09:36:34.287+02:00  INFO 402370 --- [GruppUppgift05] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-06T09:36:34.341+02:00  INFO 402370 --- [GruppUppgift05] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 6 JPA repository interfaces.
+2025-05-06T09:36:34.732+02:00  INFO 402370 --- [GruppUppgift05] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-06T09:36:34.749+02:00  INFO 402370 --- [GruppUppgift05] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-06T09:36:34.749+02:00  INFO 402370 --- [GruppUppgift05] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-05-06T09:36:34.783+02:00  INFO 402370 --- [GruppUppgift05] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-06T09:36:34.784+02:00  INFO 402370 --- [GruppUppgift05] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 965 ms
+2025-05-06T09:36:35.115+02:00  INFO 402370 --- [GruppUppgift05] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-06T09:36:35.132+02:00  INFO 402370 --- [GruppUppgift05] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-06T09:36:35.243+02:00  INFO 402370 --- [GruppUppgift05] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4fad51a3
+2025-05-06T09:36:35.244+02:00  INFO 402370 --- [GruppUppgift05] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-06T09:36:36.055+02:00  INFO 402370 --- [GruppUppgift05] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-06T09:36:36.245+02:00  INFO 402370 --- [GruppUppgift05] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-06T09:36:36.908+02:00  WARN 402370 --- [GruppUppgift05] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-06T09:36:36.922+02:00  WARN 402370 --- [GruppUppgift05] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 99fe477a-700d-434b-9547-2ef9a13e4abe
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-06T09:36:36.930+02:00  INFO 402370 --- [GruppUppgift05] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-06T09:36:37.269+02:00  INFO 402370 --- [GruppUppgift05] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-06T09:36:37.276+02:00  INFO 402370 --- [GruppUppgift05] [main] c.e.G.GruppUppgift05Application          : Started GruppUppgift05Application in 3.83 seconds (process running for 4.071)
+2025-05-06T09:36:45.844+02:00  INFO 402370 --- [GruppUppgift05] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-06T09:36:45.844+02:00  INFO 402370 --- [GruppUppgift05] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-06T09:36:45.845+02:00  INFO 402370 --- [GruppUppgift05] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-06T09:38:14.872+02:00  INFO 402370 --- [GruppUppgift05] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-06T09:38:14.878+02:00  INFO 402370 --- [GruppUppgift05] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-06T09:38:14.891+02:00  INFO 402370 --- [GruppUppgift05] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-06T09:38:14.895+02:00  INFO 402370 --- [GruppUppgift05] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-06T09:38:14.899+02:00  INFO 402370 --- [GruppUppgift05] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-06T09:38:15.988+02:00  INFO 402695 --- [GruppUppgift05] [main] c.e.G.GruppUppgift05Application          : Starting GruppUppgift05Application using Java 23.0.2 with PID 402695 (/home/eckofox/Programming/EC-utbildning/08 JavaScript/elgrupocinco/animal-shelter/backend/build/classes/java/main started by eckofox in /home/eckofox/Programming/EC-utbildning/08 JavaScript/elgrupocinco/animal-shelter/backend)
+2025-05-06T09:38:15.989+02:00  INFO 402695 --- [GruppUppgift05] [main] c.e.G.GruppUppgift05Application          : No active profile set, falling back to 1 default profile: "default"
+2025-05-06T09:38:16.447+02:00  INFO 402695 --- [GruppUppgift05] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-06T09:38:16.498+02:00  INFO 402695 --- [GruppUppgift05] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 6 JPA repository interfaces.
+2025-05-06T09:38:16.867+02:00  INFO 402695 --- [GruppUppgift05] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-06T09:38:16.877+02:00  INFO 402695 --- [GruppUppgift05] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-06T09:38:16.878+02:00  INFO 402695 --- [GruppUppgift05] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-05-06T09:38:16.920+02:00  INFO 402695 --- [GruppUppgift05] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-06T09:38:16.920+02:00  INFO 402695 --- [GruppUppgift05] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 889 ms
+2025-05-06T09:38:17.271+02:00  INFO 402695 --- [GruppUppgift05] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-06T09:38:17.293+02:00  INFO 402695 --- [GruppUppgift05] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-06T09:38:17.429+02:00  INFO 402695 --- [GruppUppgift05] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@687a0e40
+2025-05-06T09:38:17.429+02:00  INFO 402695 --- [GruppUppgift05] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-06T09:38:18.209+02:00  INFO 402695 --- [GruppUppgift05] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-06T09:38:18.390+02:00  INFO 402695 --- [GruppUppgift05] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-06T09:38:19.122+02:00  WARN 402695 --- [GruppUppgift05] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-06T09:38:19.133+02:00  WARN 402695 --- [GruppUppgift05] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: ded72ad7-7eaf-4a15-813c-61952955593a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-06T09:38:19.140+02:00  INFO 402695 --- [GruppUppgift05] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-06T09:38:19.469+02:00  INFO 402695 --- [GruppUppgift05] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-06T09:38:19.476+02:00  INFO 402695 --- [GruppUppgift05] [main] c.e.G.GruppUppgift05Application          : Started GruppUppgift05Application in 3.809 seconds (process running for 4.05)
+2025-05-06T09:38:55.523+02:00  INFO 402695 --- [GruppUppgift05] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-06T09:38:55.527+02:00  INFO 402695 --- [GruppUppgift05] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-06T09:38:55.532+02:00  INFO 402695 --- [GruppUppgift05] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-06T09:38:55.535+02:00  INFO 402695 --- [GruppUppgift05] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-06T09:38:55.538+02:00  INFO 402695 --- [GruppUppgift05] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-06T09:38:56.978+02:00  INFO 403005 --- [GruppUppgift05] [main] c.e.G.GruppUppgift05Application          : Starting GruppUppgift05Application using Java 23.0.2 with PID 403005 (/home/eckofox/Programming/EC-utbildning/08 JavaScript/elgrupocinco/animal-shelter/backend/build/classes/java/main started by eckofox in /home/eckofox/Programming/EC-utbildning/08 JavaScript/elgrupocinco/animal-shelter/backend)
+2025-05-06T09:38:56.980+02:00  INFO 403005 --- [GruppUppgift05] [main] c.e.G.GruppUppgift05Application          : No active profile set, falling back to 1 default profile: "default"
+2025-05-06T09:38:57.495+02:00  INFO 403005 --- [GruppUppgift05] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-06T09:38:57.548+02:00  INFO 403005 --- [GruppUppgift05] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 6 JPA repository interfaces.
+2025-05-06T09:38:57.907+02:00  INFO 403005 --- [GruppUppgift05] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-06T09:38:57.918+02:00  INFO 403005 --- [GruppUppgift05] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-06T09:38:57.918+02:00  INFO 403005 --- [GruppUppgift05] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-05-06T09:38:57.952+02:00  INFO 403005 --- [GruppUppgift05] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-06T09:38:57.953+02:00  INFO 403005 --- [GruppUppgift05] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 921 ms
+2025-05-06T09:38:58.288+02:00  INFO 403005 --- [GruppUppgift05] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-06T09:38:58.307+02:00  INFO 403005 --- [GruppUppgift05] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-06T09:38:58.415+02:00  INFO 403005 --- [GruppUppgift05] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@720a1fd0
+2025-05-06T09:38:58.416+02:00  INFO 403005 --- [GruppUppgift05] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-06T09:38:59.186+02:00  INFO 403005 --- [GruppUppgift05] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-06T09:38:59.392+02:00  INFO 403005 --- [GruppUppgift05] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-06T09:39:00.081+02:00  WARN 403005 --- [GruppUppgift05] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-06T09:39:00.094+02:00  WARN 403005 --- [GruppUppgift05] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 4a514932-6199-4a28-95ae-cf24660a3371
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-06T09:39:00.101+02:00  INFO 403005 --- [GruppUppgift05] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-06T09:39:00.427+02:00  INFO 403005 --- [GruppUppgift05] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-06T09:39:00.434+02:00  INFO 403005 --- [GruppUppgift05] [main] c.e.G.GruppUppgift05Application          : Started GruppUppgift05Application in 3.788 seconds (process running for 4.015)
+2025-05-06T09:39:09.727+02:00  INFO 403005 --- [GruppUppgift05] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-06T09:39:09.728+02:00  INFO 403005 --- [GruppUppgift05] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-06T09:39:09.729+02:00  INFO 403005 --- [GruppUppgift05] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-06T09:39:39.732+02:00  INFO 403005 --- [GruppUppgift05] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-06T09:39:39.735+02:00  INFO 403005 --- [GruppUppgift05] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-06T09:39:39.743+02:00  INFO 403005 --- [GruppUppgift05] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-06T09:39:39.746+02:00  INFO 403005 --- [GruppUppgift05] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-06T09:39:39.749+02:00  INFO 403005 --- [GruppUppgift05] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-06T09:39:40.755+02:00  INFO 403285 --- [GruppUppgift05] [main] c.e.G.GruppUppgift05Application          : Starting GruppUppgift05Application using Java 23.0.2 with PID 403285 (/home/eckofox/Programming/EC-utbildning/08 JavaScript/elgrupocinco/animal-shelter/backend/build/classes/java/main started by eckofox in /home/eckofox/Programming/EC-utbildning/08 JavaScript/elgrupocinco/animal-shelter/backend)
+2025-05-06T09:39:40.757+02:00  INFO 403285 --- [GruppUppgift05] [main] c.e.G.GruppUppgift05Application          : No active profile set, falling back to 1 default profile: "default"
+2025-05-06T09:39:41.227+02:00  INFO 403285 --- [GruppUppgift05] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-06T09:39:41.280+02:00  INFO 403285 --- [GruppUppgift05] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 6 JPA repository interfaces.
+2025-05-06T09:39:41.646+02:00  INFO 403285 --- [GruppUppgift05] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-06T09:39:41.657+02:00  INFO 403285 --- [GruppUppgift05] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-06T09:39:41.657+02:00  INFO 403285 --- [GruppUppgift05] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-05-06T09:39:41.697+02:00  INFO 403285 --- [GruppUppgift05] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-06T09:39:41.698+02:00  INFO 403285 --- [GruppUppgift05] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 890 ms
+2025-05-06T09:39:42.034+02:00  INFO 403285 --- [GruppUppgift05] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-06T09:39:42.051+02:00  INFO 403285 --- [GruppUppgift05] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-06T09:39:42.160+02:00  INFO 403285 --- [GruppUppgift05] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5e24592e
+2025-05-06T09:39:42.161+02:00  INFO 403285 --- [GruppUppgift05] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-06T09:39:42.976+02:00  INFO 403285 --- [GruppUppgift05] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-06T09:39:43.177+02:00  INFO 403285 --- [GruppUppgift05] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-06T09:39:43.843+02:00  WARN 403285 --- [GruppUppgift05] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-06T09:39:43.855+02:00  WARN 403285 --- [GruppUppgift05] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: cd6c0d63-9ed5-4293-9b05-743ea9435c89
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-06T09:39:43.863+02:00  INFO 403285 --- [GruppUppgift05] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-06T09:39:44.186+02:00  INFO 403285 --- [GruppUppgift05] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-06T09:39:44.193+02:00  INFO 403285 --- [GruppUppgift05] [main] c.e.G.GruppUppgift05Application          : Started GruppUppgift05Application in 3.783 seconds (process running for 4.01)
+2025-05-06T09:39:48.643+02:00  INFO 403285 --- [GruppUppgift05] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-06T09:39:48.643+02:00  INFO 403285 --- [GruppUppgift05] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-06T09:39:48.644+02:00  INFO 403285 --- [GruppUppgift05] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-06T09:40:16.531+02:00  INFO 403285 --- [GruppUppgift05] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-06T09:40:16.535+02:00  INFO 403285 --- [GruppUppgift05] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-06T09:40:16.544+02:00  INFO 403285 --- [GruppUppgift05] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-06T09:40:16.548+02:00  INFO 403285 --- [GruppUppgift05] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-06T09:40:16.551+02:00  INFO 403285 --- [GruppUppgift05] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-06T09:40:35.058+02:00  INFO 403809 --- [GruppUppgift05] [main] c.e.G.GruppUppgift05Application          : Starting GruppUppgift05Application using Java 23.0.2 with PID 403809 (/home/eckofox/Programming/EC-utbildning/08 JavaScript/elgrupocinco/animal-shelter/backend/build/classes/java/main started by eckofox in /home/eckofox/Programming/EC-utbildning/08 JavaScript/elgrupocinco/animal-shelter/backend)
+2025-05-06T09:40:35.060+02:00  INFO 403809 --- [GruppUppgift05] [main] c.e.G.GruppUppgift05Application          : No active profile set, falling back to 1 default profile: "default"
+2025-05-06T09:40:35.550+02:00  INFO 403809 --- [GruppUppgift05] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-06T09:40:35.603+02:00  INFO 403809 --- [GruppUppgift05] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 6 JPA repository interfaces.
+2025-05-06T09:40:35.947+02:00  INFO 403809 --- [GruppUppgift05] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-06T09:40:35.966+02:00  INFO 403809 --- [GruppUppgift05] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-06T09:40:35.966+02:00  INFO 403809 --- [GruppUppgift05] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-05-06T09:40:35.998+02:00  INFO 403809 --- [GruppUppgift05] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-06T09:40:35.998+02:00  INFO 403809 --- [GruppUppgift05] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 885 ms
+2025-05-06T09:40:36.331+02:00  INFO 403809 --- [GruppUppgift05] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-06T09:40:36.349+02:00  INFO 403809 --- [GruppUppgift05] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-06T09:40:36.462+02:00  INFO 403809 --- [GruppUppgift05] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5e24592e
+2025-05-06T09:40:36.463+02:00  INFO 403809 --- [GruppUppgift05] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-06T09:40:37.240+02:00  INFO 403809 --- [GruppUppgift05] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-06T09:40:37.429+02:00  INFO 403809 --- [GruppUppgift05] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-06T09:40:38.114+02:00  WARN 403809 --- [GruppUppgift05] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-06T09:40:38.126+02:00  WARN 403809 --- [GruppUppgift05] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: c2b703fe-8546-4c82-b1e9-b7f962a96fef
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-06T09:40:38.133+02:00  INFO 403809 --- [GruppUppgift05] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-06T09:40:38.451+02:00  INFO 403809 --- [GruppUppgift05] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-06T09:40:38.459+02:00  INFO 403809 --- [GruppUppgift05] [main] c.e.G.GruppUppgift05Application          : Started GruppUppgift05Application in 3.729 seconds (process running for 3.972)
+2025-05-06T09:40:39.532+02:00  INFO 403809 --- [GruppUppgift05] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-06T09:40:39.532+02:00  INFO 403809 --- [GruppUppgift05] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-06T09:40:39.533+02:00  INFO 403809 --- [GruppUppgift05] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
