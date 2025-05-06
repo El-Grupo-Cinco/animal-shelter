@@ -225,3 +225,8 @@ This generated password is for development use only. Your security configuration
 2025-05-06T09:40:39.532+02:00  INFO 403809 --- [GruppUppgift05] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2025-05-06T09:40:39.532+02:00  INFO 403809 --- [GruppUppgift05] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2025-05-06T09:40:39.533+02:00  INFO 403809 --- [GruppUppgift05] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-06T10:02:40.333+02:00  INFO 403809 --- [GruppUppgift05] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-06T10:02:40.338+02:00  INFO 403809 --- [GruppUppgift05] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-06T10:02:40.347+02:00  INFO 403809 --- [GruppUppgift05] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-06T10:02:40.350+02:00  INFO 403809 --- [GruppUppgift05] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-06T10:02:40.354+02:00  INFO 403809 --- [GruppUppgift05] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
