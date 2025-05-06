@@ -1,56 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/icons/animal-shelter-logo.png" />
-    <title>Animal Shelter - Animals</title>
 
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/animals.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/icons/animal-shelter-logo.png" />
+  <title>Animal Shelter - Animals</title>
 
-    <script src="./javascript/headerAndFooter.js" defer></script>
-    <script src="./javascript/animalClass.js" type="module" defer></script>
-    <script src="./javascript/animal.js" type="module" defer></script>
-  </head>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/animals.css" />
 
-  <body>
-    <header></header>
+  <script src="./javascript/headerAndFooter.js" defer></script>
+  <script src="./javascript/animalClass.js" type="module" defer></script>
+  <script src="./javascript/animal.js" type="module" defer></script>
+</head>
 
-    <div class="search-container">
-      <button id="search-button">Search</button>
-      <input
-        type="text"
-        id="species-search-input"
-        placeholder="Search by species..."
-      />
-      <input type="text" id="name-search-input" placeholder="Search name..." />
-      <input
-        type="date"
-        id="minimum-age-search-input"
-        placeholder="Search by minimum age..."
-      />
-    </div>
+<body>
+  <header></header>
 
-    <main>
-      <ul class="animal-cards">
-        <li class="card hidden" id="card-template">
-          <h3 class="card-name">Name</h3>
-          <!-- Namn ovanför allt -->
-          <div class="card-content">
-            <div class="card-picture">
-              <img src="" alt="" />
-            </div>
-            <div class="card-middle">
-              <p class="species-text">Species:</p>
-              <p class="date-of-birth-text">Date of Birth:</p>
-              <p class="registered-text">Registered:</p>
-            </div>
-            <div class="card-description">Description</div>
+  <div class="search-container">
+    <button id="search-button">Search</button>
+    <input type="text" id="species-search-input" placeholder="Search by species..." />
+    <input type="text" id="name-search-input" placeholder="Search name..." />
+    <input type="date" id="minimum-age-search-input" placeholder="Search by minimum age..." />
+  </div>
+
+  <main>
+    <!-- Laddar-meddelande -->
+    <div id="loading-message">Loading animals...</div>
+
+    <!-- Kortmall (dold) -->
+    <ul class="animal-cards" role="list">
+      <li class="card hidden" id="card-template" role="listitem">
+        <h3 class="card-name">Name</h3>
+        <div class="card-content">
+          <div class="card-picture">
+            <img src="" alt="" />
           </div>
-        </li>
-      </ul>
-    </main>
-    <footer></footer>
-  </body>
+          <div class="card-middle">
+            <p class="species-text">Species:</p>
+            <p class="date-of-birth-text">Date of Birth:</p>
+            <p class="registered-text">Registered:</p>
+          </div>
+          <div class="card-description">Description</div>
+        </div>
+      </li>
+    </ul>
+  </main>
+
+  <footer></footer>
+</body>
+
 </html>
