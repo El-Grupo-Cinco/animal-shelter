@@ -91,7 +91,7 @@ export class User {
         adminSection.className = "admin-section";
         deleteAdoptionBtn.className = "special-button";
 
-        searchInput.addEventListener('input', function() { searchQuery = searchInput.value; });
+        searchInput.addEventListener('input', function() { searchQuery = searchInput.value.trim(); });
         searchUserBtn.addEventListener('click', function() { searchUser(searchQuery); });
         searchAnimalBtn.addEventListener('click', function() { searchAnimal(searchQuery); });
         registerAnimalBtn.addEventListener('click', registerAnimal);
@@ -128,22 +128,48 @@ export class AddressDTO {
     }
 }
 
-function searchUser(searchQuery) {
+async function searchUser(searchQuery) {
     console.log("Searching for user with query:", searchQuery);
-    const users = [
-        new User("1af40162-50ef-43e0-847f-ccf54700587a", "Testing", "Cesar", "Milan", "2025-08-08", 
-            "1000 Hollywood Blvd, 90120 Beverly Hills", "dogwhisperer@discovery.com", 
-            "+1 62 65 19884 664", [new Animal("1af45162-50ef-43g0-847f-ccf54770587g", "Sponge Bob", "./images/400x300-dummy-greenThing.jpg", "Sponge", "01.01.2015", "08.08.2023", "Works at the Crusty Crab.")], 
-            true, [], "admin")
-    ];
+  if (!searchQuery) return alert("Please enter a user ID or email");
+  
+  await fetch(`http://localhost:8080/api/humans/search?query=${encodeURIComponent(searchQuery)}`, {
+    method: "GET",
+    Authorization: "Bearer: " + localStorage.getItem("token")
+  })
+  .then(response => {
+    if (!response.ok) throw new Error("User not found");
 
-    const foundUser = users.find(user => user.username.toLowerCase().includes(searchQuery.toLowerCase()));
-
-    if (foundUser) {
-        foundUser.showUser();
-    } else {
-        alert("User not found.");
-    }
+    return  response.json();
+  })
+  .then(data => {
+    // Skapa en lista med djur baserat på datan
+    const animals = (data.animals || []).map(
+      a => new Animal(a.id, a.name, a.picture, a.species, a.dateOfBirth, a.registeredDate, a.description)
+    );
+    
+    // Skapa användaren
+    const user = new User(
+      data.id,
+      data.username,
+      data.firstName,
+      data.lastName,
+      data.createdDate,
+      data.address,
+      data.email,
+      data.phone,
+      animals,
+      data.canAdopt,
+      data.comments || [],
+      data.role || "user"
+    );
+    console.log(data.username);
+    
+    user.showUser();
+  })
+  .catch (error => {
+    console.error("Error fetching user:", error);
+    alert("Could not fetch user.");
+  })
 }
 
 function searchAnimal(searchQuery) {

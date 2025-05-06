@@ -24,7 +24,7 @@ public class BookingController {
     private final BookingService bookingService;
 
     @PostMapping
-    public ResponseEntity<?> createBooking(@RequestBody /*@Valid*/ BookingRequest bookingRequest, @AuthenticationPrincipal Human human) {
+    public ResponseEntity<?> createBooking(@RequestBody BookingRequest bookingRequest, @AuthenticationPrincipal Human human) {
         try {
             Booking booking = bookingService.createBooking(bookingRequest, human);
             return ResponseEntity.status(HttpStatus.CREATED).body(Map.of(
