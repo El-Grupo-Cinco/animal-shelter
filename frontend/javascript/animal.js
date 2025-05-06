@@ -6,7 +6,11 @@ let animalClasses = [];
 
 async function fetchAnimals() {
     try {
-        loadingMessage.style.display = "block"; // visa meddelande
+        loadingMessage.style.display = "flex"; // visa medan vi laddar
+        loadingMessage.innerHTML = `
+            <div class="spinner"></div>
+            <p>Loading animals...</p>
+        `;
 
         const response = await fetch("/api/animals/see-all");
         if (!response.ok) throw new Error("Failed to fetch animals");
@@ -28,12 +32,15 @@ async function fetchAnimals() {
             cardList.appendChild(card);
         });
 
+        loadingMessage.style.display = "none"; // göm om allt gick bra
+
     } catch (error) {
         console.error("Error fetching animals:", error);
-        loadingMessage.textContent = "Failed to load animals.";
-    } finally {
-        loadingMessage.style.display = "none"; // göm oavsett om det lyckas eller misslyckas
+        loadingMessage.innerHTML = `
+            <p style="color: darkred;">⚠️ Failed to load animals. Please try again later.</p>
+        `;
     }
 }
+
 
 fetchAnimals();
