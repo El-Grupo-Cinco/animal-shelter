@@ -46,6 +46,74 @@ async function fetchAnimals() {
 fetchAnimals();
 showAvailableAnimalsList(); // Displays the sample list on the page
 
+
+
+// Add New Animal
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("registerForm");
+
+    if (form) {
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            const name = document.getElementById("animalName").value;
+            const species = document.getElementById("animalSpecies").value;
+            const dob = document.getElementById("assumedDateOfBirth").value;
+            const pictureURL = document.getElementById("animalPicture").value;
+            const foundByUser = document.getElementById("foundByUser").value;
+            const adopted = document.getElementById("adopted").checked;
+
+            const animalData = {
+                animalName: name,
+                animalSpecies: species,
+                assumedDateOfBirth: dob,
+                pictureURL: pictureURL,
+                foundByName: foundByUser,
+                adopted: adopted
+            };
+
+            const message = document.getElementById("registerMessage");
+
+            try {
+                const response = await fetch("/api/animals", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(animalData)
+                });
+
+                if (!response.ok) {
+                    throw new Error("Failed to register animal.");
+                }
+
+                const result = await response.json();
+                message.textContent = `Djur registrerat: ${result.animalName}`;
+                message.style.color = "green";
+                message.style.fontWeight = "bold";
+                form.reset();
+
+                setTimeout(() => {
+                    message.textContent = "";
+                }, 5000);
+
+            } catch (error) {
+                message.textContent = "Ett fel uppstod vid registrering.";
+                message.style.color = "red";
+                message.style.fontWeight = "bold";
+
+                setTimeout(() => {
+                    message.textContent = "";
+                }, 5000);
+
+                console.error(error);
+            }
+        });
+    }
+});
+
+
+
 // Convert birth date input to age in years
 function calculateAgeFromDate(dateString) {
     const birthDate = new Date(dateString);
