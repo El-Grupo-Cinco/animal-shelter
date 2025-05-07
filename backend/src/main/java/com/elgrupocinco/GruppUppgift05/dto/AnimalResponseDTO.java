@@ -15,6 +15,7 @@ public class AnimalResponseDTO {
     private String animalSpecies;
     private LocalDate assumedDateOfBirth;
     private boolean adopted;
+    private String foundByName;
     private String pictureURL; // New field
 
     public static AnimalResponseDTO fromEntity(Animal animal) {
@@ -24,6 +25,7 @@ public class AnimalResponseDTO {
                 animal.getAnimalSpecies(),
                 animal.getAssumedDateOfBirth(),
                 animal.isAdopted(),
+                animal.getFoundByName(),
                 animal.getPictureURL() // Include pictureURL in the mapping
         );
     }
