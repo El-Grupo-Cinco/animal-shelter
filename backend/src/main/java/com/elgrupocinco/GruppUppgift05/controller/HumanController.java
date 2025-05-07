@@ -56,7 +56,8 @@ public class HumanController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteUser(@PathVariable UUID id) {
+    public ResponseEntity<String> deleteUser(@PathVariable UUID id, @AuthenticationPrincipal Human human) {
+        System.out.println(human.getRole());
         try {
             String result = humanService.deleteUser(id);
             return ResponseEntity.ok(result);

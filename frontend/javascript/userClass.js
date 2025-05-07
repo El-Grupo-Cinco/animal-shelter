@@ -37,7 +37,7 @@ export class User {
         emailH3.textContent = this.email;
         canAdoptH4.textContent = this.canAdopt ? "Yes" : "No";
 
-        if (this.role === "admin") {
+        if (this.role === "ROLE_ADMIN") {
             this.showAdmin();
         }
 
@@ -177,7 +177,7 @@ function searchAnimal(searchQuery) {
 }
 
 function registerAnimal() {
-    console.log("registerAnimal button");
+    window.location.href ="newAnimal.html";
 }
 
 function goToApproveAdoption() {
