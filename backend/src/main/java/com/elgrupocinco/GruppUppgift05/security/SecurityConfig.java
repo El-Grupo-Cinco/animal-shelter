@@ -59,7 +59,9 @@ public class SecurityConfig {
                                 .requestMatchers(HttpMethod.PUT, "/api/human/").hasRole("ADMIN")
                                 .requestMatchers(HttpMethod.GET, "/api/humans/show-loggedin").authenticated()
                                 .requestMatchers(HttpMethod.DELETE, "/api/humans/**").hasRole("ADMIN")
-                                .requestMatchers(HttpMethod.GET, "/api/humans/search/**").hasRole("ADMIN")
+                                .requestMatchers(HttpMethod.DELETE, "/api/humans/**").hasRole("ADMIN")
+                                //.requestMatchers(HttpMethod.GET, "/api/humans/search/**").hasRole("ADMIN")
+                                .requestMatchers(HttpMethod.GET, "/api/humans/search/**").permitAll()
                                 .requestMatchers(HttpMethod.PUT, "/api/humans/cannot-adopt/**").hasRole("ADMIN")
                                 .requestMatchers(HttpMethod.PUT, "/api/humans/can-adopt/**").hasRole("ADMIN")
 
