@@ -32,7 +32,7 @@ loginForm.addEventListener('submit', function(e) {
     })
     .then(response => {
         if (!response.ok) {
-            let message = "Login Error: " + response.status + " - " + response.text;
+            let message = "Login Error: " + response.status + " - " + response.text();
             loginMessage.textContent = message;
             throw new Error(message);
         }

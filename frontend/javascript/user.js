@@ -17,7 +17,7 @@ function getUser() {
   })
   .then(response => {
     if (!response.ok) {
-      message = "Error: " + response.status + " - " + response.text();
+      message = "Error: " + response.status + " - " + response.text;
       console.log(message);
       throw new Error(message);
     }

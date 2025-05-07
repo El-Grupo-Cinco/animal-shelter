@@ -1,38 +1,60 @@
 import { User } from './userClass.js';
 
-const users = [
-  new User(
-    "1af40162-50ef-43e0-847f-ccf54700587a",
-    "Testing",
-    "Cesar",
-    "Milan",
-    "2025-08-08",
-    "1000 Hollywood Blvd, 90120 Beverly Hills",
-    "dogwhisperer@discovery.com",
-    "+1 62 65 19884 664",
-    [],
-    true,
-    [],
-    "admin"
-  )
-];
+searchUser("eck");
 
-document.getElementById("searchUserBtn").addEventListener("click", () => {
-  const query = document.getElementById("searchQuery").value.trim();
-  if (!query) {
-    alert("Please enter a username.");
-    return;
+async function searchUser(searchQuery) {
+    console.log("Searching for user with query:", searchQuery);
+  if (!searchQuery) return alert("Please enter a user ID or email");
+  
+  await fetch(`http://localhost:8080/api/humans/search?query=${encodeURIComponent(searchQuery)}`, {
+    method: "GET",
+    Authorization: "Bearer: " + localStorage.getItem("token")
+  })
+  .then(response => {
+    if (!response.ok) throw new Error("User not found");
+
+    return  response.json();
+  })
+  .then(data => {
+    // Skapa en lista med djur baserat på datan
+    for (let returnedData of data) {
+        const animals = (returnedData.animals || []).map(
+        a => new Animal(a.id, a.name, a.picture, a.species, a.dateOfBirth, a.registeredDate, a.description)
+        );
+        
+        // Skapa användaren
+        const user = new User(
+            returnedData.id,
+            returnedData.username,
+            returnedData.firstName,
+            returnedData.lastName,
+            returnedData.createdDate,
+            returnedData.address,
+            returnedData.email,
+            returnedData.phone,
+            animals,
+            returnedData.canAdopt,
+            returnedData.comments || [],
+            returnedData.role || "user"
+        );
+        console.log(data.username);
+        
+        const mainElement = document.getElementById("main-element");
+        const userCardTemplate = document.getElementById("user-card");
+        const newUserCard = userCardTemplate.cloneNode(true);
+        newUserCard.classList.remove("hidden");
+
+        user.showUser();
+
+        mainElement.appendChild(newUserCard);
+
+        newUserCard.removeAttribute("id");
+
   }
+    })
 
-  const foundUser = users.find(user =>
-    user.username.toLowerCase().includes(query.toLowerCase()) ||
-    `${user.firstname} ${user.lastname}`.toLowerCase().includes(query.toLowerCase())
-  );
-
-  if (foundUser) {
-    const url = `search-user.html?username=${encodeURIComponent(foundUser.username)}`;
-    window.open(url, "_blank", "width=1000,height=700");
-  } else {
-    alert("User not found.");
-  }
-});
+  .catch (error => {
+    console.error("Error fetching user:", error);
+    alert("Could not fetch user.");
+  })
+}

@@ -143,29 +143,32 @@ async function searchUser(searchQuery) {
   })
   .then(data => {
     // Skapa en lista med djur baserat på datan
-    const animals = (data.animals || []).map(
-      a => new Animal(a.id, a.name, a.picture, a.species, a.dateOfBirth, a.registeredDate, a.description)
-    );
-    
-    // Skapa användaren
-    const user = new User(
-      data.id,
-      data.username,
-      data.firstName,
-      data.lastName,
-      data.createdDate,
-      data.address,
-      data.email,
-      data.phone,
-      animals,
-      data.canAdopt,
-      data.comments || [],
-      data.role || "user"
-    );
-    console.log(data.username);
-    
-    user.showUser();
-  })
+    for (let returnedData of data) {
+        const animals = (returnedData.animals || []).map(
+        a => new Animal(a.id, a.name, a.picture, a.species, a.dateOfBirth, a.registeredDate, a.description)
+        );
+        
+        // Skapa användaren
+        const user = new User(
+            returnedData.id,
+            returnedData.username,
+            returnedData.firstName,
+            returnedData.lastName,
+            returnedData.createdDate,
+            returnedData.address,
+            returnedData.email,
+            returnedData.phone,
+            animals,
+            returnedData.canAdopt,
+            returnedData.comments || [],
+            returnedData.role || "user"
+        );
+        console.log(data.username);
+        
+        user.showUser();
+  }
+    })
+
   .catch (error => {
     console.error("Error fetching user:", error);
     alert("Could not fetch user.");
