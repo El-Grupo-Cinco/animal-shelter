@@ -75,16 +75,18 @@ document.addEventListener("DOMContentLoaded", () => {
             const message = document.getElementById("registerMessage");
 
             try {
-                const response = await fetch("/api/animals", {
+                const response = await fetch("http://localhost:8080/api/animals", {
                     method: "POST",
                     headers: {
+                        "Authorization": "Bearer " + localStorage.getItem("token"),
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify(animalData)
                 });
 
                 if (!response.ok) {
-                    throw new Error("Failed to register animal.");
+                    let message = "Failed to register animal." + response.status + ": " + response.text;
+                    throw new Error(message);
                 }
 
                 const result = await response.json();
@@ -98,13 +100,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 }, 5000);
 
             } catch (error) {
-                message.textContent = "Ett fel uppstod vid registrering.";
+                message.textContent = error.message;
                 message.style.color = "red";
                 message.style.fontWeight = "bold";
 
-                setTimeout(() => {
+/*                 setTimeout(() => {
                     message.textContent = "";
-                }, 5000);
+                }, 5000); */
 
                 console.error(error);
             }

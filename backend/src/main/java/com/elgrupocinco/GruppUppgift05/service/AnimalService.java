@@ -10,6 +10,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.chrono.ChronoLocalDate;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -38,6 +40,7 @@ public class AnimalService {
         if (animal.getAnimalId() == null) {
             animal.setAnimalId(UUID.randomUUID());
         }
+        animal.setDateRegistered(LocalDate.now());
         Animal savedAnimal = animalRepository.save(animal);
         return AnimalResponseDTO.fromEntity(savedAnimal);
     }

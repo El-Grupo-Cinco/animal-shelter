@@ -40,7 +40,7 @@ async function searchUser(searchQuery) {
         console.log(data.username);
         
         const mainElement = document.getElementById("main-element");
-        const userCardTemplate = document.getElementById("user-card");
+        const userCardTemplate = document.getElementById("user-info");
         const newUserCard = userCardTemplate.cloneNode(true);
         newUserCard.classList.remove("hidden");
 
