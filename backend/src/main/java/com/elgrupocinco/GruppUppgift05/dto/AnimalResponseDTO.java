@@ -14,6 +14,7 @@ public class AnimalResponseDTO {
     private String animalName;
     private String animalSpecies;
     private LocalDate assumedDateOfBirth;
+    private LocalDate dateRegistered;
     private boolean adopted;
     private String foundByName;
     private String pictureURL; // New field
@@ -24,6 +25,7 @@ public class AnimalResponseDTO {
                 animal.getAnimalName(),
                 animal.getAnimalSpecies(),
                 animal.getAssumedDateOfBirth(),
+                animal.getDateRegistered(),
                 animal.isAdopted(),
                 animal.getFoundByName(),
                 animal.getPictureURL() // Include pictureURL in the mapping

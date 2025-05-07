@@ -1,9 +1,10 @@
 import { User } from './userClass.js';
 
-searchUser("eck");
+export async function searchUser(searchQuery) {
+  console.log(searchQuery);
+  window.location.href = "search-user.html"
+  
 
-async function searchUser(searchQuery) {
-    console.log("Searching for user with query:", searchQuery);
   if (!searchQuery) return alert("Please enter a user ID or email");
   
   await fetch(`http://localhost:8080/api/humans/search?query=${encodeURIComponent(searchQuery)}`, {
@@ -40,7 +41,7 @@ async function searchUser(searchQuery) {
         console.log(data.username);
         
         const mainElement = document.getElementById("main-element");
-        const userCardTemplate = document.getElementById("user-info");
+        const userCardTemplate = document.getElementById("user-card");
         const newUserCard = userCardTemplate.cloneNode(true);
         newUserCard.classList.remove("hidden");
 

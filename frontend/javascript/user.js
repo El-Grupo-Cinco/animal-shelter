@@ -35,10 +35,13 @@ function getUser() {
 /**
  * Hämta användare baserat på ID eller email och visa information på sidan.
  */
-document.getElementById("searchBtn").addEventListener("click", async () => {
+/* document.getElementById("searchBtn").addEventListener("click", async () => {
   const input = document.getElementById("searchInput").value.trim();
   if (!input) return alert("Please enter a user ID or email");
-  
+
+  window.location.href = "search-user?user=" + input; */
+
+  /* 
   await fetch(`http://localhost:8080/api/humans/search?query=${encodeURIComponent(input)}`, {
     method: "GET",
     Authorization: "Bearer: " + localStorage.getItem("token")
@@ -76,5 +79,5 @@ document.getElementById("searchBtn").addEventListener("click", async () => {
   .catch (error => {
     console.error("Error fetching user:", error);
     alert("Could not fetch user.");
-  })
-});
+  }) 
+});*/

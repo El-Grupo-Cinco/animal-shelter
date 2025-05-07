@@ -12,7 +12,7 @@ async function fetchAnimals() {
             <p>Loading animals...</p>
         `;
 
-        const response = await fetch("/api/animals/see-all");
+        const response = await fetch("http://localhost:8080/api/animals/see-all");
         if (!response.ok) throw new Error("Failed to fetch animals");
 
         const animals = await response.json();
@@ -24,7 +24,7 @@ async function fetchAnimals() {
                 animal.pictureURL,
                 animal.animalSpecies,
                 animal.assumedDateOfBirth,
-                "Not provided",
+                animal.dateRegistered,
                 "No description available."
             );
             animalClasses.push(animalClass);
@@ -44,7 +44,7 @@ async function fetchAnimals() {
 
 
 fetchAnimals();
-showAvailableAnimalsList(); // Displays the sample list on the page
+
 
 
 
@@ -142,8 +142,8 @@ document.getElementById("search-button").addEventListener("click", async () => {
     };
 
     try {
-        const response = await fetch("/api/animals/filter", {
-            method: "POST",
+        const response = await fetch("http://localhost:8080/api/animals/filter", {
+            method: "PUT",
             headers: {
                 "Content-Type": "application/json",
             },
@@ -154,7 +154,8 @@ document.getElementById("search-button").addEventListener("click", async () => {
 
         const filteredAnimals = await response.json();
 
-        cardList.innerHTML = "";
+        cardList.innerHTML = '<!-- Kortmall (dold) --><ul class="animal-cards" role="list"><li class="card hidden" id="card-template" role="listitem"><h3 class="card-name">Name</h3><div class="card-content"><div class="card-picture"><img src="" alt="" /></div><div class="card-middle"><p class="species-text">Species:</p><p class="date-of-birth-text">Date of Birth:</p><p class="registered-text">Registered:</p></div><div class="card-description">Description</div></div></li></ul>';
+
         animalClasses = [];
 
         filteredAnimals.forEach(animal => {
@@ -176,13 +177,12 @@ document.getElementById("search-button").addEventListener("click", async () => {
     }
 });
 
-fetchAnimals();                 // Loads and shows all animals
-showAvailableAnimalsList();     // Displays the sample list on the page
+/* showAvailableAnimalsList();
 
 async function showAvailableAnimalsList() {
     const container = document.getElementById("debug-animal-list");
     try {
-        const response = await fetch("/api/animals/see-all");
+        const response = await fetch("http:localhost:8080/api/animals/see-all");
         const animals = await response.json();
 
         if (!Array.isArray(animals) || animals.length === 0) {
@@ -200,4 +200,4 @@ async function showAvailableAnimalsList() {
         container.textContent = "Error loading available animals.";
         console.error("Failed to load animals for UI display:", err);
     }
-}
+} */

@@ -1,5 +1,6 @@
 import { Animal } from "./animalClass.js";
 import { Booking } from "./bookingClass.js";
+import { searchUser } from "./searchUser.js";
 
 export class User {
     constructor(userID, username, firstname, lastname, dateOfBirth, address, 
@@ -37,7 +38,7 @@ export class User {
         emailH3.textContent = this.email;
         canAdoptH4.textContent = this.canAdopt ? "Yes" : "No";
 
-        if (this.role === "ROLE_ADMIN") {
+        if (this.role === "ADMIN") {
             this.showAdmin();
         }
 
@@ -79,6 +80,7 @@ export class User {
         searchLabel.setAttribute("for", "searchQuery");
         searchInput.setAttribute("id", "searchQuery");
         searchInput.setAttribute("placeholder", "Enter search term here");
+        searchUserBtn.setAttribute("type", "button");
 
         searchLabel.textContent = "Search Query:";
         searchUserBtn.textContent = "Search Username";
@@ -126,53 +128,6 @@ export class AddressDTO {
         this.postalCode = postalCode;
         this.state = state;
     }
-}
-
-async function searchUser(searchQuery) {
-    console.log("Searching for user with query:", searchQuery);
-  if (!searchQuery) return alert("Please enter a user ID or email");
-  
-  await fetch(`http://localhost:8080/api/humans/search?query=${encodeURIComponent(searchQuery)}`, {
-    method: "GET",
-    Authorization: "Bearer: " + localStorage.getItem("token")
-  })
-  .then(response => {
-    if (!response.ok) throw new Error("User not found");
-
-    return  response.json();
-  })
-  .then(data => {
-    // Skapa en lista med djur baserat på datan
-    for (let returnedData of data) {
-        const animals = (returnedData.animals || []).map(
-        a => new Animal(a.id, a.name, a.picture, a.species, a.dateOfBirth, a.registeredDate, a.description)
-        );
-        
-        // Skapa användaren
-        const user = new User(
-            returnedData.id,
-            returnedData.username,
-            returnedData.firstName,
-            returnedData.lastName,
-            returnedData.createdDate,
-            returnedData.address,
-            returnedData.email,
-            returnedData.phone,
-            animals,
-            returnedData.canAdopt,
-            returnedData.comments || [],
-            returnedData.role || "user"
-        );
-        console.log(data.username);
-        
-        user.showUser();
-  }
-    })
-
-  .catch (error => {
-    console.error("Error fetching user:", error);
-    alert("Could not fetch user.");
-  })
 }
 
 function searchAnimal(searchQuery) {
