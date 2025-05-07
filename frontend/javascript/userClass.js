@@ -1,6 +1,6 @@
 import { Animal } from "./animalClass.js";
 import { Booking } from "./bookingClass.js";
-import { searchUser } from "./searchUser.js";
+
 
 export class User {
     constructor(userID, username, firstname, lastname, dateOfBirth, address, 
@@ -42,7 +42,7 @@ export class User {
             this.showAdmin();
         }
 
-        console.log("DEBUG: " + this.ownedAnimals.length);
+        console.log("DEBUG owned animals: " + this.ownedAnimals.length);
         
         if (this.ownedAnimals.length !== 0 || this.ownedAnimals === undefined){
             const cardList = document.querySelector(".animal-cards");
@@ -94,8 +94,8 @@ export class User {
         deleteAdoptionBtn.className = "special-button";
 
         searchInput.addEventListener('input', function() { searchQuery = searchInput.value.trim(); });
-        searchUserBtn.addEventListener('click', function() { searchUser(searchQuery); });
-        searchAnimalBtn.addEventListener('click', function() { searchAnimal(searchQuery); });
+        searchUserBtn.addEventListener('click', () => { goToSearchUser(searchQuery); });
+        searchAnimalBtn.addEventListener('click', searchAnimal);
         registerAnimalBtn.addEventListener('click', registerAnimal);
         approveAdoptionBtn.addEventListener('click', goToApproveAdoption);
         deleteAdoptionBtn.addEventListener('click', goToDeleteAdoption);
@@ -130,12 +130,12 @@ export class AddressDTO {
     }
 }
 
-function searchAnimal(searchQuery) {
-    console.log(searchQuery);
+function searchAnimal() {
+    window.location.href = "animal.html"; 
 }
 
 function registerAnimal() {
-    window.location.href ="newAnimal.html";
+    window.location.href = "newAnimal.html";
 }
 
 function goToApproveAdoption() {
@@ -150,3 +150,7 @@ function goToBooking() {
     window.location.href = "booking.html";
 }
 
+function goToSearchUser(searchquery) {
+    
+    window.location.href = "search-user.html?searchQuery=" + encodeURIComponent(searchquery);
+}

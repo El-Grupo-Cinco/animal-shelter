@@ -30,10 +30,12 @@ public class SecurityConfig {
                 .authorizeHttpRequests(
                         auth -> auth
                                 .requestMatchers(HttpMethod.POST, "/api/humans/create").permitAll()
+                                .requestMatchers(HttpMethod.OPTIONS, "/api/**").permitAll()
                                 //.requestMatchers(HttpMethod.POST, "/api/humans/admin/**").permitAll()
                                 .requestMatchers(HttpMethod.POST, "/api/humans/login!").permitAll()
                                 .requestMatchers(HttpMethod.GET, "/api/animals/see-all").permitAll()
                                 .requestMatchers(HttpMethod.PUT, "/api/animals/filter").permitAll()
+                                .requestMatchers(HttpMethod.GET, "/api/humans/search/**").permitAll()
                                 .requestMatchers(HttpMethod.POST, "/api/bookings").authenticated()
                                 .requestMatchers(HttpMethod.GET, "/api/bookings").authenticated()
                                 .requestMatchers(HttpMethod.GET, "/api/bookings/**").authenticated()
@@ -59,8 +61,6 @@ public class SecurityConfig {
                                 .requestMatchers(HttpMethod.PUT, "/api/human/").hasRole("ADMIN")
                                 .requestMatchers(HttpMethod.GET, "/api/humans/show-loggedin").authenticated()
                                 .requestMatchers(HttpMethod.DELETE, "/api/humans/**").hasRole("ADMIN")
-                                .requestMatchers(HttpMethod.DELETE, "/api/humans/**").hasRole("ADMIN")
-                                .requestMatchers(HttpMethod.GET, "/api/humans/search/**").hasRole("ADMIN")
                                 .requestMatchers(HttpMethod.PUT, "/api/humans/cannot-adopt/**").hasRole("ADMIN")
                                 .requestMatchers(HttpMethod.PUT, "/api/humans/can-adopt/**").hasRole("ADMIN")
 

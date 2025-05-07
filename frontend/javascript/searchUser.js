@@ -1,23 +1,31 @@
 import { User } from './userClass.js';
 
-export async function searchUser(searchQuery) {
-  console.log(searchQuery);
-  window.location.href = "search-user.html"
-  
+searchUser();
 
-  if (!searchQuery) return alert("Please enter a user ID or email");
+export async function searchUser() {
+  const searchQuery = new URLSearchParams(window.location.search).get("searchQuery")
+  console.log(searchQuery);
   
-  await fetch(`http://localhost:8080/api/humans/search?query=${encodeURIComponent(searchQuery)}`, {
+  
+  await fetch(`http://localhost:8080/api/humans/search/?query=${encodeURIComponent(searchQuery)}`, {
     method: "GET",
-    Authorization: "Bearer: " + localStorage.getItem("token")
+    header: {"Authorization": "Bearer " + localStorage.getItem("token")}
   })
   .then(response => {
-    if (!response.ok) throw new Error("User not found");
+    if (!response.ok) throw new Error(response.text);
 
     return  response.json();
   })
   .then(data => {
     // Skapa en lista med djur baserat på datan
+    if (data === null || data === undefined) {
+      const mainElement = document.getElementById("main-element");
+      const messageP = document.createElement("i");
+      messageP.textContent = "No user found";
+      mainElement.appendChild(messageP);
+      return;
+    }
+
     for (let returnedData of data) {
         const animals = (returnedData.animals || []).map(
         a => new Animal(a.id, a.name, a.picture, a.species, a.dateOfBirth, a.registeredDate, a.description)

@@ -1,4 +1,4 @@
-import { HumanDTOWithPassword, AddressDTO } from "./userClass.js";
+import { HumanDTOWithPassword } from "./userClass.js";
 
 const loginForm = document.getElementById('loginForm');
 const registerForm = document.getElementById('registerForm');
@@ -121,14 +121,6 @@ registerForm.addEventListener('submit', function(e) {
         alert(error.message);
     })
 
-
-/*     // Simulate registration (you can add actual registration logic here)
-    registerMessage.textContent = "Registration successful!";
-    setTimeout(() => {
-        registerForm.style.display = "none";
-        loginForm.classList.toggle("hidden");
-        toggleLink.textContent = "Don't have an account? Register here";
-    }, 2000); // Redirect or show confirmation after 2 seconds */
 });
 
 // DTO for Login

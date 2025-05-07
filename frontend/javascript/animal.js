@@ -104,9 +104,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 message.style.color = "red";
                 message.style.fontWeight = "bold";
 
-/*                 setTimeout(() => {
+                 setTimeout(() => {
                     message.textContent = "";
-                }, 5000); */
+                }, 5000);
 
                 console.error(error);
             }
@@ -165,7 +165,7 @@ document.getElementById("search-button").addEventListener("click", async () => {
                 animal.pictureURL,
                 animal.animalSpecies,
                 animal.assumedDateOfBirth,
-                "Not provided",
+                animal.dateRegistered,
                 "No description available."
             );
             animalClasses.push(animalClass);
@@ -176,28 +176,3 @@ document.getElementById("search-button").addEventListener("click", async () => {
         console.error("Error filtering animals:", error);
     }
 });
-
-/* showAvailableAnimalsList();
-
-async function showAvailableAnimalsList() {
-    const container = document.getElementById("debug-animal-list");
-    try {
-        const response = await fetch("http:localhost:8080/api/animals/see-all");
-        const animals = await response.json();
-
-        if (!Array.isArray(animals) || animals.length === 0) {
-            container.textContent = "No animals available.";
-            return;
-        }
-
-        container.innerHTML = `
-      <strong>Sample animals for testing search:</strong><br>
-      <ul style="padding-left: 1em;">
-        ${animals.map(a => `<li>${a.animalName} (${a.animalSpecies})</li>`).join("")}
-      </ul>
-    `;
-    } catch (err) {
-        container.textContent = "Error loading available animals.";
-        console.error("Failed to load animals for UI display:", err);
-    }
-} */

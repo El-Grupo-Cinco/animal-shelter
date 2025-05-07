@@ -67,7 +67,7 @@ public class HumanController {
     }
 
     // Search for humans by username, email, or name
-    @GetMapping("/search")
+    @GetMapping("/search/")
     public ResponseEntity<List<HumanDTO>> searchHumans(@RequestParam String query) {
         List<HumanDTO> humans = humanService.searchHumans(query);
         return ResponseEntity.ok(humans);
