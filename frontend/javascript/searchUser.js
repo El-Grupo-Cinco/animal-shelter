@@ -7,7 +7,7 @@ export async function searchUser() {
   console.log(searchQuery);
   
   
-  await fetch(`http://localhost:8080/api/humans/search/?query=${encodeURIComponent(searchQuery)}`, {
+  await fetch(`http://localhost:8080/api/humans/search?query=${encodeURIComponent(searchQuery)}`, {
     method: "GET",
     header: {"Authorization": "Bearer " + localStorage.getItem("token")}
   })

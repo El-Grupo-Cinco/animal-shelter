@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Animal Shelter</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-image: url('/images/index1_b&w.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-height: 50vh;
+            max-width: 50%;
+            margin-left: 25%;
+            margin-right: 25%;
+        }
+        div {
+            display: flex;
+            max-width: 50%;
+            img {
+                max-width: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <img src="./icons/animal-shelter-logo.png" alt="animal-shelter-logo">
+        <h1>Animal Shelter</h1>
+        <div>
+            <a href="animal.html">Animals</a>
+            <a href="user.html">Profile</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About</a>
+        </div>
+    </section>
+</body>
+</html>

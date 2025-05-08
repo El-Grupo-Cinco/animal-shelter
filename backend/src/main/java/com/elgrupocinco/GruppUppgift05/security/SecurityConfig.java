@@ -36,7 +36,7 @@ public class SecurityConfig {
                                 .requestMatchers(HttpMethod.GET, "/api/animals/see-all").permitAll()
                                 .requestMatchers(HttpMethod.PUT, "/api/animals/filter").permitAll()
                                 .requestMatchers(HttpMethod.GET, "/api/humans/search/**").permitAll()
-                                .requestMatchers(HttpMethod.POST, "/api/bookings").authenticated()
+                                .requestMatchers(HttpMethod.POST, "/api/bookings").permitAll()
                                 .requestMatchers(HttpMethod.GET, "/api/bookings").authenticated()
                                 .requestMatchers(HttpMethod.GET, "/api/bookings/**").authenticated()
                                 .requestMatchers(HttpMethod.POST, "/adoption/register").hasRole("ADMIN")
