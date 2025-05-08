@@ -24,6 +24,7 @@ public class HumanController {
         this.humanService = humanService;
     }
     private static final Logger logger = LoggerFactory.getLogger(HumanController.class);
+
     @PostMapping("/create")
     public ResponseEntity<?> createUser(@RequestBody HumanDTOWithPassword humanDTO) {
         logger.info("Received request to create user: {}", humanDTO.getUsername());

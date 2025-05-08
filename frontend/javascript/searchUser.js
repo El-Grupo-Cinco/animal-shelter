@@ -1,4 +1,6 @@
 import { User } from './userClass.js';
+import { Booking } from './bookingClass.js';
+import { Animal } from './animalClass.js';
 
 searchUser();
 
@@ -39,9 +41,9 @@ export async function searchUser() {
             returnedData.firstName,
             returnedData.lastName,
             returnedData.createdDate,
-            returnedData.address,
+            `${returnedData.street} ${returnedData.city}, ${returnedData.zipCode}, ${returnedData.state}`,
             returnedData.email,
-            returnedData.phone,
+            returnedData.phoneNumber,
             animals,
             returnedData.canAdopt,
             returnedData.comments || [],
@@ -54,10 +56,50 @@ export async function searchUser() {
         const newUserCard = userCardTemplate.cloneNode(true);
         newUserCard.classList.remove("hidden");
 
-        userSearched.showUser();
+        newUserCard.querySelector("#username").textContent = userSearched.username;
+        newUserCard.querySelector("#userID").textContent = userSearched.userID;
+        newUserCard.querySelector("#firstname").textContent = userSearched.firstname;
+        newUserCard.querySelector("#lastname").textContent = userSearched.lastname;
+        newUserCard.querySelector("#address").textContent = userSearched.address;
+        newUserCard.querySelector("#phoneNumber").textContent = userSearched.phoneNumber;
+        newUserCard.querySelector("#email").textContent = userSearched.email;
+        newUserCard.querySelector("#canAdopt").textContent = userSearched.canAdopt ? "Yes" : "No";
+
+        // Owned animals
+        if (userSearched.ownedAnimals?.length > 0) {
+          const cardList = newUserCard.querySelector(".animal-cards");
+          userSearched.ownedAnimals.forEach(animal => {
+            const animalClass = new Animal(
+              animal.animalID,
+              animal.name,
+              animal.pictureURL,
+              animal.species,
+              animal.dateOfBirth,
+              animal.registrationDate,
+              animal.description
+            );
+            const card = animalClass.showAnimal();
+            cardList.appendChild(card);
+          });
+        }
+
+        // Simulating bookings
+        const bookingCards = newUserCard.querySelector("#booking-cards");
+        if (bookingCards) {
+          const bookings = [
+            new Booking(
+              "Testing",
+              "R2D2",
+              "2025-05-08T08:00UTC",
+              ["Doesn't really want a droid but needs a new vacuum cleaner"]
+            )
+          ];
+          bookings.forEach(booking => {
+            bookingCards.append(booking.publish());
+          });
+        }
 
         mainElement.appendChild(newUserCard);
-
         newUserCard.removeAttribute("id");
 
   }

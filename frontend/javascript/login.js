@@ -62,16 +62,13 @@ registerForm.addEventListener('submit', function(e) {
     const postalCode = document.getElementById('postalCode').value; // Postal Code
     const state = document.getElementById('country').value;    // Country
 
-
-    const addressDTO = new AddressDTO(address, city, postalCode, state);
-
     const email = document.getElementById('registerEmail').value;
     const phone = document.getElementById('phone').value;
     const password = document.getElementById('registerPassword').value;
     const confirmPassword = document.getElementById('confirmPassword').value;
 
     // Create an instance of HumanDTOWithPassword
-    const registerDTO = new HumanDTOWithPassword(username, firstName, lastName, dob, addressDTO, email, phone, password);
+    const registerDTO = new HumanDTOWithPassword(username, firstName, lastName, dob, address, postalCode, city, state, email, phone, password);
 
     // Validate email
     if (!validateEmail(registerDTO.email)) {
@@ -96,10 +93,10 @@ registerForm.addEventListener('submit', function(e) {
             "dateOfBirth": registerDTO.dob,
             "email": registerDTO.email,
             "phoneNumber": registerDTO.phone,
-            "street": addressDTO.street,
-            "city": addressDTO.city,
-            "state": addressDTO.state,
-            "zipCode": addressDTO.zipCode,
+            "street": registerDTO.address,
+            "city": registerDTO.city,
+            "state": registerDTO.state,
+            "zipCode": registerDTO.postalCode,
             "password": registerDTO.password,
           })
     })

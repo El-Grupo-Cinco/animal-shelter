@@ -109,12 +109,15 @@ export class User {
 }
 
 export class HumanDTOWithPassword {
-    constructor(username, firstName, lastName, dob, addressDTO, email, phone, password) {
+    constructor(username, firstName, lastName, dob, address, postalCode, city, state, email, phone, password) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dob = dob;
-        this.addressDTO = addressDTO;
+        this.address = address;
+        this.city = city;
+        this.postalCode = postalCode;
+        this.state = state;
         this.email = email;
         this.phone = phone;
         this.password = password;
