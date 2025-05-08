@@ -21,6 +21,22 @@
           <div style="width: 35%">Comments</div>
         </div>
       </section>
+
+      <section id="create-booking">
+        <h2>Create a Booking</h2>
+        <form id="booking-form">
+          <select id="animal-id" required>
+            <option value="">Select Animal</option>
+          </select>
+
+          <select id="user-id" required>
+            <option value="">Select User</option>
+          </select>
+
+          <input type="datetime-local" id="booking-time" required />
+          <textarea id="booking-comment" placeholder="Optional comment"></textarea>
+          <button type="submit">Book</button>
+
     </main>
   </body>
 </html>
