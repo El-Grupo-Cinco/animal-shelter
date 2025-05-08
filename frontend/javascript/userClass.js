@@ -124,14 +124,7 @@ export class HumanDTOWithPassword {
     }
 }
 
-export class AddressDTO {
-    constructor(address, city, postalCode, state) {
-        this.address = address;
-        this.city = city;
-        this.postalCode = postalCode;
-        this.state = state;
-    }
-}
+
 
 function searchAnimal() {
     window.location.href = "animal.html"; 
