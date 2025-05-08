@@ -18,10 +18,9 @@ public class AdoptionController {
 
     //create - add animal on human list, check allowed to adopt, animal = adopted
     @PostMapping("/register")
-    public ResponseEntity<?> registerAdoption(@RequestParam String userID, @RequestParam String animalID,
-                                              @RequestParam LocalDate date) {
+    public ResponseEntity<?> registerAdoption(@RequestParam String userID, @RequestParam String animalID) {
         try {
-            return ResponseEntity.ok(adoptionService.createAdoption(userID, animalID, date));
+            return ResponseEntity.ok(adoptionService.createAdoption(userID, animalID));
         } catch (Exception e) {
             return ResponseEntity.unprocessableEntity().body("Unable to register adoption. " + e.getMessage());
         }
