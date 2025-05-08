@@ -43,6 +43,9 @@ public class Animal {
     @OneToMany(mappedBy = "animal")
     private List<Comment> comments;
 
+    @OneToMany(mappedBy = "animal")
+    private Adoption adoption;
+
     // Full constructor including pictureURL
     public Animal(UUID animalId, String animalName, LocalDate assumedDateOfBirth, LocalDate dateRegistered,
                   String animalSpecies, boolean adopted, Human adopter, String foundByName,
@@ -73,6 +76,11 @@ public class Animal {
         this.foundByName = foundByName;
         this.comments = comments;
         this.pictureURL = pictureURL;
+    }
+
+    public Adoption getAdoption() {
+        return adoption;
+    }
     }
 }
 
