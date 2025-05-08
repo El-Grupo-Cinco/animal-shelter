@@ -25,12 +25,15 @@ async function fetchAnimals() {
                 animal.animalSpecies,
                 animal.assumedDateOfBirth,
                 animal.dateRegistered,
-                "No description available."
+                "No description available.",
+                animal.adoptionId // newly added
             );
             animalClasses.push(animalClass);
             const card = animalClass.showAnimal();
             cardList.appendChild(card);
         });
+
+        setupDeleteButtons();  // activate delete buttons - newly added
 
         loadingMessage.style.display = "none"; // göm om allt gick bra
 
@@ -46,7 +49,40 @@ async function fetchAnimals() {
 fetchAnimals();
 
 
+// Delete-adoption-button functionality
+function setupDeleteButtons() {
+    document.querySelectorAll(".delete-adoption-button").forEach(button => {
+        button.addEventListener("click", async (event) => {
+            const card = event.target.closest(".card");
+            const adoptionId = card.dataset.adoptionId;
 
+            if (!adoptionId) {
+                alert("No adoption ID found.");
+                return;
+            }
+
+            if (!confirm("Are you sure you want to delete this adoption?")) {
+                return;
+            }
+
+            try {
+                const response = await fetch(`http://localhost:8080/adoptions/${adoptionId}`, {
+                    method: "DELETE"
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(errorText || "Failed to delete adoption.");
+                }
+
+                alert("Adoption deleted successfully.");
+                card.remove();
+            } catch (error) {
+                alert("Error: " + error.message);
+            }
+        });
+    });
+}
 
 // Add New Animal
 document.addEventListener("DOMContentLoaded", () => {
@@ -97,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 setTimeout(() => {
                     message.textContent = "";
-                }, 5000);
+                }, 30000);  // show message for 30sec
 
             } catch (error) {
                 message.textContent = error.message;
@@ -106,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                  setTimeout(() => {
                     message.textContent = "";
-                }, 5000);
+                }, 30000);  // show message for 30sec
 
                 console.error(error);
             }
@@ -167,11 +203,15 @@ document.getElementById("search-button").addEventListener("click", async () => {
                 animal.assumedDateOfBirth,
                 animal.dateRegistered,
                 "No description available."
+                animal.adoptionId // newly added
             );
             animalClasses.push(animalClass);
             const card = animalClass.showAnimal();
             cardList.appendChild(card);
         });
+
+        setupDeleteButtons(); // activate delete-buttons after filter too
+
     } catch (error) {
         console.error("Error filtering animals:", error);
     }
