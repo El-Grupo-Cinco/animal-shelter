@@ -14,40 +14,38 @@ async function loadAnimalOptions() {
 
 // Load user options into the select dropdown
 async function loadUserOptions() {
-        const res = await fetch("http://localhost:8080/api/humans/see-all", {
+        const res = await fetch("http://localhost:8080/api/humans/show-loggedin", {
                 headers: {
                         "Authorization": "Bearer " + localStorage.getItem("token")
                 }
         });
-        const users = await res.json();
+        const user = await res.json();
         const userSelect = document.getElementById("user-id");
 
-        users.forEach(user => {
                 const option = document.createElement("option");
-                option.value = user.id;
+                option.value = user.userId;
                 option.textContent = user.username;
                 userSelect.appendChild(option);
-        });
 }
 
 // Booking form submission
 document.getElementById("booking-form").addEventListener("submit", async (e) => {
         e.preventDefault();
-
+        let bookingID;
         const animalId = document.getElementById("animal-id").value;
         const userId = document.getElementById("user-id").value;
         const time = document.getElementById("booking-time").value;
         const comment = document.getElementById("booking-comment").value.trim();
-
+        
         const bookingBody = {
-                animalId,
-                humanId: userId,
-                bookingTime: time,
-                comment: comment || null,
+                animalId: animalId,
+                humanID: userId,
+                appointmentTime: time,
+                comment: comment 
         };
-
+        //makes booking and get response (we need ID for comment)
         try {
-                const response = await fetch("http://localhost:8080/api/bookings/create", {
+                const response = await fetch("http://localhost:8080/api/bookings", {
                         method: "POST",
                         headers: {
                                 "Content-Type": "application/json",
@@ -57,6 +55,8 @@ document.getElementById("booking-form").addEventListener("submit", async (e) => 
                 });
 
                 if (!response.ok) throw new Error("Booking failed");
+
+                bookingID = response.bookingID;
 
                 alert("✅ Booking created successfully!");
                 document.getElementById("booking-form").reset();

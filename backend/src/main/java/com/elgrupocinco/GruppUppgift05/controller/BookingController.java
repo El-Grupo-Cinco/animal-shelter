@@ -27,10 +27,8 @@ public class BookingController {
     public ResponseEntity<?> createBooking(@RequestBody BookingRequest bookingRequest, @AuthenticationPrincipal Human human) {
         try {
             Booking booking = bookingService.createBooking(bookingRequest, human);
-            return ResponseEntity.status(HttpStatus.CREATED).body(Map.of(
-                    "Message", "The booking was successfully created",
-                    "bookingId", booking.getBookingId()
-            ));
+            return ResponseEntity.status(HttpStatus.CREATED).body(BookingDTO.fromBooking(booking)
+            );
         } catch (EntityNotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("Error ", e.getMessage()));
         } catch (IllegalArgumentException e) {

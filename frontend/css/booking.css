@@ -51,3 +51,21 @@
                 margin-left: 2rem;
         }
 }
+
+#booking-form {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        input {
+                height: 2rem;
+                font-size: 1rem;
+        }
+        select {
+                height: 2rem;
+                width: fit-content;
+                font-size: 1rem;
+        }
+        textarea {
+                height: 5rem;
+        }
+}

@@ -2,7 +2,6 @@ package com.elgrupocinco.GruppUppgift05.dto;
 
 import com.elgrupocinco.GruppUppgift05.models.Comment;
 import com.elgrupocinco.GruppUppgift05.models.Human;
-import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

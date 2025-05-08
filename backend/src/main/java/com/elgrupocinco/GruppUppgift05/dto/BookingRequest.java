@@ -11,7 +11,7 @@ import java.util.UUID;
 @Data
 public class BookingRequest {
     @NotNull
-    private UUID userId;
+    private UUID humanID;
 
     @NotNull
     private UUID animalId;
@@ -20,5 +20,5 @@ public class BookingRequest {
     //TODO add back and why there: @Future
     private LocalDateTime appointmentTime;
 
-    private List<Comment> comments;
+    private String comment;
 }

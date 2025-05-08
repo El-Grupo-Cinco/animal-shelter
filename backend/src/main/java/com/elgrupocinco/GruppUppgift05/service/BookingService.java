@@ -2,6 +2,7 @@ package com.elgrupocinco.GruppUppgift05.service;
 
 import com.elgrupocinco.GruppUppgift05.dto.BookingDTO;
 import com.elgrupocinco.GruppUppgift05.dto.BookingRequest;
+import com.elgrupocinco.GruppUppgift05.dto.CommentDTO;
 import com.elgrupocinco.GruppUppgift05.models.Animal;
 import com.elgrupocinco.GruppUppgift05.models.Booking;
 import com.elgrupocinco.GruppUppgift05.models.Comment;
@@ -18,10 +19,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Service
 public class BookingService {
@@ -41,7 +39,7 @@ public class BookingService {
 
     public Booking createBooking(BookingRequest request, Human human) throws IllegalArgumentException, IllegalAccessException {
         // Retrieve user
-        Human user = userRepository.findById(request.getUserId())
+        Human user = userRepository.findById(request.getHumanID())
                 .orElseThrow(() -> new EntityNotFoundException("The user was not found"));
         if (!user.getUserId().equals(human.getUserId())) {
             if (!human.getRole().equals("admin")) {
@@ -59,16 +57,22 @@ public class BookingService {
         }
 
         // Create booking
+
         Booking booking = new Booking(
                 UUID.randomUUID(),
                 user,
                 animal,
                 request.getAppointmentTime(),
-                request.getComments()
+                new ArrayList<>()
         );
 
-        // Save to the database
-        return bookingRepository.save(booking);
+        bookingRepository.save(booking);
+
+        var comment = new Comment(UUID.randomUUID(), request.getComment(), booking);
+        booking.getComments().add(comment);
+        commentRepository.save(comment);
+
+        return booking;
 
     }
 
