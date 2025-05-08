@@ -9,7 +9,7 @@ export async function searchUser() {
   
   await fetch(`http://localhost:8080/api/humans/search?query=${encodeURIComponent(searchQuery)}`, {
     method: "GET",
-    header: {"Authorization": "Bearer " + localStorage.getItem("token")}
+    headers: {"Authorization": "Bearer " + localStorage.getItem("token")}
   })
   .then(response => {
     if (!response.ok) throw new Error(response.text);
@@ -17,7 +17,7 @@ export async function searchUser() {
     return  response.json();
   })
   .then(data => {
-    // Skapa en lista med djur baserat på datan
+
     if (data === null || data === undefined) {
       const mainElement = document.getElementById("main-element");
       const messageP = document.createElement("i");
@@ -27,12 +27,13 @@ export async function searchUser() {
     }
 
     for (let returnedData of data) {
+      
         const animals = (returnedData.animals || []).map(
         a => new Animal(a.id, a.name, a.picture, a.species, a.dateOfBirth, a.registeredDate, a.description)
         );
         
         // Skapa användaren
-        const user = new User(
+        const userSearched = new User(
             returnedData.id,
             returnedData.username,
             returnedData.firstName,
@@ -46,14 +47,14 @@ export async function searchUser() {
             returnedData.comments || [],
             returnedData.role || "user"
         );
-        console.log(data.username);
+        console.log(returnedData.username);
         
         const mainElement = document.getElementById("main-element");
         const userCardTemplate = document.getElementById("user-card");
         const newUserCard = userCardTemplate.cloneNode(true);
         newUserCard.classList.remove("hidden");
 
-        user.showUser();
+        userSearched.showUser();
 
         mainElement.appendChild(newUserCard);
 
