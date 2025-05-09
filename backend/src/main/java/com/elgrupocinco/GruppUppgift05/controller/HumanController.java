@@ -4,10 +4,12 @@ package com.elgrupocinco.GruppUppgift05.controller;
 import com.elgrupocinco.GruppUppgift05.dto.HumanDTO;
 import com.elgrupocinco.GruppUppgift05.dto.HumanDTOLogin;
 import com.elgrupocinco.GruppUppgift05.dto.HumanDTOWithPassword;
+import com.elgrupocinco.GruppUppgift05.models.Human;
 import com.elgrupocinco.GruppUppgift05.service.HumanService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,6 +24,7 @@ public class HumanController {
         this.humanService = humanService;
     }
     private static final Logger logger = LoggerFactory.getLogger(HumanController.class);
+
     @PostMapping("/create")
     public ResponseEntity<?> createUser(@RequestBody HumanDTOWithPassword humanDTO) {
         logger.info("Received request to create user: {}", humanDTO.getUsername());
@@ -34,8 +37,6 @@ public class HumanController {
         }
     }
 
-
-
     @PostMapping("/login!")
     public ResponseEntity<String> login(@RequestBody HumanDTOLogin humanDTOLogin) {
         try {
@@ -45,8 +46,19 @@ public class HumanController {
         }
     }
 
+    @GetMapping("/show-loggedin")
+    public ResponseEntity<?> showLoggedInUserInfo(@AuthenticationPrincipal Human human){
+        try {
+            HumanDTO humanDTO = HumanDTO.fromHuman(humanService.showInfo(human));
+            return ResponseEntity.ok(humanDTO);
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().body("Haven't written error handling for 'showLoggedInUserInfo', sorry");
+        }
+    }
+
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteUser(@PathVariable UUID id) {
+    public ResponseEntity<String> deleteUser(@PathVariable UUID id, @AuthenticationPrincipal Human human) {
+        System.out.println(human.getRole());
         try {
             String result = humanService.deleteUser(id);
             return ResponseEntity.ok(result);

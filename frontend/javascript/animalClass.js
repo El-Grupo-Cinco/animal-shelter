@@ -1,5 +1,5 @@
 export class Animal {
-    constructor(animalID, name, pictureURL, species, dateOfBirth, registrationDate, description) {
+    constructor(animalID, name, pictureURL, species, dateOfBirth, registrationDate, description) {  
         this.animalID = animalID;
         this.name = name;
         this.pictureURL = pictureURL;
@@ -7,6 +7,7 @@ export class Animal {
         this.dateOfBirth = dateOfBirth;
         this.registrationDate = registrationDate;
         this.description = description;
+        //this.adoptionId = adoptionId; // newly added, we need an explanation why
     }
 
     showAnimal() {
@@ -24,6 +25,8 @@ export class Animal {
         newCard.querySelector(".date-of-birth-text").textContent = `Date of Birth: ${this.dateOfBirth}`;
         newCard.querySelector(".registered-text").textContent = `Registered: ${this.registrationDate}`;
         newCard.querySelector(".card-description").textContent = `Description: ${this.description}`;
+
+        newCard.dataset.adoptionId = this.adoptionId; // newly added
 
         newCard.removeAttribute("id");
 

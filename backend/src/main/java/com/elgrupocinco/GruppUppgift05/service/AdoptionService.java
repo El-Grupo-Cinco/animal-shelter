@@ -26,13 +26,13 @@ public class AdoptionService {
     private CommentRepository commentRepository;
 
     //create - add animal on human list, check allowed to adopt, animal = adopted
-    public AdoptionDTO createAdoption(String userID, String animalID, LocalDate date) {
+    public AdoptionDTO createAdoption(String userID, String animalID) {
         Human human = humanRepository.findById(UUID.fromString(userID)).orElseThrow(()-> new NoSuchElementException("AdopterID not found or registered."));
         Animal animal = animalRepository.findById(UUID.fromString(animalID)).orElseThrow(()-> new NoSuchElementException("Animal not found or registered"));
         if (!human.isCanAdopt()) {
             throw new IllegalArgumentException ("This person cannot adopt");
         }
-        Adoption adoption = new Adoption(UUID.randomUUID(), date, animal, human, new ArrayList<>());
+        Adoption adoption = new Adoption(UUID.randomUUID(), LocalDate.now(), animal, human, new ArrayList<>());
         human.getOwnedAnimals().add(animal);
         animal.setAdopted(true);
         animal.setAdopter(human);

@@ -10,6 +10,9 @@ body {
         flex-direction: column;
         min-height: 100vh;
       }
+h1 {
+        font-family: "Noticia Text", serif;
+    }
 
 main {
         flex: 1;
@@ -32,14 +35,20 @@ header {
         display:flex;
         align-items: center;
         justify-content: space-between;
-        
       }
+
+header > div {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+}
 
 header img {
         height: 5rem;
       }
       
-header > a {
+header a {
         display: flex;
         align-items: center;
         justify-self: baseline;
@@ -49,6 +58,8 @@ header > a {
         gap: 0.5rem;
         text-decoration: none;
         color: #007F5F;
+        z-index: 100;
+        font-weight: bold;
         }
       
 nav.navbar {

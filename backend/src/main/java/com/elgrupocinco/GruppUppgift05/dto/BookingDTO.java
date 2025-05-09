@@ -14,6 +14,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 @Data
 public class BookingDTO {
+    private final UUID bookingID;
     private final String humanName;
     private final String animalName;
     private final LocalDateTime appointmentTime;
@@ -22,6 +23,7 @@ public class BookingDTO {
 
     public static BookingDTO fromBooking(Booking booking) {
         return new BookingDTO(
+                booking.getBookingId(),
                 booking.getUser().getUsername(),
                 booking.getAnimal().getAnimalName(),
                 booking.getAppointmentTime(),

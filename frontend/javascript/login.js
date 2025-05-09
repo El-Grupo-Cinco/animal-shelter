@@ -1,4 +1,4 @@
-import { HumanDTOWithPassword, AddressDTO } from "./userClass.js";
+import { HumanDTOWithPassword } from "./userClass.js";
 
 const loginForm = document.getElementById('loginForm');
 const registerForm = document.getElementById('registerForm');
@@ -32,13 +32,14 @@ loginForm.addEventListener('submit', function(e) {
     })
     .then(response => {
         if (!response.ok) {
-            let message = "Login Error: " + response.status + " - " + response.text;
+            let message = "Login Error: " + response.status + " - " + response.text();
             loginMessage.textContent = message;
             throw new Error(message);
         }
-        return response.json.text;
+        return response.text();
+        
     })
-    .then(token => {
+    .then(token => {       
         loginMessage.textContent = "Login successful!";
         localStorage.setItem("token", token);
         window.location.href = "/user.html";
@@ -61,16 +62,13 @@ registerForm.addEventListener('submit', function(e) {
     const postalCode = document.getElementById('postalCode').value; // Postal Code
     const state = document.getElementById('country').value;    // Country
 
-
-    const addressDTO = new AddressDTO(address, city, postalCode, state);
-
     const email = document.getElementById('registerEmail').value;
     const phone = document.getElementById('phone').value;
     const password = document.getElementById('registerPassword').value;
     const confirmPassword = document.getElementById('confirmPassword').value;
 
     // Create an instance of HumanDTOWithPassword
-    const registerDTO = new HumanDTOWithPassword(username, firstName, lastName, dob, addressDTO, email, phone, password);
+    const registerDTO = new HumanDTOWithPassword(username, firstName, lastName, dob, address, postalCode, city, state, email, phone, password);
 
     // Validate email
     if (!validateEmail(registerDTO.email)) {
@@ -95,10 +93,10 @@ registerForm.addEventListener('submit', function(e) {
             "dateOfBirth": registerDTO.dob,
             "email": registerDTO.email,
             "phoneNumber": registerDTO.phone,
-            "street": addressDTO.street,
-            "city": addressDTO.city,
-            "state": addressDTO.state,
-            "zipCode": addressDTO.zipCode,
+            "street": registerDTO.address,
+            "city": registerDTO.city,
+            "state": registerDTO.state,
+            "zipCode": registerDTO.postalCode,
             "password": registerDTO.password,
           })
     })
@@ -120,14 +118,6 @@ registerForm.addEventListener('submit', function(e) {
         alert(error.message);
     })
 
-
-/*     // Simulate registration (you can add actual registration logic here)
-    registerMessage.textContent = "Registration successful!";
-    setTimeout(() => {
-        registerForm.style.display = "none";
-        loginForm.classList.toggle("hidden");
-        toggleLink.textContent = "Don't have an account? Register here";
-    }, 2000); // Redirect or show confirmation after 2 seconds */
 });
 
 // DTO for Login

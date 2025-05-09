@@ -51,7 +51,7 @@ public class AnimalController {
     }
 
     // 5. Filter animals
-    @GetMapping("/filter")
+    @PutMapping("/filter")
     public ResponseEntity<List<AnimalResponseDTO>> filterAnimals(@RequestBody FilterAnimalDTO filter) {
         List<AnimalResponseDTO> animals = animalService.filterAnimals(filter);
         return ResponseEntity.ok(animals);

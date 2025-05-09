@@ -2,14 +2,17 @@ package com.elgrupocinco.GruppUppgift05.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
 @Entity(name = "animals")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 public class Animal {
 
@@ -37,20 +40,18 @@ public class Animal {
     @ManyToOne
     private Human adopter;
 
-    @ManyToOne
-    @JoinColumn(name = "found_by_user_id")
-    private Human foundByUser;
-    //private String foundByFirstName;
-    //private String foundByLastName;
-    //private String foundByPhoneNumber;
-
+    @Column
+    private String foundByName;
 
     @OneToMany(mappedBy = "animal")
     private List<Comment> comments;
 
+//    @OneToOne(mappedBy = "animal")
+//    private Adoption adoption;
+
     // Full constructor including pictureURL
     public Animal(UUID animalId, String animalName, LocalDate assumedDateOfBirth, LocalDate dateRegistered,
-                  String animalSpecies, boolean adopted, Human adopter, Human foundByUser,
+                  String animalSpecies, boolean adopted, Human adopter, String foundByName,
                   List<Comment> comments, String pictureURL) {
         this.animalId = animalId;
         this.animalName = animalName;
@@ -59,25 +60,27 @@ public class Animal {
         this.animalSpecies = animalSpecies;
         this.adopted = adopted;
         this.adopter = adopter;
-        this.foundByUser = foundByUser;
+        this.foundByName = foundByName;
         this.comments = comments;
         this.pictureURL = pictureURL;
     }
 
     // Constructor with auto-generated ID
-    public Animal(String animalName, LocalDate assumedDateOfBirth, LocalDate dateRegistered,
-                  String animalSpecies, boolean adopted, Human adopter, Human foundByUser,
+    public Animal(String animalName, LocalDate assumedDateOfBirth,
+                  String animalSpecies, boolean adopted, Human adopter, String foundByName,
                   List<Comment> comments, String pictureURL) {
         this.animalId = UUID.randomUUID();
         this.animalName = animalName;
         this.assumedDateOfBirth = assumedDateOfBirth;
-        this.dateRegistered = dateRegistered;
+        this.dateRegistered = LocalDate.now();
         this.animalSpecies = animalSpecies;
         this.adopted = adopted;
         this.adopter = adopter;
-        this.foundByUser = foundByUser;
+        this.foundByName = foundByName;
         this.comments = comments;
         this.pictureURL = pictureURL;
+
     }
+
 }
 

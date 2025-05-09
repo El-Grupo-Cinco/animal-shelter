@@ -1,6 +1,7 @@
 import { Animal } from "./animalClass.js";
 import { Booking } from "./bookingClass.js";
 
+
 export class User {
     constructor(userID, username, firstname, lastname, dateOfBirth, address, 
                 email, phoneNumber, ownedAnimals, canAdopt, comments, role) {
@@ -37,16 +38,22 @@ export class User {
         emailH3.textContent = this.email;
         canAdoptH4.textContent = this.canAdopt ? "Yes" : "No";
 
-        if (this.role === "admin") {
+        if (this.role === "ADMIN") {
             this.showAdmin();
         }
 
-        const cardList = document.querySelector(".animal-cards");
-        this.ownedAnimals.forEach(animal => {
-            const animalClass = new Animal(animal.animalID, animal.name, animal.pictureURL, animal.species, animal.dateOfBirth, animal.registrationDate, animal.description);
-            const card = animalClass.showAnimal();
-            cardList.appendChild(card);
-        });
+        console.log("DEBUG owned animals: " + this.ownedAnimals.length);
+        
+        if (this.ownedAnimals.length !== 0 || this.ownedAnimals === undefined){
+            const cardList = document.querySelector(".animal-cards");
+        
+            this.ownedAnimals.forEach(animal => {
+                const animalClass = new Animal(animal.animalID, animal.name, animal.pictureURL, animal.species, animal.dateOfBirth, animal.registrationDate, animal.description);
+                const card = animalClass.showAnimal();
+                cardList.appendChild(card);
+            });
+        }
+
 
         // Simulating bookings
         const bookings = [new Booking("Testing", "R2D2", "2025-05-08T08:00UTC", ["Doesn't really want a droid but needs a new vacuum cleaner"])];
@@ -73,6 +80,7 @@ export class User {
         searchLabel.setAttribute("for", "searchQuery");
         searchInput.setAttribute("id", "searchQuery");
         searchInput.setAttribute("placeholder", "Enter search term here");
+        searchUserBtn.setAttribute("type", "button");
 
         searchLabel.textContent = "Search Query:";
         searchUserBtn.textContent = "Search Username";
@@ -85,9 +93,9 @@ export class User {
         adminSection.className = "admin-section";
         deleteAdoptionBtn.className = "special-button";
 
-        searchInput.addEventListener('input', function() { searchQuery = searchInput.value; });
-        searchUserBtn.addEventListener('click', function() { searchUser(searchQuery); });
-        searchAnimalBtn.addEventListener('click', function() { searchAnimal(searchQuery); });
+        searchInput.addEventListener('input', function() { searchQuery = searchInput.value.trim(); });
+        searchUserBtn.addEventListener('click', () => { goToSearchUser(searchQuery); });
+        searchAnimalBtn.addEventListener('click', searchAnimal);
         registerAnimalBtn.addEventListener('click', registerAnimal);
         approveAdoptionBtn.addEventListener('click', goToApproveAdoption);
         deleteAdoptionBtn.addEventListener('click', goToDeleteAdoption);
@@ -101,51 +109,29 @@ export class User {
 }
 
 export class HumanDTOWithPassword {
-    constructor(username, firstName, lastName, dob, addressDTO, email, phone, password) {
+    constructor(username, firstName, lastName, dob, address, postalCode, city, state, email, phone, password) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dob = dob;
-        this.addressDTO = addressDTO;
+        this.address = address;
+        this.city = city;
+        this.postalCode = postalCode;
+        this.state = state;
         this.email = email;
         this.phone = phone;
         this.password = password;
     }
 }
 
-export class AddressDTO {
-    constructor(address, city, postalCode, state) {
-        this.address = address;
-        this.city = city;
-        this.postalCode = postalCode;
-        this.state = state;
-    }
-}
 
-function searchUser(searchQuery) {
-    console.log("Searching for user with query:", searchQuery);
-    const users = [
-        new User("1af40162-50ef-43e0-847f-ccf54700587a", "Testing", "Cesar", "Milan", "2025-08-08", 
-            "1000 Hollywood Blvd, 90120 Beverly Hills", "dogwhisperer@discovery.com", 
-            "+1 62 65 19884 664", [new Animal("1af45162-50ef-43g0-847f-ccf54770587g", "Sponge Bob", "./images/400x300-dummy-greenThing.jpg", "Sponge", "01.01.2015", "08.08.2023", "Works at the Crusty Crab.")], 
-            true, [], "admin")
-    ];
 
-    const foundUser = users.find(user => user.username.toLowerCase().includes(searchQuery.toLowerCase()));
-
-    if (foundUser) {
-        foundUser.showUser();
-    } else {
-        alert("User not found.");
-    }
-}
-
-function searchAnimal(searchQuery) {
-    console.log(searchQuery);
+function searchAnimal() {
+    window.location.href = "animal.html"; 
 }
 
 function registerAnimal() {
-    console.log("registerAnimal button");
+    window.location.href = "newAnimal.html";
 }
 
 function goToApproveAdoption() {
@@ -160,3 +146,7 @@ function goToBooking() {
     window.location.href = "booking.html";
 }
 
+function goToSearchUser(searchquery) {
+    
+    window.location.href = "search-user.html?searchQuery=" + encodeURIComponent(searchquery);
+}
