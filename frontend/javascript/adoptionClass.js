@@ -29,14 +29,14 @@ export class Adoption {
         card.className = "adoption-card";
 
         dateDiv.textContent = this.adoptionTime;
-        userName.textContent = this.humanName;
         animalName.textContent = this.animalName;
+        userName.textContent = this.humanName;
         commentList.textContent = "Comments";
 
         for (const comment of this.comments) {
-            const listItem = document.createElement("li");
-            listItem.textContent = comment;
-            commentList.append(listItem);
+            const li = document.createElement("li");
+            li.textContent = comment;
+            commentList.appendChild(li);
         }
 
         card.append(dateDiv, animalName, userName, commentList);

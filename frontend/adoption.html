@@ -9,10 +9,26 @@
     <script src="javascript/headerAndFooter.js" defer></script>
     <script src="javascript/adoption.js" type="module"></script>
     <script type="module" src="javascript/adoptionClass.js"></script>
-    <title>Animal Shelter - adoptions</title>
+    <title>Animal Shelter - Adoptions</title>
   </head>
   <body>
     <main>
+      <!-- Form Section -->
+      <section id="adoption-form-section" style="max-width: 600px; margin: auto; padding: 2rem;">
+        <h2>Register an Adoption</h2>
+        <form id="adoption-form">
+          <label for="userID">User ID:</label><br />
+          <input type="text" id="userID" name="userID" required /><br /><br />
+
+          <label for="animalID">Animal ID:</label><br />
+          <input type="text" id="animalID" name="animalID" required /><br /><br />
+
+          <button type="submit">Submit Adoption</button>
+        </form>
+        <p id="form-response" style="color: green; margin-top: 1rem;"></p>
+      </section>
+
+      <!-- Card List -->
       <section id="adoption-cards">
         <div class="adoption-header">
           <div style="width: 18%">DATE AND TIME</div>

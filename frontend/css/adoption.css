@@ -42,7 +42,6 @@
 .adoption-card > ul {
     font-weight: bold;
     width: 35%;
-    min-width: auto;
     text-align: start;
 }
 
