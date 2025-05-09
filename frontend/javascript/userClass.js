@@ -135,7 +135,7 @@ function registerAnimal() {
 }
 
 function goToApproveAdoption() {
-    console.log("Approve Adoption button");
+    window.location.href = "adoption.html";
 }
 
 function goToDeleteAdoption() {
