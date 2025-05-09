@@ -2,6 +2,39 @@ import { Adoption, AdoptionRequest } from "./adoptionClass.js";
 
 const adoptionCards = document.getElementById("adoption-cards");
 
+loadAnimalOptions();
+loadUserOptions();
+
+async function loadAnimalOptions() {
+    const res = await fetch("http://localhost:8080/api/animals/see-all");
+    const animals = await res.json();
+    const animalSelect = document.getElementById("animalID");
+
+    animals.forEach(animal => {
+            const option = document.createElement("option");
+            option.value = animal.animalId;
+            option.textContent = animal.animalName;
+            animalSelect.appendChild(option);
+    });
+}
+
+// Load user options into the select dropdown
+async function loadUserOptions() {
+    const res = await fetch("http://localhost:8080/api/humans/show-loggedin", {
+            headers: {
+                    "Authorization": "Bearer " + localStorage.getItem("token")
+            }
+    });
+    const user = await res.json();
+    const userSelect = document.getElementById("userID");
+
+            const option = document.createElement("option");
+            option.value = user.userId;
+            option.textContent = user.username;
+            userSelect.appendChild(option);
+}
+
+
 // Dummy example data — remove when you load real data from backend
 const adoptions = [
     new Adoption("DarthVader", "R2D2", "2025-05-08T08:00UTC", [
@@ -30,12 +63,12 @@ form.addEventListener("submit", async (event) => {
     const animalID = document.getElementById("animalID").value;
 
     try {
-        const res = await fetch("/register", {
+        const res = await fetch(`http://localhost:8080/adoption/register?userID=${userID}&animalID=${animalID}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
             },
-            body: new URLSearchParams({ userID, animalID }),
+            
         });
 
         if (res.ok) {

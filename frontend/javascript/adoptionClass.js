@@ -1,9 +1,9 @@
 export class AdoptionRequest {
-    constructor(userId, animalId, adoptionTime, comments) {
+    constructor(userId, animalId, adoptionTime, comment) {
         this.userId = userId;
         this.animalId = animalId;
         this.adoptionTime = adoptionTime;
-        this.comments = comments;
+        this.comment = comment;
     }
 
     save() {
@@ -12,11 +12,11 @@ export class AdoptionRequest {
 }
 
 export class Adoption {
-    constructor(humanName, animalName, adoptionTime, comments) {
+    constructor(humanName, animalName, adoptionTime, comment) {
         this.humanName = humanName;
         this.animalName = animalName;
         this.adoptionTime = adoptionTime;
-        this.comments = comments;
+        this.comment = comment;
     }
 
     publish() {
@@ -31,9 +31,9 @@ export class Adoption {
         dateDiv.textContent = this.adoptionTime;
         animalName.textContent = this.animalName;
         userName.textContent = this.humanName;
-        commentList.textContent = "Comments";
+        commentList.textContent = "Comment";
 
-        for (const comment of this.comments) {
+        for (const comment of this.comment) {
             const li = document.createElement("li");
             li.textContent = comment;
             commentList.appendChild(li);

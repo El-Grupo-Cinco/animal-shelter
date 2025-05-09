@@ -14,6 +14,22 @@
   <body>
     <main>
       <!-- Form Section -->
+      <section id="adoption-form-section" style="max-width: 600px; margin: auto; padding: 2rem; text-align: center;">
+        <h2>Register an Adoption</h2>
+        <form id="adoption-form" style="display: flex; gap: 1rem; align-items: flex-start;">
+          <select id="animalID" required style="height: 2.5rem; font-size: 1.5rem;">
+            <option value="">Select Animal</option>
+          </select>
+
+          <select id="userID" required style="height: 2.5rem; font-size: 1.5rem;">
+            <option value="">Select User</option>
+          </select>
+          <textarea id="adoption-comment" placeholder="Optional comment" style="height: 5rem;"></textarea>
+          <button type="submit">Submit Adoption</button>
+          </form>
+          <p id="form-response" style="color: green; margin-top: 1rem; height: 3rem;"></p>
+      </section>
+      <!-- original code with manual UUID
       <section id="adoption-form-section" style="max-width: 600px; margin: auto; padding: 2rem;">
         <h2>Register an Adoption</h2>
         <form id="adoption-form">
@@ -26,7 +42,7 @@
           <button type="submit">Submit Adoption</button>
         </form>
         <p id="form-response" style="color: green; margin-top: 1rem;"></p>
-      </section>
+      </section> -->
 
       <!-- Card List -->
       <section id="adoption-cards">
