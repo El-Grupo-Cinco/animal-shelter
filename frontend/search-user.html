@@ -9,18 +9,15 @@
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="stylesheet" href="./css/animals.css" />
   <link rel="stylesheet" href="./css/booking.css" />
-  <script src="./javascript/userClass.js" type="module"></script>
-  <script src="./javascript/user.js" type="module"></script>
-  <script src="./javascript/headerAndFooter.js" defer></script>
-  <script type="module" src="./javascript/animalClass.js"></script>
-  <script type="module" src="./javascript/animal.js"></script>
-  <script type="module" src="./javascript/bookingClass.js"></script>
+
+  <!-- Importerar JavaScript-filerna. Specifikt, här laddas searchUserPopup.js som gör API-anropet -->
   <script type="module" src="./javascript/searchUserPopup.js"></script>
 </head>
 <body>
   <main>
     <h1>Search User By Username</h1>
     <section class="user-card">
+      <!-- Här kommer information om användaren att visas -->
       <div class="user-info">
         <h1 id="username">placeholder</h1>
         <div class="userIDClass">
@@ -52,8 +49,8 @@
           <h4 id="canAdopt">placeholder</h4>
         </div>
       </div>
-      <div class="user-comments"></div>
-      <h2>Animals owned</h2>
+
+      <!-- Här kommer listan av djur som ägs av användaren -->
       <section id="animals">
         <ul class="animal-cards">
           <li class="card hidden" id="card-template">
@@ -70,6 +67,8 @@
           </li>
         </ul>
       </section>
+
+      <!-- Här kommer bokningar att listas -->
       <h2>Bookings made</h2>
       <section id="booking-cards"></section>
     </section>

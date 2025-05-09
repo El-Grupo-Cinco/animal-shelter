@@ -1,0 +1,53 @@
+#adoption-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+    gap: 20px;
+}
+
+.adoption-header {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center; 
+    font-size: 1.1rem;
+}
+
+.adoption-card {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 1000px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center; 
+    font-size: 1.25rem;
+}
+
+.adoption-card > div {
+    width: 18%;
+}
+
+.adoption-card > h2 {
+    width: 23%;
+}
+
+.adoption-card > ul {
+    font-weight: bold;
+    width: 35%;
+    min-width: auto;
+    text-align: start;
+}
+
+.adoption-card > ul > li {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-left: 2rem;
+}
