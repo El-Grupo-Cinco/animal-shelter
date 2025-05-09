@@ -1,13 +1,14 @@
 // Header
 const header = document.createElement("header");
-const logoAndTitle = document.createElement("a");
+const logoAndTitle = document.createElement("div");
+const title = document.createElement("a")
 const logo = document.createElement("img");
-logoAndTitle.textContent = "Animal Shelter";
+title.textContent = "Animal Shelter";
 logo.src = "./icons/animal-shelter-logo.png";
-logoAndTitle.href = "index.html";
+title.setAttribute("href", "index2.html");
 document.body.prepend(header);
 header.append(logoAndTitle);
-logoAndTitle.prepend(logo);
+logoAndTitle.append(logo, title);
 
 // Nav
 const nav = document.createElement("nav");

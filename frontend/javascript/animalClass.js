@@ -1,5 +1,5 @@
 export class Animal {
-    constructor(animalID, name, pictureURL, species, dateOfBirth, registrationDate, description, adoptionId) {  // added adoptionId
+    constructor(animalID, name, pictureURL, species, dateOfBirth, registrationDate, description) {  
         this.animalID = animalID;
         this.name = name;
         this.pictureURL = pictureURL;
@@ -7,7 +7,7 @@ export class Animal {
         this.dateOfBirth = dateOfBirth;
         this.registrationDate = registrationDate;
         this.description = description;
-        this.adoptionId = adoptionId; // newly added
+        //this.adoptionId = adoptionId; // newly added, we need an explanation why
     }
 
     showAnimal() {

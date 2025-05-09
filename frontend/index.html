@@ -1,60 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="/icons/animal-shelter-logo.png" />
-  <title>Welcome - Animal Care & Adoption Center</title>
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./css/index.css" />
-  <script src="./javascript/headerAndFooter.js" defer></script>
-  <script type="module" src="./javascript/searchUser.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/icons/animal-shelter-logo.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Whisper&display=swap" rel="stylesheet">
+    <title>Welcome to Animal Shelter</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-image: url('/images/index1_b&w.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-height: 50vh;
+            max-width: 50%;
+            margin-left: 30%;
+            margin-right: 20%;
+            margin-bottom: 10%;
+            gap: 0;
+        }
+        img {
+                max-width: 50%;
+                aspect-ratio: aut;
+                align-self: center;
+        }
+        h1 {
+            font-family: "Whisper", cursive;
+            font-size: 6rem;
+            align-self: center;
+            color: #80B918;
+            margin: -1rem;
+        }
+        .navbar2 {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            color: #007F5F;
+            padding: 0.5rem;
+            margin: 0 auto;
+            width: 100%;
+            
+        }
+        button {
+        background-color: #80B918;
+        color: #007F5F;
+        font-weight: bold;
+        border-radius: 0.5rem;
+        width: 6rem;
+        height: 2.75rem;
+        border: 2px solid #007F5F;
+        transition: 500ms;
+        z-index: 100;
+}
+
+        button:hover {
+                border: 2px solid #DDDF00;
+                color: #DDDF00;
+        }
+        
+    </style>
 </head>
-
 <body>
-  <header></header>
-
-  <main class="home-main">
-    <section class="features-section">
-      <div class="feature">
-        <h3>Veterinary Services</h3>
-        <p>Comprehensive healthcare for your beloved pets by certified professionals.</p>
-      </div>
-      <div class="feature">
-        <h3>Animal Adoption</h3>
-        <p>Give a homeless pet a second chance at a loving home.</p>
-      </div>
-      <div class="feature">
-        <h3>Emergency Care</h3>
-        <p>We're here for urgent needs with state-of-the-art facilities and compassionate staff.</p>
-      </div>
+    <section>
+        <img src="./icons/animal-shelter-logo.png" alt="animal-shelter-logo">
+        <h1>Animal Shelter</h1>
+        <nav class = "navbar2">
+            <a href="animal.html"><button>Animals</button></a>
+            <a href="user.html"><button>Profile</button></a>
+            <a href="contact.html"><button>Contact</button></a>
+            <a href="about.html"><button>About</button></a>
+        </nav>
     </section>
-
-    <section class="testimonials-section">
-      <h2>What Our Clients Say</h2>
-      <div class="testimonial">
-        <p>"Animal Care Center helped me adopt the sweetest dog! The staff was incredibly supportive and professional."</p>
-        <h4>- Emma L.</h4>
-      </div>
-      <div class="testimonial">
-        <p>"When my cat got sick, they treated her like family. I'm so grateful for the amazing veterinarians here!"</p>
-        <h4>- Marcus T.</h4>
-      </div>
-      <div class="testimonial">
-        <p>"Professional, friendly, and truly compassionate. Highly recommend for both vet services and pet adoption!"</p>
-        <h4>- Sofia R.</h4>
-      </div>
-    </section>
-
-    <!-- Admin Search Section -->
-    <section class="admin-search">
-      <h2>Admin: Search User</h2>
-      <label for="searchQuery">Search by Username:</label>
-      <input type="text" id="searchQuery" placeholder="Enter username..." />
-      <button id="searchUserBtn">Search</button>
-    </section>
-  </main>
-
-  <footer></footer>
 </body>
 </html>
