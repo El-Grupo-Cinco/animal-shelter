@@ -2,14 +2,17 @@ package com.elgrupocinco.GruppUppgift05.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
 @Entity(name = "animals")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 public class Animal {
 
@@ -43,8 +46,8 @@ public class Animal {
     @OneToMany(mappedBy = "animal")
     private List<Comment> comments;
 
-    @OneToMany(mappedBy = "animal")
-    private Adoption adoption;
+//    @OneToOne(mappedBy = "animal")
+//    private Adoption adoption;
 
     // Full constructor including pictureURL
     public Animal(UUID animalId, String animalName, LocalDate assumedDateOfBirth, LocalDate dateRegistered,
@@ -76,11 +79,8 @@ public class Animal {
         this.foundByName = foundByName;
         this.comments = comments;
         this.pictureURL = pictureURL;
+
     }
 
-    public Adoption getAdoption() {
-        return adoption;
-    }
-    }
 }
 

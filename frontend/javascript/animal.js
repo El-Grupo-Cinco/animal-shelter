@@ -26,7 +26,7 @@ async function fetchAnimals() {
                 animal.assumedDateOfBirth,
                 animal.dateRegistered,
                 "No description available.",
-                animal.adoptionId // newly added
+                //animal.adoptionId // newly added @ninis we don't understand why
             );
             animalClasses.push(animalClass);
             const card = animalClass.showAnimal();
@@ -203,7 +203,7 @@ document.getElementById("search-button").addEventListener("click", async () => {
                 animal.assumedDateOfBirth,
                 animal.dateRegistered,
                 "No description available."
-                animal.adoptionId // newly added
+                //animal.adoptionId // newly added
             );
             animalClasses.push(animalClass);
             const card = animalClass.showAnimal();

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
     <title>Welcome to Animal Shelter</title>
     <style>
         html, body {
@@ -26,26 +27,30 @@
             max-width: 50%;
             margin-left: 25%;
             margin-right: 25%;
-        }
-        div {
-            display: flex;
-            max-width: 50%;
             img {
-                max-width: 50%;
+                max-width: 40%;
+                aspect-ratio: covers;
+                align-self: center;
             }
         }
+        nav {
+            display: flex;
+            max-width: 50%;
+            
+        }
+        
     </style>
 </head>
 <body>
     <section>
         <img src="./icons/animal-shelter-logo.png" alt="animal-shelter-logo">
         <h1>Animal Shelter</h1>
-        <div>
+        <nav class = "navbar">
             <a href="animal.html">Animals</a>
             <a href="user.html">Profile</a>
             <a href="contact.html">Contact</a>
             <a href="about.html">About</a>
-        </div>
+        </nav>
     </section>
 </body>
 </html>

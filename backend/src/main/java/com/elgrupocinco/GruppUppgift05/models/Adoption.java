@@ -1,16 +1,15 @@
 package com.elgrupocinco.GruppUppgift05.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
 @Entity(name = "adoptions")
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Adoption {
@@ -18,7 +17,7 @@ public class Adoption {
     private UUID adoptionID;
     @Column
     private LocalDate adoptionDate;
-    @ManyToOne
+    @OneToOne
     private Animal animal;
     @ManyToOne
     private Human human;

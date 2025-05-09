@@ -66,6 +66,11 @@ document.getElementById("booking-form").addEventListener("submit", async (e) => 
         }
 });
 
+function getAllBookings () {
+        //fetch bookings from api, if none, return nothing
+}
+
 // Load options when the page loads
 loadAnimalOptions();
 loadUserOptions();
+getAllBookings();

@@ -18,7 +18,7 @@ public class AnimalResponseDTO {
     private boolean adopted;
     private String foundByName;
     private String pictureURL; // New field
-    private UUID adoptionId; // New field to keep track of adoptions
+    //private UUID adoptionId; // New field to keep track of adoptions
 
     public static AnimalResponseDTO fromEntity(Animal animal) {
         return new AnimalResponseDTO(
@@ -30,7 +30,7 @@ public class AnimalResponseDTO {
                 animal.isAdopted(),
                 animal.getFoundByName(),
                 animal.getPictureURL() // Include pictureURL in the mapping
-                animal.getAdoption() != null ? animal.getAdoption().getAdoptionId() : null
+                //animal.getAdoption() != null ? animal.getAdoption().getAdoptionID() : null
         );
     }
 }
