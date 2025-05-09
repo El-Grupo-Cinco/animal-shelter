@@ -26,7 +26,7 @@ export class Booking {
                 const dateDiv = document.createElement("div");
                 const animalName = document.createElement("h2");
                 const userName = document.createElement("h2");
-                const commentList = document.createElement("ul");
+                const comment = document.createElement("p");
 
                 card.className = "booking-card";
 
@@ -36,15 +36,9 @@ export class Booking {
                 
                 animalName.textContent = this.animalName;
 
-                commentList.textContent = "Comments";
+                comment.textContent = this.comment;
 
-                for(const comment of this.comments) {
-                        const listItem = document.createElement("li");
-                        listItem.textContent = comment;
-                        commentList.append(listItem);
-                }
-
-                card.append(dateDiv, animalName, userName, commentList);
+                card.append(dateDiv, animalName, userName, comment);
 
                 return card;
         }
