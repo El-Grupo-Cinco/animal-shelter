@@ -43,7 +43,7 @@ document.getElementById("booking-form").addEventListener("submit", async (e) => 
                 appointmentTime: time,
                 comment: comment 
         };
-        //makes booking and get response (we need ID for comment)
+        // Makes booking and get a response (we need ID for comment)
         try {
                 const response = await fetch("http://localhost:8080/api/bookings", {
                         method: "POST",
@@ -66,8 +66,53 @@ document.getElementById("booking-form").addEventListener("submit", async (e) => 
         }
 });
 
-function getAllBookings () {
-        //fetch bookings from api, if none, return nothing
+async function getAllBookings() {
+        try {
+                const res = await fetch("http://localhost:8080/api/bookings", {
+                        headers: {
+                                "Authorization": "Bearer " + localStorage.getItem("token")
+                        }
+                });
+                if (!res.ok) throw new Error("Failed to fetch bookings");
+
+                const bookings = await res.json();
+                const bookingCards = document.getElementById("booking-cards");
+
+
+                // Clear any previous content
+                bookingCards.innerHTML = "";
+
+                // If no bookings, show a message and return
+                if (!bookings || bookings.length === 0) {
+                        const message = document.createElement("p");
+                        message.textContent = "You have no bookings yet.";
+                        message.style.fontStyle = "italic";
+                        message.style.textAlign = "center";
+                        bookingCards.appendChild(message);
+                        return;
+                }
+
+                // Display each booking
+                bookings.forEach(b => {
+                        const card = document.createElement("div");
+                        card.classList.add("booking-card");
+
+                        const combinedComments = b.comments && b.comments.length
+                            ? b.comments.join("<br>")
+                            : "No comments";
+
+                        card.innerHTML = `
+        <div style="width: 18%">${b.appointmentTime}</div>
+        <div style="width: 23%">${b.animalName}</div>
+        <div style="width: 23%">${b.humanName}</div>
+        <div style="width: 35%">${combinedComments}</div>
+      `;
+
+                        bookingCards.appendChild(card);
+                });
+        } catch (error) {
+                console.error("Error fetching bookings:", error);
+        }
 }
 
 // Load options when the page loads
