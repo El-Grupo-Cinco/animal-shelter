@@ -25,7 +25,10 @@ public class AnimalService {
 
     // Get All Animals
     public List<Animal> getAllAnimals() {
-        return animalRepository.findAll();
+        return animalRepository.findAll()
+                .stream()
+                .filter(animal -> !animal.isAdopted())
+                .collect(Collectors.toList());
     }
 
     // Get Animal by Id
