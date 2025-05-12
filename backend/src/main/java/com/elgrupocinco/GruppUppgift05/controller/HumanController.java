@@ -100,4 +100,18 @@ public class HumanController {
             return ResponseEntity.badRequest().body("Error: " + e.getMessage());
         }
     }
+
+    @GetMapping("/get-all")
+    public ResponseEntity<?> getAllUsers(@AuthenticationPrincipal Human human) {
+        try {
+            List<Human> allHumans = humanService.getAllHumans();
+            List<HumanDTO> allHumanDTO = allHumans
+                    .stream()
+                    .map(HumanDTO::fromHuman)
+                    .toList();
+            return ResponseEntity.ok().body(allHumanDTO);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
 }
