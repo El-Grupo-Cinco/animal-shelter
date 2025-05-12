@@ -101,6 +101,10 @@ public class BookingService {
         return bookingRepository.findAll();
     }
 
+    public List<Booking> getBookingOfUser (UUID userID) {
+        return bookingRepository.findByUser_UserId(userID);
+    }
+
     private boolean isTimeUnavailable(LocalDateTime time) {
         // Check office hours (example: 9-17) and existing bookings
         LocalTime officeStart = LocalTime.of(9, 0);

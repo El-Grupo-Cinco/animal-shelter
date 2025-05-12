@@ -185,11 +185,11 @@ async function getOwnBookings() {
                             : "No comments";
 
                         card.innerHTML = `
-        <div style="width: 18%">${b.appointmentTime}</div>
-        <div style="width: 23%">${b.animalName}</div>
-        <div style="width: 23%">${b.humanName}</div>
-        <div style="width: 35%">${combinedComments}</div>
-      `;
+                                        <div style="width: 18%">${b.appointmentTime}</div>
+                                        <div style="width: 23%">${b.animalName}</div>
+                                        <div style="width: 23%">${b.humanName}</div>
+                                        <div style="width: 35%">${combinedComments}</div>
+                                        `;
 
                         bookingCards.appendChild(card);
                 });

@@ -69,4 +69,18 @@ public class BookingController {
         }
     }
 
+    @GetMapping("/forUser/{userID}")
+    public ResponseEntity<?> getBookingForUser (@PathVariable UUID userID) {
+        try {
+            System.out.println(userID);
+            List<BookingDTO> bookingDTOS = bookingService.getBookingOfUser(userID)
+                    .stream()
+                    .map(BookingDTO::fromBooking)
+                    .toList();
+            return ResponseEntity.ok(bookingDTOS);
+        } catch (Exception e) {
+            return ResponseEntity.status(404).body(e.getMessage());
+        }
+    }
+
 }

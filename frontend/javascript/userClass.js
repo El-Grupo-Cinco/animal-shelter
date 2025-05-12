@@ -28,6 +28,7 @@ export class User {
         const emailH3 = document.getElementById("email");
         const canAdoptH4 = document.getElementById("canAdopt");
         const animalCards = document.getElementById("animals");
+        const bookingCards = document.getElementById("booking-cards");
 
         usernameH1.textContent = this.username;
         userIDP.textContent = this.userID;
@@ -55,12 +56,9 @@ export class User {
         }
 
 
-        // Simulating bookings
-        const bookings = [new Booking("Testing", "R2D2", "2025-05-08T08:00UTC", ["Doesn't really want a droid but needs a new vacuum cleaner"])];
-        const bookingCards = document.getElementById("booking-cards");
-        bookings.forEach(booking => {
-            bookingCards.append(booking.publish());
-        });
+        //bookings
+        getOwnBookings(bookingCards);
+    
     }
 
     showAdmin() {
@@ -141,4 +139,35 @@ function goToBooking() {
 function goToSearchUser(searchquery) {
     
     window.location.href = "search-user.html?searchQuery=" + encodeURIComponent(searchquery);
+}
+
+async function getOwnBookings(bookingCards) {
+    try {
+            const res = await fetch("http://localhost:8080/api/bookings", {
+                    headers: {
+                            "Authorization": "Bearer " + localStorage.getItem("token")
+                    }
+            });
+            if (!res.ok) throw new Error("Failed to fetch bookings");
+
+            const bookings = await res.json();
+            console.log(bookings);
+            
+            // If no bookings, show a message and return
+            if (!bookings || bookings.length === 0) {
+                const message = document.createElement("p");
+                message.textContent = "You have no bookings yet.";
+                message.style.fontStyle = "italic";
+                message.style.textAlign = "center";
+                bookingCards.appendChild(message);
+                return;
+        }
+
+            for (let booking of bookings) {
+                const bookingToPublish = new Booking(booking.humanName, booking.animalName, booking.appointmentTime, booking.comments);
+                bookingCards.append(bookingToPublish.publish());
+            }
+    } catch (error) {
+            console.error("Error fetching bookings:", error);
+    }
 }

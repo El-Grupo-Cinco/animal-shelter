@@ -165,7 +165,7 @@ function calculateAgeFromDate(dateString) {
     return age;
 }
 
-document.getElementById("search-button").addEventListener("click", async () => {
+    document.getElementById("search-button").addEventListener("click", async () => {
     const name = document.getElementById("name-search-input").value.trim();
     const species = document.getElementById("species-search-input").value.trim();
     const minAgeInput = document.getElementById("minimum-age-search-input").value;

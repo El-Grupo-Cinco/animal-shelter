@@ -6,7 +6,6 @@ searchUser();
 
 export async function searchUser() {
   const searchQuery = new URLSearchParams(window.location.search).get("searchQuery")
-  console.log(searchQuery);
   
   
   await fetch(`http://localhost:8080/api/humans/search?query=${encodeURIComponent(searchQuery)}`, {
@@ -36,7 +35,7 @@ export async function searchUser() {
         
         // Skapa användaren
         const userSearched = new User(
-            returnedData.id,
+            returnedData.userId,
             returnedData.username,
             returnedData.firstName,
             returnedData.lastName,
@@ -49,7 +48,6 @@ export async function searchUser() {
             returnedData.comments || [],
             returnedData.role || "user"
         );
-        console.log(returnedData.username);
         
         const mainElement = document.getElementById("main-element");
         const userCardTemplate = document.getElementById("user-card");
@@ -83,30 +81,64 @@ export async function searchUser() {
           });
         }
 
-        // Simulating bookings
-        const bookingCards = newUserCard.querySelector("#booking-cards");
-        if (bookingCards) {
-          const bookings = [
-            new Booking(
-              "Testing",
-              "R2D2",
-              "2025-05-08T08:00UTC",
-              ["Doesn't really want a droid but needs a new vacuum cleaner"]
-            )
-          ];
-          bookings.forEach(booking => {
-            bookingCards.append(booking.publish());
-          });
-        }
+        //bookings
+        getUserBookings(userSearched.userID);
 
         mainElement.appendChild(newUserCard);
         newUserCard.removeAttribute("id");
 
-  }
-    })
-
+    }
+  })
   .catch (error => {
     console.error("Error fetching user:", error);
     alert("Could not fetch user.");
   })
 }
+
+async function getUserBookings (userID) {
+  try {
+    const res = await fetch(`http://localhost:8080/api/bookings/forUser/${encodeURIComponent(userID)}`, {
+            headers: {
+                    "Authorization": "Bearer " + localStorage.getItem("token")
+            }
+    });
+      if (!res.ok) throw new Error("Failed to fetch bookings");
+
+      const bookings = await res.json();
+      const bookingCards = document.getElementById("booking-cards");
+
+      
+
+      // If no bookings, show a message and return
+      if (!bookings || bookings.length === 0) {
+              const message = document.createElement("p");
+              message.textContent = "You have no bookings yet.";
+              message.style.fontStyle = "italic";
+              message.style.textAlign = "center";
+              bookingCards.appendChild(message);
+              return;
+      }
+
+      // Display each booking
+      bookings.forEach(b => {
+              const card = document.createElement("div");
+              card.classList.add("booking-card");
+
+              const combinedComments = b.comments && b.comments.length
+                  ? b.comments.join("<br>")
+                  : "No comments";
+
+              card.innerHTML = `
+                              <div style="width: 18%">${b.appointmentTime}</div>
+                              <div style="width: 23%">${b.animalName}</div>
+                              <div style="width: 23%">${b.humanName}</div>
+                              <div style="width: 35%">${combinedComments}</div>
+                              `;
+
+              bookingCards.appendChild(card);
+      });
+    } catch (error) {
+        console.error("Error fetching bookings:", error);
+    }
+}
+
