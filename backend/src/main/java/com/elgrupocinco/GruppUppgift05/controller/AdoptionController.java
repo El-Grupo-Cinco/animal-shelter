@@ -1,9 +1,11 @@
 package com.elgrupocinco.GruppUppgift05.controller;
 
 import com.elgrupocinco.GruppUppgift05.dto.AdoptionDTO;
+import com.elgrupocinco.GruppUppgift05.models.Adoption;
 import com.elgrupocinco.GruppUppgift05.service.AdoptionService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -69,6 +71,20 @@ public class AdoptionController {
             return ResponseEntity.ok(adoptionService.updateAdoption(adoptionDTO));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body("Unable to update adoption data. " + e.getMessage());
+        }
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<?> getAllAdoptions() {
+        try {
+            List<Adoption> adoptions = adoptionService.getAllAdoptions();
+            List<AdoptionDTO> adoptionDTOS = adoptions
+                    .stream()
+                    .map(AdoptionDTO::fromAdoption)
+                    .toList();
+            return ResponseEntity.ok(adoptionDTOS);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
 

@@ -12,10 +12,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.NoSuchElementException;
-import java.util.UUID;
+import java.util.*;
 
 @Service
 @AllArgsConstructor
@@ -80,5 +77,9 @@ public class AdoptionService {
         adoption.setHuman(humanRepository.findById(adoptionDTO.getHumanDTO().getUserId()).orElseThrow(()-> new NoSuchElementException("User not found.")));
         adoptionRepository.save(adoption);
         return AdoptionDTO.fromAdoption(adoption);
+    }
+
+    public List<Adoption> getAllAdoptions() {
+        return adoptionRepository.findAll();
     }
 }
