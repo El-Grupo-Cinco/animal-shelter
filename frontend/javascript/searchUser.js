@@ -180,3 +180,82 @@ const res = await fetch(`http://localhost:8080/api/bookings/forUser/${encodeURIC
   }
 }
 
+async function loadUserBookings() {
+    try {
+        const res = await fetch("http://localhost:8080/api/bookings", {
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token")
+            }
+        });
+
+        if (!res.ok) throw new Error("Failed to fetch bookings");
+
+        const bookings = await res.json();
+
+        const container = document.getElementById("user-bookings");
+        container.innerHTML = ""; // clear previous
+
+        if (!bookings || bookings.length === 0) {
+            container.innerHTML = "<p>No bookings found.</p>";
+            return;
+        }
+
+        bookings.forEach(b => {
+            const bookingDiv = document.createElement("div");
+            bookingDiv.classList.add("booking-item");
+
+            const comments = b.comments && b.comments.length
+                ? b.comments.join("<br>")
+                : "No comments";
+
+            bookingDiv.innerHTML = `
+        <p><strong>Date:</strong> ${b.appointmentTime}</p>
+        <p><strong>Animal:</strong> ${b.animalName}</p>
+        <p><strong>Comments:</strong><br>${comments}</p>
+        <hr>
+      `;
+            container.appendChild(bookingDiv);
+        });
+
+    } catch (err) {
+        console.error("Error loading user bookings:", err);
+    }
+}
+
+async function loadUserAdoptions() {
+    try {
+        const res = await fetch("http://localhost:8080/api/adoption/all", {
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token")
+            }
+        });
+
+        if (!res.ok) throw new Error("Failed to fetch adoptions");
+
+        const adoptions = await res.json();
+        const container = document.getElementById("user-adoptions");
+        container.innerHTML = "";
+
+        if (!adoptions || adoptions.length === 0) {
+            container.innerHTML = "<p>No adoptions found.</p>";
+            return;
+        }
+
+        adoptions.forEach(a => {
+            const div = document.createElement("div");
+            div.classList.add("adoption-entry");
+
+            div.innerHTML = `
+        <p><strong>Animal:</strong> ${a.animalName}</p>
+        <p><strong>Date:</strong> ${a.adoptionDate || "Unknown"}</p>
+        <hr>
+      `;
+            container.appendChild(div);
+        });
+    } catch (err) {
+        console.error("Error loading adoptions:", err);
+    }
+}
+
+loadUserBookings();
+loadUserAdoptions();
