@@ -123,6 +123,10 @@ public class HumanService {
         return "User deleted";
     }
 
+    public List<Human> getAllHumans() {
+        return humanRepository.findAll();
+    }
+
     public Optional<Human> verifyAuthentication(String token) {
         try {
             UUID humanID = jwtService.verifyToken(token);

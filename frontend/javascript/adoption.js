@@ -20,18 +20,21 @@ async function loadAnimalOptions() {
 
 // Load user options into the select dropdown
 async function loadUserOptions() {
-    const res = await fetch("http://localhost:8080/api/humans/show-loggedin", {
+    const res = await fetch("http://localhost:8080/api/humans/get-all", {
+        method: "GET",
             headers: {
                     "Authorization": "Bearer " + localStorage.getItem("token")
             }
     });
-    const user = await res.json();
+    const users = await res.json();
     const userSelect = document.getElementById("userID");
 
+        for (let user of users) {
             const option = document.createElement("option");
             option.value = user.userId;
             option.textContent = user.username;
             userSelect.appendChild(option);
+        }
 }
 
 
