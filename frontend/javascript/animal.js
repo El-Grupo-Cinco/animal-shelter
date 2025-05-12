@@ -45,8 +45,9 @@ async function fetchAnimals() {
     }
 }
 
-
-fetchAnimals();
+if (window.location.href.includes("animal.html")) {
+    fetchAnimals();
+}
 
 
 // Delete-adoption-button functionality

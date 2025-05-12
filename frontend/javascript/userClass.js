@@ -42,13 +42,13 @@ export class User {
             this.showAdmin();
         }
 
-        console.log("DEBUG owned animals: " + this.ownedAnimals.length);
+        console.log("DEBUG owned animals: " + this);
         
-        if (this.ownedAnimals.length !== 0 || this.ownedAnimals === undefined){
+        if (this.ownedAnimals && this.ownedAnimals.length !== 0) {
             const cardList = document.querySelector(".animal-cards");
         
             this.ownedAnimals.forEach(animal => {
-                const animalClass = new Animal(animal.animalID, animal.name, animal.pictureURL, animal.species, animal.dateOfBirth, animal.registrationDate, animal.description);
+                const animalClass = new Animal(animal.animalID, animal.animalName, animal.pictureURL, animal.species, animal.dateOfBirth, animal.registrationDate, animal.description);
                 const card = animalClass.showAnimal();
                 cardList.appendChild(card);
             });
@@ -74,7 +74,6 @@ export class User {
         const searchAnimalBtn = document.createElement("button");
         const registerAnimalBtn = document.createElement("button");
         const approveAdoptionBtn = document.createElement("button");
-        const deleteAdoptionBtn = document.createElement("button");
         const bookingsBtn = document.createElement("button");
 
         searchLabel.setAttribute("for", "searchQuery");
@@ -87,24 +86,21 @@ export class User {
         searchAnimalBtn.textContent = "Search Animal";
         registerAnimalBtn.textContent = "Register Animal";
         approveAdoptionBtn.textContent = "Approve Adoption";
-        deleteAdoptionBtn.textContent = "Delete Adoption";
         bookingsBtn.textContent = "Handle Bookings";
 
         adminSection.className = "admin-section";
-        deleteAdoptionBtn.className = "special-button";
 
         searchInput.addEventListener('input', function() { searchQuery = searchInput.value.trim(); });
         searchUserBtn.addEventListener('click', () => { goToSearchUser(searchQuery); });
         searchAnimalBtn.addEventListener('click', searchAnimal);
         registerAnimalBtn.addEventListener('click', registerAnimal);
         approveAdoptionBtn.addEventListener('click', goToApproveAdoption);
-        deleteAdoptionBtn.addEventListener('click', goToDeleteAdoption);
         bookingsBtn.addEventListener('click', goToBooking);
 
         userInfoSection[0].append(adminSection);
         adminSection.append(searchLabel, searchInput);
         adminSection.appendChild(buttons);
-        buttons.append(searchUserBtn, searchAnimalBtn, registerAnimalBtn, approveAdoptionBtn, deleteAdoptionBtn, bookingsBtn);
+        buttons.append(searchUserBtn, searchAnimalBtn, registerAnimalBtn, approveAdoptionBtn, bookingsBtn);
     }
 }
 
@@ -136,10 +132,6 @@ function registerAnimal() {
 
 function goToApproveAdoption() {
     window.location.href = "adoption.html";
-}
-
-function goToDeleteAdoption() {
-    console.log("Delete Adoption button");
 }
 
 function goToBooking() {

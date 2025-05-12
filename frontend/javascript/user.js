@@ -1,4 +1,5 @@
 import { User } from "./userClass.js";
+import { Animal } from "./animalClass.js";
 
 if (window.location.pathname.endsWith("/user.html")) {
   if (localStorage.length === 0) {
