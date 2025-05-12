@@ -2,18 +2,12 @@ package com.elgrupocinco.GruppUppgift05.service;
 
 import com.elgrupocinco.GruppUppgift05.dto.BookingDTO;
 import com.elgrupocinco.GruppUppgift05.dto.BookingRequest;
-import com.elgrupocinco.GruppUppgift05.dto.CommentDTO;
-import com.elgrupocinco.GruppUppgift05.models.Animal;
-import com.elgrupocinco.GruppUppgift05.models.Booking;
-import com.elgrupocinco.GruppUppgift05.models.Comment;
-import com.elgrupocinco.GruppUppgift05.models.Human;
+import com.elgrupocinco.GruppUppgift05.models.*;
 import com.elgrupocinco.GruppUppgift05.repository.AnimalRepository;
 import com.elgrupocinco.GruppUppgift05.repository.BookingRepository;
 import com.elgrupocinco.GruppUppgift05.repository.CommentRepository;
 import com.elgrupocinco.GruppUppgift05.repository.HumanRepository;
 import jakarta.persistence.EntityNotFoundException;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -101,6 +95,10 @@ public class BookingService {
             }
         }
         bookingRepository.deleteById(bookingId);
+    }
+
+    public List<Booking> getAllBookings() {
+        return bookingRepository.findAll();
     }
 
     private boolean isTimeUnavailable(LocalDateTime time) {

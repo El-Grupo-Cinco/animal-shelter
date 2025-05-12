@@ -54,4 +54,19 @@ public class BookingController {
         bookingService.deleteBooking(bookingId);
         return ResponseEntity.ok(Map.of("Message", "The booking has been removed"));
     }
+
+    @GetMapping("/all")
+    public ResponseEntity<?> getAllBookings() {
+        try {
+            List<Booking> bookings = bookingService.getAllBookings();
+            List<BookingDTO> bookingDTOS = bookings
+                    .stream()
+                    .map(BookingDTO::fromBooking)
+                    .toList();
+            return ResponseEntity.ok(bookingDTOS);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+
 }
