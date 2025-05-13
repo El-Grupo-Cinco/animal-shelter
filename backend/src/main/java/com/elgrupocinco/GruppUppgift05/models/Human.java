@@ -90,6 +90,7 @@ public class Human implements UserDetails {
         this.city = city;
         this.state = state;
         this.zipCode = zipCode;
+        this.canAdopt = true;
         this.role = role;
     }
 
