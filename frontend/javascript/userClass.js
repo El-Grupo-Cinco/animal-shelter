@@ -42,14 +42,16 @@ export class User {
         if (this.role === "ADMIN") {
             this.showAdmin();
         }
-
-        console.log("DEBUG owned animals: " + this);
         
         if (this.ownedAnimals && this.ownedAnimals.length !== 0) {
             const cardList = document.querySelector(".animal-cards");
         
             this.ownedAnimals.forEach(animal => {
-                const animalClass = new Animal(animal.animalID, animal.animalName, animal.pictureURL, animal.species, animal.dateOfBirth, animal.registrationDate, animal.description);
+                console.log(animal);
+                
+                const animalClass = new Animal(animal.animalID, animal.animalName, animal.pictureURL, animal.species, animal.assumedDateOfBirth, animal.dateRegistered, animal.description);
+                console.log(animalClass);
+                
                 const card = animalClass.showAnimal();
                 cardList.appendChild(card);
             });
@@ -151,7 +153,6 @@ async function getOwnBookings(bookingCards) {
             if (!res.ok) throw new Error("Failed to fetch bookings");
 
             const bookings = await res.json();
-            console.log(bookings);
             
             // If no bookings, show a message and return
             if (!bookings || bookings.length === 0) {

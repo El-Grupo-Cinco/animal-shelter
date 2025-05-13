@@ -175,7 +175,7 @@ function calculateAgeFromDate(dateString) {
         animalName: name || null,
         animalSpecies: species || null,
         minimumAge: minimumAge,
-        includeAdopted: true, // Change to false if needed
+        includeAdopted: false, // Change to false if needed
     };
 
     try {
