@@ -4,6 +4,7 @@ const adoptionCards = document.getElementById("adoption-cards");
 
 loadAnimalOptions();
 loadUserOptions();
+renderAdoptions();
 
 async function loadAnimalOptions() {
     const res = await fetch("http://localhost:8080/api/animals/see-all");
@@ -50,7 +51,11 @@ async function renderAdoptions() {
 
     const adoptionSection = document.getElementById("adoption-section");
     for (let adoption of adoptions) {
-        const newAdoption = adoption.
+        const comments = (adoption.commentDTOs || []).map(c => c.commentText || "");
+        const newAdoption = new Adoption (adoption.humanDTO.username, adoption.animalDTO.animalName, adoption.adoptionDate, comments);
+        console.log(newAdoption);
+        
+        adoptionSection.append(newAdoption.publish());
     }
     
 
@@ -94,4 +99,3 @@ form.addEventListener("submit", async (event) => {
     }
 });
 
-renderAdoptions();
