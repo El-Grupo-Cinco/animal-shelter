@@ -236,12 +236,17 @@ async function loadUserAdoptions() {
         const container = document.getElementById("user-adoptions");
         container.innerHTML = "";
 
-        if (!adoptions || adoptions.length === 0) {
+        const username = localStorage.getItem("username"); // or fetch this securely
+
+        // Filter adoptions for this user
+        const userAdoptions = adoptions.filter(a => a.username === username);
+
+        if (!userAdoptions || userAdoptions.length === 0) {
             container.innerHTML = "<p>No adoptions found.</p>";
             return;
         }
 
-        adoptions.forEach(a => {
+        userAdoptions.forEach(a => {
             const div = document.createElement("div");
             div.classList.add("adoption-entry");
 
@@ -252,6 +257,7 @@ async function loadUserAdoptions() {
       `;
             container.appendChild(div);
         });
+
     } catch (err) {
         console.error("Error loading adoptions:", err);
     }
