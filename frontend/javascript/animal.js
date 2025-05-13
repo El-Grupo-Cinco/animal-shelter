@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
                 const result = await response.json();
-                message.textContent = `Djur registrerat: ${result.animalName}`;
+                message.textContent = `Animal registered: ${result.animalName}`;
                 message.style.color = "green";
                 message.style.fontWeight = "bold";
                 form.reset();
