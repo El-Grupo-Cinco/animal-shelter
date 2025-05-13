@@ -1,3 +1,12 @@
+if (window.location.pathname.endsWith("/booking.html")) {
+        const token = localStorage.getItem("token");
+        if (!token) {
+            alert("You are not logged in. Redirecting to login.");
+            window.location.href = "login.html";
+    }
+}
+
+
 // Load animal options into the select dropdown
 async function loadAnimalOptions() {
         const res = await fetch("http://localhost:8080/api/animals/see-all");
