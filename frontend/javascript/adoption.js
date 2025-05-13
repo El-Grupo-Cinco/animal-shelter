@@ -38,22 +38,25 @@ async function loadUserOptions() {
 }
 
 
-// Dummy example data — remove when you load real data from backend
-const adoptions = [
-    new Adoption("DarthVader", "R2D2", "2025-05-08T08:00UTC", [
-        "Bring bolts and charger", 
-        "Brings old picture from Tatoine"
-    ]),
-    new Adoption("Longstocking", "Lilla Gubben", "2025-05-08T08:00UTC", [
-        "Brings a monkey (why?)", 
-        "Is very strong, can carry the horse back if all goes well"
-    ])
-];
-
 // Render existing adoptions
-for (const adoption of adoptions) {
-    adoptionCards.append(adoption.publish());
+async function renderAdoptions() {
+    const res = await fetch("http://localhost:8080/adoption/all");
+    const adoptions = await res.json();
+    if (adoptions.length === 0 || adoptions === null || adoptions === undefined) {
+        const message = document.getElementById("message");
+        message.textContent = "No adoptions found.";
+        return;
+    }
+
+    const adoptionSection = document.getElementById("adoption-section");
+    for (let adoption of adoptions) {
+        const newAdoption = adoption.
+    }
+    
+
+    
 }
+
 
 // Handle form submission
 const form = document.getElementById("adoption-form");
@@ -90,3 +93,5 @@ form.addEventListener("submit", async (event) => {
         responseText.style.color = "red";
     }
 });
+
+renderAdoptions();
